@@ -1,12 +1,12 @@
-// Optional 3D hover effect
-const hero = document.querySelector('.hero');
-
-hero.addEventListener('mousemove', (e) => {
-  const x = (window.innerWidth - e.pageX * 2) / 90;
-  const y = (window.innerHeight - e.pageY * 2) / 90;
-  hero.style.transform = `translate(-50%, -50%) rotateX(${y}deg) rotateY(${x}deg)`;
+// Fade-in animation on load
+document.addEventListener("DOMContentLoaded", () => {
+  const content = document.querySelector(".content");
+  content.classList.add("show");
 });
 
-hero.addEventListener('mouseleave', () => {
-  hero.style.transform = 'translate(-50%, -50%) rotateX(0deg) rotateY(0deg)';
+// Parallax scroll effect
+window.addEventListener("scroll", () => {
+  const bg = document.body;
+  const offset = window.pageYOffset;
+  bg.style.backgroundPositionY = offset * 0.4 + "px";
 });
