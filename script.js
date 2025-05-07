@@ -10,3 +10,24 @@ window.addEventListener("scroll", () => {
   const offset = window.pageYOffset;
   bg.style.backgroundPositionY = offset * 0.4 + "px";
 });
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('is-flipped');
+    });
+  });
+
+  // Optional: Parallax effect for background
+  window.addEventListener("scroll", () => {
+    document.body.style.backgroundPositionY = window.scrollY * 0.4 + "px";
+  });
+});

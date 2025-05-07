@@ -136,3 +136,171 @@ html {
     justify-content: center;
   }
 }
+
+
+/* Celestara - Daily Horoscope Page Styling */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  background-image: url("Celestial pattern.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Navbar styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 90%;
+  left: 5%;
+  margin: 20px auto;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 10px #9fd3ff;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #fff;
+  transition: width 0.3s;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* Horoscope Cards */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+  padding: 140px 40px 60px;
+  max-width: 1200px;
+  margin: auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.card {
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  text-align: center;
+  padding: 20px;
+}
+
+.card-front {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: #c9f3ff;
+  text-shadow: 0 0 8px #aff;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+/* Glow on hover */
+.card:hover .card-front,
+.card:hover .card-back {
+  box-shadow: 0 0 20px #9fd3ff, 0 0 30px #3a9ad9 inset;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .card-container {
+    padding: 120px 20px 40px;
+    gap: 20px;
+  }
+
+  .card-inner {
+    height: 180px;
+  }
+}
