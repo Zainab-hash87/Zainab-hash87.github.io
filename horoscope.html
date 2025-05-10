@@ -2,115 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Daily Horoscope | Celestara</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Know Your Horoscope</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Raleway&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">Celestara</div>
-    <nav class="menu">
-      <a href="index.html">Home</a>
-      <a href="#">Horoscope</a>
-      <a href="#">Compatibility</a>
-      <a href="#">Blog</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
+  <!-- Heading and Description Section -->
+  <section class="intro-section">
+    <h1 class="main-heading">Unlock the Secrets of Your Stars</h1>
+    <p class="sub-heading">Reveal Your Horoscope by Inputting Your Date of Birth!</p>
+  </section>
 
-  <!-- Horoscope Cards -->
-  <main class="card-container">
-
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front"><h2>♈ Aries</h2></div>
-        <div class="card-back"><p>Today is a powerful day to take initiative. Trust your instincts!</p></div>
+  <!-- Zodiac Calculator Section -->
+  <div class="calculator-section">
+    <div class="calculator-box">
+      <h2 class="calculator-heading">Discover Your Zodiac Sign</h2>
+      <div class="input-container">
+        <input type="date" id="dob" />
+        <button id="calculate-btn">Calculate</button>
+      </div>
+      <div class="result-section" id="result-section">
+        <h3>Your Zodiac Sign:</h3>
+        <p id="zodiac-sign">-</p>
       </div>
     </div>
+  </div>
 
+  <!-- Flip Cards Section -->
+  <div class="flip-cards-section">
     <div class="card">
       <div class="card-inner">
-        <div class="card-front"><h2>♉ Taurus</h2></div>
-        <div class="card-back"><p>Focus on stability and treat yourself to something relaxing.</p></div>
+        <div class="card-front">
+          <h3>Aries</h3>
+        </div>
+        <div class="card-back">
+          <p>Aries are known for their dynamic and enthusiastic personality. They are the natural-born leaders of the zodiac!</p>
+        </div>
       </div>
     </div>
-
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front"><h2>♊ Gemini</h2></div>
-        <div class="card-back"><p>Your mind is sharp today. Share your ideas with confidence.</p></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front"><h2>♋ Cancer</h2></div>
-        <div class="card-back"><p>Focus on your emotional well-being. Home is your sanctuary today.</p></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front"><h2>♌ Leo</h2></div>
-        <div class="card-back"><p>Let your light shine! Your charisma is at its peak—use it wisely.</p></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front"><h2>♍ Virgo</h2></div>
-        <div class="card-back"><p>Details matter today. Organize your space and thoughts clearly.</p></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front"><h2>♎ Libra</h2></div>
-        <div class="card-back"><p>Harmony is key today. Balance work and relationships gracefully.</p></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front"><h2>♏ Scorpio</h2></div>
-        <div class="card-back"><p>Trust your inner power. Something hidden may come to light today.</p></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front"><h2>♐ Sagittarius</h2></div>
-        <div class="card-back"><p>Adventure calls! Explore a new idea, book, or conversation.</p></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front"><h2>♑ Capricorn</h2></div>
-        <div class="card-back"><p>Your determination will lead you forward. Stick to your plan!</p></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front"><h2>♒ Aquarius</h2></div>
-        <div class="card-back"><p>Think outside the box. A surprising solution may emerge today.</p></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front"><h2>♓ Pisces</h2></div>
-        <div class="card-back"><p>Your intuition is your compass. Trust it to guide your actions.</p></div>
-      </div>
-    </div>
-
-  </main>
+    <!-- Add more flip cards for other signs here -->
+  </div>
   <script src="script.js" defer></script>
-
-</body>
+ </body>
 </html>
