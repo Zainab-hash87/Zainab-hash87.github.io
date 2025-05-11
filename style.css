@@ -1,13 +1,13 @@
 /* Basic Reset */
 * {
   box-sizing: border-box;
-   margin: 0;
+  margin: 0;
   padding: 0;
 }
 body, html {
   height: 100%;
-  font-family: 'Raleway', sans-serif;
-   color: white;
+  font-family: 'Raleway', sans-serif;    
+  color: white;
   overflow-x: hidden;
 }
 
@@ -32,32 +32,29 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-   background: rgba(0, 0, 0, 0.5);
-   backdrop-filter: blur(10px);
-   z-index: 1000;
-
- }
+  background: rgba(0, 0, 0, 0.6); /* slight transparency */
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: background 0.3s ease-in-out; /* smooth background change */
+}
 .logo {
   font-family: 'Playfair Display', serif;
   font-size: 28px;
   font-weight: bold;
   color: #ffffff;
- }
+}
 .menu {
-   display: flex;
+  display: flex;
   gap: 25px;
-
- }
+}
 .menu a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
- 
+  transition: color 0.3s ease;
 }
-
 .menu a:hover {
   color: #c1f0ff;
- 
 }
 
 /* Hero Content */
@@ -72,17 +69,117 @@ body, html {
   z-index: 10;
   position: relative;
 }
-
 .content h1 {
   font-size: 3em;
   font-family: 'Playfair Display', serif;
   color: #ffffff;
   margin-bottom: 10px;
-  text-shadow: 0 0 10px #00bcd4;
+  text-shadow: 0 0 15px #00bcd4;
+  opacity: 0;
+  animation: fadeInText 1s forwards 1s;
 }
 
 .content p {
   font-size: 1.2em;
   color: #e0f7fa;
+  opacity: 0; /* initially invisible */
+  animation: type 2s steps(35) 1s forwards, fadeIn 1s forwards;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
 
+.content p:nth-of-type(2) {
+  animation-delay: 3s;
+}
+
+.content p:nth-of-type(3) {
+  animation-delay: 3s;
+}
+
+/* Smooth Typing Animation */
+@keyframes type {
+  to {
+    width: 100%;
+  }
+}
+
+/* Fade-in for Text */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Fade-in effect for the h1 */
+@keyframes fadeInText {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Footer Styling */
+.footer {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 50px;
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.95em;
+}
+.footer-container {
+  max-width: 900px;
+  margin: auto;
+}
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.footer-links {
+  margin-top: 15px;
+}
+.footer-links a {
+  color: #ddd;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+.footer-links a:hover {
+  color: #c1f0ff;
+  text-decoration: underline;
+}
+.footer p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #bbb;
+}                                                          
+
+/* Navbar hover effect */
+.navbar a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px;
+  transition: all 0.3s ease;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
 }

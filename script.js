@@ -6,9 +6,10 @@ window.addEventListener("load", () => {
   }, 600);
 });
 
-// Parallax scroll effect for background video
-window.addEventListener("scroll", () => {
-  const bg = document.getElementById("bg-video");
-  const offset = window.pageYOffset;
-  bg.style.transform = `translateY(${offset * 0.3}px)`;
+// Typing animation effect (for the content paragraphs)
+document.addEventListener('DOMContentLoaded', function () {
+  const paragraphs = document.querySelectorAll('.content p');
+  paragraphs.forEach((paragraph, index) => {
+    paragraph.style.animationDelay = `${index * 3}s`; // Adjust timing for each paragraph
+  });
 });
