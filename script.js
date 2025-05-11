@@ -1,15 +1,16 @@
-// Loader fade-out
+// Loader fade-out (optional future loader support)
 window.addEventListener("load", () => {
-  document.getElementById("loader").style.opacity = "0";
-  setTimeout(() => {
-    document.getElementById("loader").style.display = "none";
-  }, 600);
+  const loader = document.getElementById("loader");
+  if (loader) {
+    loader.style.opacity = "0";
+    setTimeout(() => loader.style.display = "none", 600);
+  }
 });
 
-// Typing animation effect (for the content paragraphs)
-document.addEventListener('DOMContentLoaded', function () {
+// Typewriter delay for paragraphs
+document.addEventListener('DOMContentLoaded', () => {
   const paragraphs = document.querySelectorAll('.content p');
-  paragraphs.forEach((paragraph, index) => {
-    paragraph.style.animationDelay = `${index * 3}s`; // Adjust timing for each paragraph
+  paragraphs.forEach((p, index) => {
+    p.style.animationDelay = `${1 + index * 2.5}s`;
   });
 });

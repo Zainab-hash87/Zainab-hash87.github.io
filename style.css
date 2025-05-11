@@ -32,10 +32,9 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0, 0, 0, 0.6); /* slight transparency */
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
   z-index: 1000;
-  transition: background 0.3s ease-in-out; /* smooth background change */
 }
 .logo {
   font-family: 'Playfair Display', serif;
@@ -51,10 +50,20 @@ body, html {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  position: relative;
 }
-.menu a:hover {
-  color: #c1f0ff;
+.menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+.menu a:hover::after {
+  width: 100%;
 }
 
 /* Hero Content */
@@ -78,47 +87,19 @@ body, html {
   opacity: 0;
   animation: fadeInText 1s forwards 1s;
 }
-
 .content p {
   font-size: 1.2em;
   color: #e0f7fa;
-  opacity: 0; /* initially invisible */
-  animation: type 2s steps(35) 1s forwards, fadeIn 1s forwards;
+  opacity: 0;
+  animation: type 4s steps(35) 2s forwards, fadeIn 2s forwards;
   white-space: nowrap;
   overflow: hidden;
   width: 0;
 }
+.content p:nth-of-type(2) { animation-delay: 3s; }
+.content p:nth-of-type(3) { animation-delay: 2s; }
 
-.content p:nth-of-type(2) {
-  animation-delay: 3s;
-}
-
-.content p:nth-of-type(3) {
-  animation-delay: 3s;
-}
-
-/* Smooth Typing Animation */
-@keyframes type {
-  to {
-    width: 100%;
-  }
-}
-
-/* Fade-in for Text */
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-/* Fade-in effect for the h1 */
-@keyframes fadeInText {
-  to {
-    opacity: 1;
-  }
-}
-
-/* Footer Styling */
+/* Footer */
 .footer {
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(6px);
@@ -159,27 +140,30 @@ body, html {
   margin-top: 10px;
   font-size: 14px;
   color: #bbb;
-}                                                          
-
-/* Navbar hover effect */
-.navbar a {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 2px;
-  transition: all 0.3s ease;
 }
 
-.navbar a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background-color: #fff;
-  bottom: 0;
-  left: 0;
-  transition: width 0.3s ease;
+/* Fade Animations */
+@keyframes fadeInText {
+  to { opacity: 1; }
+}
+@keyframes type {
+  to { width: 100%; }
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
 }
 
-.navbar a:hover::after {
-  width: 100%;
+/* Page Turn Animation */
+.page-transition {
+  animation: pageTurn 1s ease;
+}
+@keyframes pageTurn {
+  from {
+    transform: rotateY(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
 }

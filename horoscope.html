@@ -3,47 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Know Your Horoscope</title>
+  <title>Your Daily Horoscope</title>
   <link rel="stylesheet" href="style.css" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Raleway&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2d5c6f53c.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <!-- Heading and Description Section -->
-  <section class="intro-section">
-    <h1 class="main-heading">Unlock the Secrets of Your Stars</h1>
-    <p class="sub-heading">Reveal Your Horoscope by Inputting Your Date of Birth!</p>
-  </section>
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src=".mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-  <!-- Zodiac Calculator Section -->
-  <div class="calculator-section">
-    <div class="calculator-box">
-      <h2 class="calculator-heading">Discover Your Zodiac Sign</h2>
-      <div class="input-container">
-        <input type="date" id="dob" />
-        <button id="calculate-btn">Calculate</button>
-      </div>
-      <div class="result-section" id="result-section">
-        <h3>Your Zodiac Sign:</h3>
-        <p id="zodiac-sign">-</p>
-      </div>
-    </div>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Stellara</div>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="horoscope.html">Horoscope</a>
+      <a href="#">Compatibility</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Page Content -->
+  <div class="content page-transition">
+    <h1>Your Daily Horoscope</h1>
+    <p>Discover your zodiac's wisdom tailored for today.</p>
+    <p>Stars reveal insights about your love, career, and destiny.</p>
   </div>
 
-  <!-- Flip Cards Section -->
-  <div class="flip-cards-section">
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <h3>Aries</h3>
-        </div>
-        <div class="card-back">
-          <p>Aries are known for their dynamic and enthusiastic personality. They are the natural-born leaders of the zodiac!</p>
-        </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">Stellara</div>
+      <p>Stellara — Reading the stars so you don't have to.✨</p>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a> | 
+        <a href="#">Terms of Use</a> | 
+        <a href="#">Contact Us</a>
       </div>
+      <p class="copyright">© 2025 Stellara. All rights reserved.</p>
     </div>
-    <!-- Add more flip cards for other signs here -->
-  </div>
-  <script src="script.js" defer></script>
- </body>
- </html>
+  </footer>
+
+</body>
+</html>
