@@ -167,3 +167,247 @@ body, html {
     opacity: 1;
   }
 }
+
+/* Page Turn Animation */
+.page-transition {
+  animation: pageTurn 1s ease;
+}
+@keyframes pageTurn {
+  from {
+    transform: rotateY(90deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+
+
+
+/* Zodiac Section */
+
+/* Fonts */
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+  background: #000;
+  overflow-x: hidden;
+  animation: fadeInPage 1.5s ease-in-out;
+}
+
+/* Page Fade-in Animation */
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Background Video */
+#bg-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-family: 'Playfair Display', serif;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .logo {
+  font-size: 1.8rem;
+  color: #00bcd4;
+}
+
+.menu a {
+  color: #ffffff;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #00bcd4;
+  text-shadow: 0 0 10px #00bcd4;
+}
+
+/* Content Section */
+.zodiac-content{
+  max-width: 800px;
+  margin: 5rem auto;
+  padding: 2rem;
+  background-color:rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 204, 112, 0.4);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.zodiac-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #00bcd4;
+  margin-bottom: 1rem;
+}
+
+/* Button Style */
+.button-container .button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 12px 24px;
+  background-color: #00bcd4;
+  color: #000;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.button-container .button:hover {
+  background-color: #ffffff;
+  color: #000;
+  box-shadow: 0 0 15px #00bcd4;
+  transform: scale(1.05);
+}
+
+/* Scroll Arrow */
+.scroll-arrow {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.scroll-arrow a {
+  color: #c8e9ed;
+  transition: transform 0.3s ease;
+}
+
+.scroll-arrow a:hover {
+  transform: translateY(5px);
+  color: #ffffff;
+}
+
+/* Zodiac Section */
+#zodiac-section {
+  padding: 4rem 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+.zodiac-box {
+  background-color: rgba(20, 20, 20, 0.85);
+  max-width: 600px;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #00bcd4;
+}
+
+.zodiac-box h2 {
+  color: #00bcd4;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+}
+
+.zodiac-box input, .zodiac-box button {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+
+.zodiac-box input {
+  width: 60%;
+}
+
+.zodiac-box button {
+  background-color: #00bcd4;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.zodiac-box button:hover {
+  background-color: #fff;
+  box-shadow: 0 0 10px #00bcd4;
+}
+
+/* Result box */
+.result {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+/* Footer */
+.footer {
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  color: #00bcd4;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.5rem;
+}
+
+.footer a {
+  color: #00bcd4;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+.result.show {
+  animation: fadeInZodiac 1.2s ease-out;
+}
+
+@keyframes fadeInZodiac {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.zodiac-animation {
+  padding: 1rem;
+  background-color: rgba(255, 204, 112, 0.1);
+  border: 1px solid #00bcd4;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 204, 112, 0.5);
+  color: #00bcd4;
+  font-size: 1.2rem;
+}

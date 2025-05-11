@@ -18,7 +18,7 @@
 
   <!-- Navbar -->
   <header class="navbar">
-    <div class="logo">Stellara</div>
+    <div class="logo">Stellara </div>
     <nav class="menu">
       <a href="index.html">Home</a>
       <a href="horoscope.html">Horoscope</a>
@@ -29,16 +29,49 @@
   </header>
 
   <!-- Page Content -->
-  <div class="content page-transition">
-    <h1>Your Daily Horoscope</h1>
-    <p>Discover your zodiac’s wisdom tailored for today.</p>
-    <p>Stars reveal insights about your love, career, and destiny.</p>
+<!-- Content -->
+<section class="content page-transition">
+  <h1><u>What is a Horoscope?</u></h1>
+  <p>Horoscopes are celestial insights based on the position of the stars and planets at your birth.</p>
+
+  <p>They reveal secrets about your personality, emotions, and destiny!</p>
+
+  <p>Whether you're a fiery Aries or a dreamy Pisces, your zodiac sign holds the key to understanding yourself and your relationships.</p>
+
+  <p>Join us on a cosmic journey to discover your zodiac sign and what it means for you!</p>
+  
+  <p>Click the button below to find out your zodiac sign based on your birthdate.</p>
+
+  <p>Stellara is here to guide you through the stars and help you navigate your cosmic path.</p>
+
+  <div class="button-container">
+    <a href="#zodiac-section" class="button">Find My Zodiac Sign</a>
   </div>
+</section>
+  <!-- Scroll Down Arrow -->
+  <div class="scroll-arrow">
+    <a href="#zodiac-section"><i class="fas fa-chevron-down"></i></a>
+  </div>
+
+  <!-- Zodiac Calculator Section -->
+  <section id="zodiac-section">
+    <div class="zodiac-box visible">
+      <h2>Know Your Zodiac</h2>
+      <label for="birthdate">Enter Your Birthdate:</label>
+      <input type="text" id="name" placeholder="Enter Your Name" required />
+      <input type="date" id="birthdate" required />
+      <button onclick="calculateZodiac()">Find Zodiac</button>
+      <div id="result" class="result"></div>
+    </div>
+  </section>
+
+
+
 
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
-      <div class="footer-logo">Stellara</div>
+      <div class="footer-logo">Stellara ✨</div>
       <p>Stellara — Reading the stars so you don't have to.✨</p>
       <div class="footer-links">
         <a href="#">Privacy Policy</a> | 
@@ -49,5 +82,7 @@
     </div>
   </footer>
 
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
