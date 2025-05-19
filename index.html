@@ -1,51 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic page setup with character encoding and responsive settings -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stellara | Your Guide to the Stars</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Raleway&display=swap" rel="stylesheet">
- </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- Page title displayed in browser tab -->
+  <title>Stellara - Welcome</title>
+
+  <!-- Favicon icon for browser tab -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3924/3924420.png" type="image/png" />
+  
+  <!-- Linking external stylesheet -->
+  <link rel="stylesheet" href="index.css" />
+
+  <!-- Importing Google Fonts for stylish typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome script for social media and decorative icons -->
+  <script src="https://kit.fontawesome.com/a2e0e6cfd6.js" crossorigin="anonymous"></script>
+</head>
 <body>
- 
+
+  <!-- Background video that plays silently and loops for cosmic ambiance -->
   <video autoplay muted loop id="bg-video">
-    <source src="stars_waves.mp4" type="video/mp4" />
+    <source src="https://cdn.pixabay.com/video/2019/07/08/25047-347958032_large.mp4" type="video/mp4" />
   </video>
 
-  <header class="navbar">
+  <!-- Empty div for potential content layering over video -->
+  <div class="page-content"></div>
+
+  <!-- Website header with logo and navigation links -->
+  <header class="main-header">
     <div class="logo">Stellara</div>
-    <nav class="menu">
+    <nav class="navbar">
+      <!-- Navigation links to different pages -->
       <a href="index.html">Home</a>
-      <a href="horoscope.html">Horoscope</a>
+      <a href="zodiac.html">Reveal Zodiac</a>
       <a href="compatibility.html">Compatibility</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
+      <a href="Celestial-Quiz.html">Quick Quiz</a>
+      <a href="Services.html"> Stellar Services</a>
     </nav>
   </header>
 
-  <div class="content page-transition">
-    <h1> <i> <u>Welcome to Stellara </u> </i> </h1>
-    
-    <p>Your journey through the stars begins here.</p>
-    <p>Unlock the secrets written in the sky.</p>
-    <p>Let Stellara illuminate your path with wisdom written in the stars.</p>
-  </div>
-
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-logo">Stellara</div>
-      <p>Stellara — Reading the stars so you don't have to.✨</p>
-      <div class="footer-links">
-        <a href="#">Privacy Policy</a> | 
-        <a href="#">Terms of Use</a> | 
-        <a href="#">Contact Us</a>
+  <!-- Hero section with welcome message and call-to-action buttons -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="stellara-title">Welcome to Stellara</h1>
+      <p class="stellara-subtitle">Discover the secrets written in the stars</p>
+      
+      <!-- Buttons to direct users to interactive experiences -->
+      <div class="button-group">
+        <a href="zodiac.html" class="btn-glow">Explore Zodiac</a>
+        <a href="daily-horoscope.html" class="btn-glow">Check Compatibility</a>
       </div>
-      <p class="copyright">© 2025 Stellara. All rights reserved.</p>
-    </div>
-  </footer>
 
-  <script src="script.js" defer></script>
+      <!-- Scroll-down indicator encouraging users to explore further -->
+      <div class="scroll-down" id="scrollTrigger">
+        <span class="arrow">&#x25BC;</span>
+        <p>Scroll down</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive section allowing users to choose their current mood -->
+  <section id="cosmic-vibe-section" class="cosmic-vibe">
+    <h2>Find Your Cosmic Vibe</h2>
+    <label for="mood">Select Your Stellar Mood:</label>
+
+    <!-- Dropdown for selecting mood, triggering personalized messages -->
+    <select id="mood">
+        <option value="">Choose a vibe...</option>
+        <option value="dreamy">Dreamy</option>
+        <option value="energetic">Energetic</option>
+        <option value="calm">Calm</option>
+        <option value="creative">Creative</option>
+        <option value="mysterious">Mysterious</option>
+        <option value="magical">Magical</option>
+        <option value="excited">Excited</option>
+        <option value="curious">Curious</option>
+        <option value="anxious">Anxious</option>
+        <option value="hopeful">Hopeful</option>
+    </select>
+
+    <!-- This will display the cosmic message based on mood -->
+    <div class="cosmic-result"></div>
+  </section>
+
+  <!-- Section giving a brief overview of the Stellara platform -->
+  <section class="about-section">
+    <h2>About Stellara</h2>
+    <p>Stellara is your cosmic companion, bringing the wisdom of the stars to life through interactive horoscopes, zodiac guides, and celestial tools.</p>
+  </section>
+
+  <!-- Footer with branding, social media icons, and legal links -->
+  <footer class="footer">
+    <div class="footer-logo">Stellara</div>
+    <div class="footer-stars"><span>✨🌙🌟</span></div>
+    <p>Stellara — Reading the stars so you don't have to. ✨</p>
+
+    <!-- Social media links for community connection -->
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+    </div>
+
+    <!-- Footer navigation links -->
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Terms of Use</a> | 
+      <a href="#">Contact Us</a>
+    </div>
+
+    <!-- Copyright -->
+    <p class="copyright">© 2025 Stellara. All rights reserved.</p>
+  </footer>
+  
 </body>
 </html>
+
+<!-- ========== JavaScript Section ========== -->
+<script>
+// Wait until the full page content is loaded
+document.addEventListener('DOMContentLoaded', () => {
+
+  // === COSMIC VIBE SECTION LOGIC ===
+  const moodSelect = document.getElementById('mood'); // Dropdown selector
+  const cosmicVibeSection = document.getElementById('cosmic-vibe-section'); // Section container
+  const resultBox = document.querySelector('.cosmic-result'); // Result display box
+
+  // Dictionary of mood messages with emoji and descriptive text
+  const cosmicMessages = {
+    dreamy: { text: "Your dreamy energy connects you to celestial wisdom beyond the veil...", emoji: "✨" },
+    energetic: { text: "The universe is channeling dynamic energy through you today...", emoji: "⚡" },
+    calm: { text: "Your serenity brings balance to the cosmic forces...", emoji: "🌙" },
+    creative: { text: "Creative celestial energy flows through your spirit today...", emoji: "🎨" },
+    mysterious: { text: "You're in tune with the enigmatic shadows between stars...", emoji: "🔮" },
+    magical: { text: "Magical vibrations surround your aura today...", emoji: "✨" },
+    excited: { text: "The universe loves your excitement! Cosmic adventures await...", emoji: "🚀" },
+    curious: { text: "Curiosity opens doors to astral wisdom and cosmic knowledge...", emoji: "🔭" },
+    anxious: { text: "Even stars have stormy nights. Your cosmic guardians are near...", emoji: "💫" },
+    hopeful: { text: "Hope is the universe's favorite emotion. Your optimism radiates...", emoji: "🌠" }
+  };
+
+  // When a mood is selected, update the cosmic message
+  if (moodSelect) {
+    moodSelect.addEventListener('change', () => {
+      const selectedMood = moodSelect.value;
+      resultBox.innerHTML = ''; // Clear previous content
+      resultBox.style.opacity = '0'; // Hide before showing new content
+
+      if (selectedMood && cosmicMessages[selectedMood]) {
+        const { text, emoji } = cosmicMessages[selectedMood];
+
+        // Create emoji element
+        const emojiSpan = document.createElement('span');
+        emojiSpan.textContent = emoji;
+        emojiSpan.style.fontSize = '2rem';
+        emojiSpan.style.display = 'block';
+        emojiSpan.style.textAlign = 'center';
+        emojiSpan.style.marginBottom = '10px';
+
+        // Create message paragraph
+        const messageText = document.createElement('p');
+        messageText.textContent = text;
+        messageText.style.fontSize = '1.1rem';
+        messageText.style.color = '#fff';
+        messageText.style.textAlign = 'center';
+        messageText.style.maxWidth = '500px';
+        messageText.style.margin = '0 auto';
+
+        // Smoothly fade in message after short delay
+        setTimeout(() => {
+          resultBox.appendChild(emojiSpan);
+          resultBox.appendChild(messageText);
+          resultBox.style.opacity = '1';
+
+          // Animate background effect
+          cosmicVibeSection.style.transition = 'background 0.5s ease';
+          cosmicVibeSection.style.background = 'radial-gradient(ellipse at center, rgba(25, 15, 50, 0.7) 0%, rgba(20, 10, 40, 0.5) 70%)';
+          
+          // Revert to original background after animation
+          setTimeout(() => {
+            cosmicVibeSection.style.background = 'rgba(20, 10, 40, 0.5)';
+          }, 1500);
+        }, 300);
+      }
+    });
+  }
+
+  // === SCROLL TO COSMIC VIBE SECTION ===
+  const scrollTrigger = document.getElementById('scrollTrigger');
+  if (scrollTrigger) {
+    scrollTrigger.addEventListener('click', () => {
+      const cosmicSection = document.getElementById('cosmic-vibe-section');
+      if (cosmicSection) {
+        cosmicSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  // === HIGHLIGHT CURRENT PAGE LINK IN NAVBAR ===
+  const currentPage = window.location.pathname.split("/").pop();
+  const navLinks = document.querySelectorAll('.navbar a');
+  navLinks.forEach(link => {
+    const linkHref = link.getAttribute('href');
+    if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
+      link.style.color = '#bf80ff'; // Highlight color
+      link.style.textShadow = '0 0 10px #bf80ff, 0 0 20px #bf80ff, 0 0 30px #bf80ff'; // Glow effect
+    }
+  });
+
+  // === FADE-IN TRANSITION WHEN PAGE LOADS ===
+  document.body.style.opacity = '0';
+  document.body.style.transition = 'opacity 1s ease-in-out';
+  setTimeout(() => {
+    document.body.style.opacity = '1';
+  }, 100);
+
+  // You can expand this section later for animated button navigation or transition effects
+});
+</script>

@@ -1,0 +1,840 @@
+/* Fonts & base */
+/* This sets up our cosmic space theme with a dark background and ensures the page fills the whole screen.
+   The fadeInPage animation gives that nice smooth entrance when the site loads. */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: radial-gradient(ellipse at center, #0b0f1a 0%, #000 90%);
+  color: #eee;
+  overflow-x: hidden; /* Changed from visible to hidden to prevent horizontal scroll */
+  min-height: 100vh;
+  position: relative;
+  animation: fadeInPage 1s ease-in-out;
+}
+
+
+/* Fullscreen background video */
+/* This creates our immersive space/astrology background video that covers the entire viewport.
+   Setting z-index to -1 ensures it stays behind all our content. */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; 
+  z-index: -1;        
+}
+
+
+/* Main content wrapper - keeps everything on top of our background video with some breathing room */
+.page-content {
+  position: relative;
+  z-index: 10;
+  color: white;
+  padding: 20px;
+}
+
+/* Header */
+/* Our mystical navigation bar that stays fixed at the top with a gorgeous semi-transparent 
+   glass effect and subtle purple glow shadow for that magical astrology feel */
+.main-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 12px 25px; /* Consistent padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(5, 5, 15, 0.75);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  box-shadow: 0 0 15px #5533ff66;
+  box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+/* Our magical logo styling with that gorgeous Cinzel Decorative font and purple glow */
+.logo {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.8rem;
+  color: #a280ff;
+  text-shadow: 0 0 8px #a280ff88;
+  letter-spacing: 0.15em;
+  user-select: none;
+  cursor: default;
+  white-space: nowrap; /* Prevents logo from breaking into multiple lines */
+}
+
+/* Navbar links */
+/* This creates our horizontal navigation with consistent spacing between links */
+.navbar {
+  display: flex;
+  gap: 20px; /* Replaces margin-left on individual links */
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* Each navigation link gets this subtle styling with a soft glow on hover */
+.navbar a {
+  color: #ccc;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  text-shadow: 0 0 3px #0008;
+  white-space: nowrap; /* Prevents nav items from wrapping */
+  padding: 5px 0; /* Adds clickable area */
+}
+
+/* Making our header responsive for smaller screens - stacking elements vertically */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 10px 15px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .logo {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .navbar {
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .navbar a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra adjustments for very small screens to keep things tidy */
+@media (max-width: 480px) {
+  .navbar {
+    gap: 8px;
+  }
+  
+  .navbar a {
+    font-size: 0.85rem;
+  }
+}
+
+/* This creates the magical purple glow effect when hovering over navigation links */
+.navbar a:hover,
+.navbar a:focus {
+  color: #bf80ff;
+  text-shadow:
+    0 0 10px #bf80ff,
+    0 0 20px #bf80ff,
+    0 0 30px #bf80ff,
+    0 0 40px #bf80ff;
+}
+
+/* Adding a cute little star after links on hover for that extra mystical touch */
+.navbar a:hover::after {
+  content: "✦";
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #bf80ff;
+  animation: sparkle 1.2s infinite alternate;
+  font-size: 1.2rem;
+}
+
+/* Makes our little star twinkle by changing opacity and size - so cosmic! */
+@keyframes sparkle {
+  0% {opacity: 0.3; transform: translateY(-50%) scale(1);}
+  100% {opacity: 1; transform: translateY(-60%) scale(1.3);}
+}
+
+
+/* Hero Section */
+/* Our main landing area that takes up most of the viewport with centered cosmic content */
+.hero-section {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* Keeps our hero content from stretching too wide on larger screens */
+.hero-content {
+  max-width: 700px;
+  margin: auto;
+}
+
+/* The magical main title - big, bold, and with that special cosmic font */
+.stellara-title {
+  font-size: 48px;
+  font-family: 'Cinzel Decorative', cursive;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* A softer subtitle to balance the bold title above */
+.stellara-subtitle {
+  font-size: 20px;
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+/* Our cosmic call-to-action button with a pretty hover effect */
+.btn-glow {
+  padding: 12px 24px;
+  background: #9494e4;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* Button transforms to white with a purple glow when hovered - very celestial! */
+.btn-glow:hover {
+  background: #fff;
+  color: #111;
+  box-shadow: 0 0 15px #2c1961;
+}
+
+/* Zodiac Calculator Section */
+/* Our interactive zodiac calculator section with a slightly darker background to stand out */
+.zodiac-calculator {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* The calculator box itself gets this pretty glass-like effect with golden accents */
+.calculator-container {
+  max-width: 600px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 8, 255, 0.3);
+}
+
+/* Golden title for our calculator to add that mystical astrology vibe */
+.calculator-container h2 {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 32px;
+  color: #ffd700;
+  margin-bottom: 25px;
+}
+
+/* Each input field gets its own space and consistent styling */
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Golden labels that match our title for consistency */
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+/* Semi-transparent inputs with golden borders for that magical feel */
+.styled-input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ffd700;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Slightly lighter placeholder text so it doesn't compete with actual input */
+.styled-input::placeholder {
+  color: #ccc;
+}
+
+/* Results area gets a special golden border and subtle background */
+.result {
+  margin-top: 25px;
+  font-size: 18px;
+  color: #fff;
+  background-color: rgba(255, 215, 0, 0.15);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ffd700;
+}
+
+/* Carousel Section */
+/* Container for our mystical zodiac/cosmic card carousel with overflow handling */
+.carousel-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gives our carousel some horizontal breathing room */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+/* Handles the visibility of carousel items with clean edges */
+.carousel-track-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+/* The actual sliding track that moves left/right with our cards */
+.carousel-track {
+  display: flex;
+  list-style: none;
+  transition: transform 0.5s ease-out;
+  cursor: grab;
+}
+
+/* Changes cursor when actively dragging the carousel */
+.carousel-track.grabbing {
+  cursor: grabbing;
+  transition: none;
+}
+
+/* Individual cards in our carousel with pretty hover effects */
+.carousel-card {
+  flex: 0 0 auto;
+  width: 300px;
+  margin: 0 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Cards float upward with a bigger shadow on hover - so magical! */
+.carousel-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Makes sure images fill the card perfectly */
+.carousel-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Navigation buttons for our carousel with subtle semi-transparent styling */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+/* Buttons become slightly more visible on hover */
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Positioning for left navigation button */
+.left-btn {
+  left: 10px;
+}
+
+/* Positioning for right navigation button */
+.right-btn {
+  right: 10px;
+}
+
+/* Progress indicators */
+/* Little dots to show which slide is active in our carousel */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Each indicator is a small circle that can be clicked */
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* The active slide gets a purple indicator - matches our cosmic theme */
+.indicator.active {
+  background-color: #c98fff;
+}
+
+/* Responsiveness */
+/* Makes our carousel work better on mobile devices */
+@media (max-width: 768px) {
+  .carousel-card {
+    width: calc(100vw - 40px);
+  }
+  
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Fonts & base */
+/* (This appears to be a duplicate of the first section - possibly unintentional) */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: radial-gradient(ellipse at center, #0b0f1a 0%, #000 90%);
+  color: #eee;
+  overflow-x: hidden; /* Changed from visible to hidden to prevent horizontal scroll */
+  min-height: 100vh;
+  position: relative;
+  animation: fadeInPage 1s ease-in-out;
+}
+
+
+/* Fullscreen background video */
+/* (This appears to be a duplicate of earlier code) */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; 
+  z-index: -1;        
+}
+
+
+.page-content {
+  position: relative;
+  z-index: 10;
+  color: white;
+  padding: 20px;
+}
+
+/* Header */
+/* (This appears to be a duplicate of earlier code) */
+.main-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 12px 25px; /* Consistent padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(5, 5, 15, 0.75);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  box-shadow: 0 0 15px #5533ff66;
+  box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+.logo {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.8rem;
+  color: #a280ff;
+  text-shadow: 0 0 8px #a280ff88;
+  letter-spacing: 0.15em;
+  user-select: none;
+  cursor: default;
+  white-space: nowrap; /* Prevents logo from breaking into multiple lines */
+}
+
+/* Navbar links */
+/* (This appears to be a duplicate of earlier code) */
+.navbar {
+  display: flex;
+  gap: 20px; /* Replaces margin-left on individual links */
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.navbar a {
+  color: #ccc;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  text-shadow: 0 0 3px #0008;
+  white-space: nowrap; /* Prevents nav items from wrapping */
+  padding: 5px 0; /* Adds clickable area */
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    padding: 10px 15px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .logo {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .navbar {
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .navbar a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    gap: 8px;
+  }
+  
+  .navbar a {
+    font-size: 0.85rem;
+  }
+}
+
+.navbar a:hover,
+.navbar a:focus {
+  color: #bf80ff;
+  text-shadow:
+    0 0 10px #bf80ff,
+    0 0 20px #bf80ff,
+    0 0 30px #bf80ff,
+    0 0 40px #bf80ff;
+}
+
+.navbar a:hover::after {
+  content: "✦";
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #bf80ff;
+  animation: sparkle 1.2s infinite alternate;
+  font-size: 1.2rem;
+}
+
+@keyframes sparkle {
+  0% {opacity: 0.3; transform: translateY(-50%) scale(1);}
+  100% {opacity: 1; transform: translateY(-60%) scale(1.3);}
+}
+
+
+/* Hero Section */
+/* (This appears to be a duplicate of earlier code) */
+.hero-section {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: auto;
+}
+
+.stellara-title {
+  font-size: 48px;
+  font-family: 'Cinzel Decorative', cursive;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.stellara-subtitle {
+  font-size: 20px;
+  color: #ddd;
+  margin-bottom: 30px;
+}
+
+.btn-glow {
+  padding: 12px 24px;
+  background: #9494e4;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-glow:hover {
+  background: #fff;
+  color: #111;
+  box-shadow: 0 0 15px #2c1961;
+}
+
+/* Zodiac Calculator Section */
+/* (This appears to be a duplicate of earlier code) */
+.zodiac-calculator {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.calculator-container {
+  max-width: 600px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 8, 255, 0.3);
+}
+
+.calculator-container h2 {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 32px;
+  color: #ffd700;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.styled-input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ffd700;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.styled-input::placeholder {
+  color: #ccc;
+}
+
+.result {
+  margin-top: 25px;
+  font-size: 18px;
+  color: #fff;
+  background-color: rgba(255, 215, 0, 0.15);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ffd700;
+}
+
+.carousel-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  list-style: none;
+  transition: transform 0.5s ease-out;
+  cursor: grab;
+}
+
+.carousel-track.grabbing {
+  cursor: grabbing;
+  transition: none;
+}
+
+.carousel-card {
+  flex: 0 0 auto;
+  width: 300px;
+  margin: 0 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.left-btn {
+  left: 10px;
+}
+
+.right-btn {
+  right: 10px;
+}
+
+/* Progress indicators */
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+  background-color: #c98fff;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .carousel-card {
+    width: calc(100vw - 40px);
+  }
+  
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Footer */
+/* Our cosmic footer with subtle styling - like star dust at the bottom of the universe */
+.footer {
+  background: #0b0f1a;
+  color: #9999cc;
+  text-align: center;
+  padding: 3px 6px; /* Reduced padding to make footer shorter */
+  font-size: 0.9rem; /* Slightly smaller font */
+  border-top: 1px solid #1f1a3d;
+  box-shadow: 0 -2px 10px #2a1a50;
+}
+
+/* Footer logo matches our header for brand consistency */
+.footer-logo {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.5rem; /* Smaller logo */
+  color: #a280ff;
+  margin-bottom: 5px;
+}
+
+/* A little starry decoration in the footer */
+.footer-stars {
+  margin: 5px 0;
+}
+
+/* Social media links arranged in a neat row */
+.social-icons {
+  margin: 10px 0;
+}
+
+/* Each social icon gets the same baseline styling */
+.social-icons a {
+  color: #9999cc;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+/* Icons glow purple on hover like our navigation links */
+.social-icons a:hover {
+  color: #bf80ff;
+}
+
+/* Footer navigation links in a clean row */
+.footer-links {
+  margin: 10px 0;
+}
+
+/* Styling for each footer link */
+.footer-links a {
+  color: #9999cc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Footer links also get the purple glow on hover */
+.footer-links a:hover {
+  color: #bf80ff;
+}
+
+/* Copyright notice at the very bottom - subtle and small */
+.copyright {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #666699;
+}

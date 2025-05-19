@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stellara | Zodiac Signs</title>
+  <!-- Favicon for the browser tab - mystical planet icon -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3924/3924420.png" type="image/png" />
+  <!-- 🌌 Fonts and Icons - Cinzel Decorative for mystical headings and Montserrat for readable body text -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <!-- FontAwesome for social media and navigation icons -->
+  <script src="https://kit.fontawesome.com/a2e0e6cfd6.js" crossorigin="anonymous"></script>
+
+  <!-- 🌟 External CSS stylesheet with all the cosmic styling -->
+  <link rel="stylesheet" href="zodiac.css" />
+ 
+  <!-- Smooth scrolling behavior for better user experience when clicking navigation links -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <!-- Video Background - Cosmic/space theme video that plays automatically and loops -->
+  <video autoplay muted loop id="bg-video">
+    <source src="https://cdn.pixabay.com/video/2019/07/08/25047-347958032_large.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Page Content Wrapper - Holds all visible content above the background -->
+  <div class="page-content">
+  </div>
+
+  
+    <!-- Header with Navbar - Fixed position for persistent navigation -->
+  <header class="main-header">
+    <div class="logo">Stellara</div>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="zodiac.html">Reveal Zodiac</a>
+      <a href="compatibility.html">Compatibility</a>
+      <a href="Celestial-Quiz.html">Quick Quiz</a>
+      <a href="Services.html">Services</a>
+    </nav>
+  </header>
+
+    <!-- 🌟 Hero Section - First visible content to greet visitors -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1 class="stellara-title">Explore the Mysteries of the Zodiac</h1>
+        <p class="stellara-subtitle">Each sign tells a story. Discover yours in the stars.</p>
+        <p class="stellara-subtitle">Join us on a cosmic journey to discover your zodiac sign and what it means for you!</p>
+        
+        <!-- Glowing CTA button that smoothly scrolls to the calculator section -->
+        <a href="#zodiac-calculator" class="btn-glow">Reveal My Sign</a>
+      </div>
+    </section>
+
+    <!-- ✨ Zodiac Calculator - The interactive form for users to find their zodiac sign -->
+    <section id="zodiac-calculator" class="zodiac-calculator">
+      <div class="calculator-container">
+        <h2>Know Your Zodiac</h2>
+
+        <!-- Name input field -->
+        <div class="input-group">
+          <label for="name">Enter Your Name:</label>
+          <input type="text" id="name" class="styled-input" placeholder="Your Name" required>
+        </div>
+
+        <!-- Birthdate selection with date picker -->
+        <div class="input-group">
+          <label for="birthdate">Enter Your Birthdate:</label>
+          <input type="date" id="birthdate" class="styled-input" required>
+        </div>
+
+        <!-- Submit button triggers the JavaScript calculation function -->
+        <button onclick="calculateZodiac()" class="btn-glow">Find Zodiac</button>
+
+        <!-- Results container that gets populated by the JavaScript function -->
+        <div id="result" class="result"></div>
+      </div>
+    </section>
+
+   <!-- ✨ Zodiac Cards Carousel - Visual showcase of all zodiac signs with information graphics -->
+  <section id="zodiac-carousel" class="carousel-section cosmic-vibe">
+    <h2 class="section-title">Unveil the Stars: Meet Your Zodiac</h2>
+
+    <div class="carousel-container">
+      <!-- Left navigation button for carousel -->
+      <button class="carousel-btn left-btn" aria-label="Scroll Left">
+        <i class="fas fa-angle-left"></i>
+      </button>
+
+      <!-- Container for the scrollable carousel track -->
+      <div class="carousel-track-container">
+        <ul class="carousel-track">
+          <!-- Individual zodiac cards with infographics - one for each sign -->
+          <!-- Aries - March 21 - April 19 -->
+          <li class="carousel-card">
+            <img src="https://www.astrograph.com/images/signs/1Aries-InfoGraphic.jpg" alt="Aries" />
+          </li>
+          
+          <!-- Taurus - April 20 - May 20 -->
+          <li class="carousel-card">
+            <img src="https://astrograph.com/images/signs/2Taurus-InfoGraphic.jpg" alt="Taurus" />
+          </li>
+          
+          <!-- Gemini - May 21 - June 20 -->
+          <li class="carousel-card">
+            <img src="https://www.astrograph.com/images/signs/3Gemini-InfoGraphic.jpg" alt="Gemini" />
+          </li>
+          
+          <!-- Cancer - June 21 - July 22 -->
+          <li class="carousel-card">
+            <img src="https://www.astrograph.com/images/signs/4Cancer-InfoGraphic.jpg" alt="Cancer" />
+          </li>
+          
+          <!-- Leo - July 23 - August 22 -->
+          <li class="carousel-card">
+            <img src="https://www.astrograph.com/images/signs/5Leo-InfoGraphic.jpg" alt="Leo" />
+          </li>
+          
+          <!-- Virgo - August 23 - September 22 -->
+          <li class="carousel-card">
+            <img src="https://www.astrograph.com/images/signs/6Virgo-InfoGraphic.jpg" alt="Virgo" />
+          </li>
+          
+          <!-- Libra - September 23 - October 22 -->
+          <li class="carousel-card">
+            <img src="https://www.astrograph.com/images/signs/7Libra-InfoGraphic.jpg" alt="Libra" />
+          </li>
+          
+          <!-- Scorpio - October 23 - November 21 -->
+          <li class="carousel-card">
+            <img src="https://www.astrograph.com/images/signs/8Scorpio-InfoGraphic.jpg" alt="Scorpio" />
+          </li>
+          
+          <!-- Sagittarius - November 22 - December 21 -->
+          <li class="carousel-card">
+            <img src="https://astrograph.com/images/signs/9Sagittarius-InfoGraphic.jpg" alt="Sagittarius" />
+          </li>
+          
+          <!-- Capricorn - December 22 - January 19 -->
+          <li class="carousel-card">
+            <img src="https://astrograph.com/images/signs/10Capricorn-InfoGraphic.jpg" alt="Capricorn" />
+          </li>
+          
+          <!-- Aquarius - January 20 - February 18 -->
+          <li class="carousel-card">
+            <img src="https://astrograph.com/images/signs/11Aquarius-InfoGraphic.jpg" alt="Aquarius" />
+          </li>
+          
+          <!-- Pisces - February 19 - March 20 -->
+          <li class="carousel-card">
+            <img src="https://www.astrograph.com/images/signs/12Pisces-InfoGraphic.jpg" alt="Pisces" />
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right navigation button for carousel -->
+      <button class="carousel-btn right-btn" aria-label="Scroll Right">
+        <i class="fas fa-angle-right"></i>
+      </button>
+    </div>
+    
+    <!-- Carousel indicators - visual dots showing which slide is active -->
+    <div class="carousel-indicators"></div>
+  </section>
+
+
+    <!-- 🌙 Footer - Site information and social links -->
+    <footer class="footer">
+      <div class="footer-logo">Stellara</div>
+      <div class="footer-stars"><span>✨🌙🌟</span></div>
+      <p>Stellara — Reading the stars so you don't have to. ✨</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      </div>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a> | 
+        <a href="#">Terms of Use</a> | 
+        <a href="#">Contact Us</a>
+      </div>
+      <p class="copyright">© 2025 Stellara. All rights reserved.</p>
+     </div>
+    </footer>
+
+
+
+ <!-- JavaScript for Zodiac Sign Calculation and Carousel Functionality -->
+  
+   <script>
+
+
+   // This function calculates and displays a person's zodiac sign based on their birth date
+// It runs when the user submits the zodiac calculator form
+function calculateZodiac() {
+  // Get the user's name and birthdate from the form
+  const name = document.getElementById("name").value.trim();
+  const birthdate = new Date(document.getElementById("birthdate").value);
+  const result = document.getElementById("result"); // This is where we'll show the result
+
+  // Make sure the user entered valid information
+  if (!name || isNaN(birthdate)) {
+    result.innerHTML = "<p>Please enter a valid name and birthdate.</p>";
+    return; // Exit the function if information is missing
+  }
+
+  // Extract the day and month from the birthdate
+  // Note: getMonth() returns 0-11, so we add 1 to get 1-12
+  const day = birthdate.getDate();
+  const month = birthdate.getMonth() + 1;
+
+  // Variable to store the zodiac sign
+  let sign = "";
+
+  // Determine the zodiac sign based on birth month and day
+  // Each zodiac sign spans across parts of two months
+  if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) sign = "Aries ♈"; // March 21 - April 19
+  else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) sign = "Taurus ♉"; // April 20 - May 20
+  else if ((month === 5 && day >= 21) || (month === 6 && day <= 20)) sign = "Gemini ♊"; // May 21 - June 20
+  else if ((month === 6 && day >= 21) || (month === 7 && day <= 22)) sign = "Cancer ♋"; // June 21 - July 22
+  else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) sign = "Leo ♌"; // July 23 - August 22
+  else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) sign = "Virgo ♍"; // August 23 - September 22
+  else if ((month === 9 && day >= 23) || (month === 10 && day <= 22)) sign = "Libra ♎"; // September 23 - October 22
+  else if ((month === 10 && day >= 23) || (month === 11 && day <= 21)) sign = "Scorpio ♏"; // October 23 - November 21
+  else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) sign = "Sagittarius ♐"; // November 22 - December 21
+  else if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) sign = "Capricorn ♑"; // December 22 - January 19
+  else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) sign = "Aquarius ♒"; // January 20 - February 18
+  else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) sign = "Pisces ♓"; // February 19 - March 20
+
+  // Display a personalized result with the user's name and zodiac sign
+  result.innerHTML = `<p>🌟 Hello, <strong>${name}</strong>! Your Zodiac sign is <strong>${sign}</strong>.</p>`;
+}
+
+
+//====== CAROUSEL FUNCTIONALITY ======
+// This script creates an interactive image carousel that users can navigate
+// Wait for the DOM to be fully loaded before running the carousel code
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all the carousel elements we need to work with
+  const track = document.querySelector('.carousel-track'); // The sliding container
+  const cards = Array.from(document.querySelectorAll('.carousel-card')); // All the image cards
+  const indicators = Array.from(document.querySelectorAll('.indicator')); // The dots showing current position
+  const leftBtn = document.querySelector('.left-btn'); // Previous button
+  const rightBtn = document.querySelector('.right-btn'); // Next button
+  
+  // Safety check - if we can't find the carousel, don't proceed
+  if (!track || cards.length === 0) {
+    console.error('Carousel elements not found');
+    return;
+  }
+  
+  // Set up variables to control the carousel
+  let currentIndex = 0; // Which card is currently showing (starting with the first)
+  // Calculate the total width of each card including margins
+  let cardWidth = cards[0].offsetWidth + parseInt(window.getComputedStyle(cards[0]).marginLeft) + 
+                 parseInt(window.getComputedStyle(cards[0]).marginRight);
+  let autoSwipeInterval; // Will hold our automatic slide timer
+  
+  // This function updates the position of the carousel to show the current card
+  function updateCarouselPosition() {
+    if (!track) return;
+    // Move the track to position the current card in view
+    track.style.transform = `translateX(${-currentIndex * cardWidth}px)`;
+    
+    // Update the indicator dots to show current position
+    if (indicators.length > 0) {
+      indicators.forEach((indicator, idx) => {
+        if (idx === currentIndex % indicators.length) {
+          indicator.classList.add('active'); // Highlight the current dot
+        } else {
+          indicator.classList.remove('active'); // Un-highlight other dots
+        }
+      });
+    }
+  }
+  
+  // Function to show the next slide in the carousel
+  function moveToNextSlide() {
+    currentIndex = (currentIndex + 1) % cards.length; // Loop back to first card after the last one
+    updateCarouselPosition();
+  }
+  
+  // Function to show the previous slide in the carousel
+  function moveToPrevSlide() {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length; // Loop to last card if going back from first
+    updateCarouselPosition();
+  }
+  
+  // Set up the timer for automatic sliding
+  function startAutoSwipe() {
+    stopAutoSwipe(); // Clear any existing timer first to prevent multiple timers
+    autoSwipeInterval = setInterval(moveToNextSlide, 5000); // Change slides every 5 seconds
+  }
+  
+  // Function to stop the automatic sliding (used when user interacts)
+  function stopAutoSwipe() {
+    if (autoSwipeInterval) {
+      clearInterval(autoSwipeInterval);
+    }
+  }
+  
+  // Set up click events for the previous/next buttons
+  if (leftBtn) {
+    leftBtn.addEventListener('click', function() {
+      moveToPrevSlide();
+      // Restart the timer when user manually changes slides
+      startAutoSwipe();
+    });
+  }
+  
+  if (rightBtn) {
+    rightBtn.addEventListener('click', function() {
+      moveToNextSlide();
+      // Restart the timer when user manually changes slides
+      startAutoSwipe();
+    });
+  }
+  
+  // Set up click events for the indicator dots
+  indicators.forEach((indicator, idx) => {
+    indicator.addEventListener('click', function() {
+      currentIndex = idx; // Jump directly to the clicked position
+      updateCarouselPosition();
+      // Restart the timer when user manually changes slides
+      startAutoSwipe();
+    });
+  });
+  
+  // Pause auto-sliding when user hovers or touches the carousel
+  track.addEventListener('mouseenter', stopAutoSwipe);
+  track.addEventListener('touchstart', stopAutoSwipe);
+  
+  // Resume auto-sliding when user stops interacting
+  track.addEventListener('mouseleave', startAutoSwipe);
+  track.addEventListener('touchend', startAutoSwipe);
+  
+  // ====== DRAG FUNCTIONALITY ======
+  // Allow users to drag/swipe the carousel with mouse or touch
+  let isDragging = false;
+  let startPosition = 0;
+  let currentTranslate = 0;
+  
+  // Set up event listeners for dragging
+  track.addEventListener('mousedown', dragStart);
+  track.addEventListener('touchstart', dragStart);
+  
+  track.addEventListener('mouseup', dragEnd);
+  track.addEventListener('touchend', dragEnd);
+  
+  track.addEventListener('mousemove', drag);
+  track.addEventListener('touchmove', drag);
+  
+  track.addEventListener('mouseleave', dragEnd);
+  
+  // Function that runs when user starts dragging
+  function dragStart(event) {
+    event.preventDefault();
+    // Get the starting position of the drag (different for mouse vs touch)
+    if (event.type === 'touchstart') {
+      startPosition = event.touches[0].clientX;
+    } else {
+      startPosition = event.clientX;
+    }
+    
+    isDragging = true;
+    track.classList.add('grabbing'); // Change cursor to show we're dragging
+    
+    // Get the current position from the transform style
+    const transformValue = window.getComputedStyle(track).getPropertyValue('transform');
+    if (transformValue !== 'none') {
+      const matrix = new DOMMatrix(transformValue);
+      currentTranslate = matrix.m41; // The X translation value from the matrix
+    }
+  }
+  
+  // Function that runs while user is dragging
+  function drag(event) {
+    if (!isDragging) return;
+    
+    // Get current position (different for mouse vs touch)
+    let currentPosition;
+    if (event.type === 'touchmove') {
+      currentPosition = event.touches[0].clientX;
+    } else {
+      currentPosition = event.clientX;
+    }
+    
+    // Calculate how far we've dragged and update the position
+    const diff = currentPosition - startPosition;
+    track.style.transform = `translateX(${currentTranslate + diff}px)`;
+  }
+  
+  // Function that runs when user stops dragging
+  function dragEnd() {
+    if (!isDragging) return;
+    isDragging = false;
+    track.classList.remove('grabbing'); // Restore normal cursor
+    
+    // Decide which slide to snap to based on drag distance
+    const transformValue = window.getComputedStyle(track).getPropertyValue('transform');
+    if (transformValue !== 'none') {
+      const matrix = new DOMMatrix(transformValue);
+      const currentPosition = matrix.m41;
+      
+      // Figure out which slide we're closest to after dragging
+      const slideIndex = Math.round(Math.abs(currentPosition) / cardWidth);
+      currentIndex = Math.min(Math.max(slideIndex, 0), cards.length - 1);
+      
+      updateCarouselPosition(); // Snap to the closest slide
+      startAutoSwipe(); // Restart the auto-slide timer
+    }
+  }
+  
+  // Update everything if the window size changes
+  window.addEventListener('resize', function() {
+    // Recalculate card width if screen size changes
+    cardWidth = cards[0].offsetWidth + parseInt(window.getComputedStyle(cards[0]).marginLeft) + 
+               parseInt(window.getComputedStyle(cards[0]).marginRight);
+    updateCarouselPosition();
+  });
+  
+  // Initialize the carousel
+  updateCarouselPosition();
+  startAutoSwipe();
+});
+
+
+// ====== NAVIGATION ARROW ======
+// This function creates a floating arrow button that links to the compatibility page
+const createNextPageArrow = () => {
+  // Create the arrow element
+  const nextPageArrow = document.createElement('div');
+  nextPageArrow.className = 'next-page-arrow';
+  nextPageArrow.innerHTML = `
+    <a href="compatibility.html" title="compatibility page">
+      <span style="margin-right: 10px;">Analyze Compatibility</span>
+      <span style="font-size: 1.8rem;">⟶</span>
+    </a>
+  `;
+  
+  // Style the arrow to make it look like a floating button
+  nextPageArrow.style.cssText = `
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(20, 10, 40, 0.7);
+    padding: 15px 20px;
+    border-radius: 50px;
+    box-shadow: 0 0 15px #a280ff77, inset 0 0 20px #bf80ff55;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `;
+
+  // Style the link inside the arrow
+  const arrowLink = nextPageArrow.querySelector('a');
+  arrowLink.style.cssText = `
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #cda9ff;
+    font-weight: 600;
+    font-size: 1.1rem;
+  `;
+
+  // Style the arrow icon specifically
+  const arrowIcon = nextPageArrow.querySelector('span:last-child');
+  arrowIcon.style.cssText = `
+    font-size: 1.8rem;
+    color: #bf80ff;
+    text-shadow: 0 0 10px #bf80ff;
+    transition: transform 0.3s ease;
+  `;
+
+  // Add hover effects to make the button interactive
+  nextPageArrow.addEventListener('mouseover', () => {
+    // Enhance the glow effect on hover
+    nextPageArrow.style.boxShadow = '0 0 25px #bf80ffaa, inset 0 0 30px #bf80ff77';
+    // Make the arrow move slightly to suggest action
+    arrowIcon.style.transform = 'translateX(5px)';
+  });
+
+  // Reset the effects when mouse leaves
+  nextPageArrow.addEventListener('mouseout', () => {
+    nextPageArrow.style.boxShadow = '0 0 15px #a280ff77, inset 0 0 20px #bf80ff55';
+    arrowIcon.style.transform = 'translateX(0)';
+  });
+
+  // Add the arrow to the page
+  document.body.appendChild(nextPageArrow);
+};
+
+// Create the navigation arrow when the script loads
+createNextPageArrow();
+
+</script>
