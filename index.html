@@ -122,39 +122,70 @@
 
 <!-- ========== JavaScript Section ========== -->
 <script>
-// Wait until the full page content is loaded
+  
 document.addEventListener('DOMContentLoaded', () => {
+  // 🌌✨ WELCOME TO THE COSMIC VIBE SECTION ✨🌌
+  // This section listens to the user's current vibe and sends them a soul-soothing, star-aligned message.
 
-  // === COSMIC VIBE SECTION LOGIC ===
-  const moodSelect = document.getElementById('mood'); // Dropdown selector
-  const cosmicVibeSection = document.getElementById('cosmic-vibe-section'); // Section container
-  const resultBox = document.querySelector('.cosmic-result'); // Result display box
+  const moodSelect = document.getElementById('mood');
+  const cosmicVibeSection = document.getElementById('cosmic-vibe-section');
+  const resultBox = document.querySelector('.cosmic-result');
 
-  // Dictionary of mood messages with emoji and descriptive text
+  // 🌠 Cosmic affirmations tailored for every mood under the stars
   const cosmicMessages = {
-    dreamy: { text: "Your dreamy energy connects you to celestial wisdom beyond the veil...", emoji: "✨" },
-    energetic: { text: "The universe is channeling dynamic energy through you today...", emoji: "⚡" },
-    calm: { text: "Your serenity brings balance to the cosmic forces...", emoji: "🌙" },
-    creative: { text: "Creative celestial energy flows through your spirit today...", emoji: "🎨" },
-    mysterious: { text: "You're in tune with the enigmatic shadows between stars...", emoji: "🔮" },
-    magical: { text: "Magical vibrations surround your aura today...", emoji: "✨" },
-    excited: { text: "The universe loves your excitement! Cosmic adventures await...", emoji: "🚀" },
-    curious: { text: "Curiosity opens doors to astral wisdom and cosmic knowledge...", emoji: "🔭" },
-    anxious: { text: "Even stars have stormy nights. Your cosmic guardians are near...", emoji: "💫" },
-    hopeful: { text: "Hope is the universe's favorite emotion. Your optimism radiates...", emoji: "🌠" }
+    dreamy: {
+      text: "Your dreamy energy connects you to celestial wisdom beyond the veil. The stars are whispering secrets to your subconscious tonight.",
+      emoji: "✨"
+    },
+    energetic: {
+      text: "The universe is channeling dynamic energy through you today! You're aligned with cosmic forces of creation and transformation.",
+      emoji: "⚡"
+    },
+    calm: {
+      text: "Your serenity brings balance to the cosmic forces. The universe appreciates your peaceful energy and offers clarity in return.",
+      emoji: "🌙"
+    },
+    creative: {
+      text: "Creative celestial energy flows through your spirit today. The stars themselves are inspired by your imaginative aura.",
+      emoji: "🎨"
+    },
+    mysterious: {
+      text: "You're in tune with the enigmatic shadows between stars. Secrets of the universe find their way to those who embrace mystery.",
+      emoji: "🔮"
+    },
+    magical: {
+      text: "Magical vibrations surround your aura today. You're channeling the enchanted energy that weaves between constellations.",
+      emoji: "✨"
+    },
+    excited: {
+      text: "The universe loves your excitement! Cosmic adventures await as your energetic vibrations align with celestial opportunities.",
+      emoji: "🚀"
+    },
+    curious: {
+      text: "Curiosity opens doors to astral wisdom and cosmic knowledge. Keep asking questions, brave star seeker.",
+      emoji: "🔭"
+    },
+    anxious: {
+      text: "Even stars have stormy nights. Your cosmic guardians surround you with protective light. This feeling will pass.",
+      emoji: "💫"
+    },
+    hopeful: {
+      text: "Hope is the universe's favorite emotion. Your optimistic energy lights up the galaxy and attracts stellar blessings.",
+      emoji: "🌠"
+    }
   };
 
-  // When a mood is selected, update the cosmic message
+  // 🌙✨ When the user picks a mood, let's send them their cosmic message gently
   if (moodSelect) {
     moodSelect.addEventListener('change', () => {
       const selectedMood = moodSelect.value;
-      resultBox.innerHTML = ''; // Clear previous content
-      resultBox.style.opacity = '0'; // Hide before showing new content
+      resultBox.innerHTML = ''; // Clear previous message
+      resultBox.style.opacity = '0'; // Hide box momentarily for a smoother reveal
 
       if (selectedMood && cosmicMessages[selectedMood]) {
         const { text, emoji } = cosmicMessages[selectedMood];
 
-        // Create emoji element
+        // 🌟 Build the emoji element to visually vibe with their emotion
         const emojiSpan = document.createElement('span');
         emojiSpan.textContent = emoji;
         emojiSpan.style.fontSize = '2rem';
@@ -162,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
         emojiSpan.style.textAlign = 'center';
         emojiSpan.style.marginBottom = '10px';
 
-        // Create message paragraph
+        // 🌌 Create the message text
         const messageText = document.createElement('p');
         messageText.textContent = text;
         messageText.style.fontSize = '1.1rem';
@@ -171,17 +202,17 @@ document.addEventListener('DOMContentLoaded', () => {
         messageText.style.maxWidth = '500px';
         messageText.style.margin = '0 auto';
 
-        // Smoothly fade in message after short delay
+        // ⏳ Delay to allow the user to *feel* the transition
         setTimeout(() => {
           resultBox.appendChild(emojiSpan);
           resultBox.appendChild(messageText);
           resultBox.style.opacity = '1';
 
-          // Animate background effect
+          // 💫 Animate a subtle cosmic glow in the background
           cosmicVibeSection.style.transition = 'background 0.5s ease';
           cosmicVibeSection.style.background = 'radial-gradient(ellipse at center, rgba(25, 15, 50, 0.7) 0%, rgba(20, 10, 40, 0.5) 70%)';
-          
-          // Revert to original background after animation
+
+          // Fade the glow gently back to neutral cosmic night
           setTimeout(() => {
             cosmicVibeSection.style.background = 'rgba(20, 10, 40, 0.5)';
           }, 1500);
@@ -190,35 +221,134 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // === SCROLL TO COSMIC VIBE SECTION ===
+  // 🌠✨ SMOOTH SCROLLING TO COSMIC VIBE SECTION ✨🌠
   const scrollTrigger = document.getElementById('scrollTrigger');
   if (scrollTrigger) {
     scrollTrigger.addEventListener('click', () => {
       const cosmicSection = document.getElementById('cosmic-vibe-section');
       if (cosmicSection) {
-        cosmicSection.scrollIntoView({ behavior: 'smooth' });
+        cosmicSection.scrollIntoView({ behavior: 'smooth' }); // float down like a falling star
       }
     });
   }
 
-  // === HIGHLIGHT CURRENT PAGE LINK IN NAVBAR ===
+  // ⭐ PAGE NAVIGATION HIGHLIGHT — Glow up the current page link
   const currentPage = window.location.pathname.split("/").pop();
   const navLinks = document.querySelectorAll('.navbar a');
   navLinks.forEach(link => {
     const linkHref = link.getAttribute('href');
     if (linkHref === currentPage || (currentPage === '' && linkHref === 'index.html')) {
-      link.style.color = '#bf80ff'; // Highlight color
-      link.style.textShadow = '0 0 10px #bf80ff, 0 0 20px #bf80ff, 0 0 30px #bf80ff'; // Glow effect
+      link.style.color = '#bf80ff';
+      link.style.textShadow = '0 0 10px #bf80ff, 0 0 20px #bf80ff, 0 0 30px #bf80ff';
     }
   });
 
-  // === FADE-IN TRANSITION WHEN PAGE LOADS ===
+  //  FADE-IN TRANSITION ON PAGE LOAD — because sudden appearances aren't very cosmic
   document.body.style.opacity = '0';
   document.body.style.transition = 'opacity 1s ease-in-out';
   setTimeout(() => {
     document.body.style.opacity = '1';
   }, 100);
 
-  // You can expand this section later for animated button navigation or transition effects
+  //  BUTTON GLOW FEEDBACK — subtle pulse to show they're magical and interactive
+  const navigationButtons = document.querySelectorAll('.btn-glow');
+  navigationButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      button.style.animation = 'btnPulse 0.5s 3';
+      setTimeout(() => {
+        button.style.animation = '';
+      }, 1500);
+    });
+  });
+
+  //  LOGO INTERACTION — make your logo glow when touched by curiosity
+  const logo = document.querySelector('.logo');
+  if (logo) {
+    logo.addEventListener('mouseover', () => {
+      logo.style.animation = 'glowing 1s ease-in-out infinite';
+    });
+    logo.addEventListener('mouseout', () => {
+      logo.style.animation = '';
+    });
+  }
+
+  // 💜 INTERACTIVE ABOUT SECTION — a gentle glow to invite engagement
+  const aboutSection = document.querySelector('.about-section');
+  if (aboutSection) {
+    aboutSection.style.transition = 'all 0.5s ease';
+    aboutSection.addEventListener('mouseover', () => {
+      aboutSection.style.boxShadow = '0 0 30px #bf80ffaa, inset 0 0 60px #a280ff77';
+    });
+    aboutSection.addEventListener('mouseout', () => {
+      aboutSection.style.boxShadow = '0 0 20px #bf80ff88, inset 0 0 40px #a280ff55';
+    });
+  }
+
+  // 🌠 FLOATING NEXT PAGE ARROW — gentle nudge to move forward in your cosmic journey
+  const createNextPageArrow = () => {
+    const nextPageArrow = document.createElement('div');
+    nextPageArrow.className = 'next-page-arrow';
+    nextPageArrow.innerHTML = `
+      <a href="zodiac.html" title="Go to Zodiac page">
+        <span style="margin-right: 10px;">Discover Your Zodiac</span>
+        <span style="font-size: 1.8rem;">⟶</span>
+      </a>
+    `;
+
+    // 💫 Styling the container
+    nextPageArrow.style.cssText = `
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: rgba(20, 10, 40, 0.7);
+      padding: 15px 20px;
+      border-radius: 50px;
+      box-shadow: 0 0 15px #a280ff77, inset 0 0 20px #bf80ff55;
+      cursor: pointer;
+      z-index: 100;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    `;
+
+    // 🪐 Styling the link text
+    const arrowLink = nextPageArrow.querySelector('a');
+    arrowLink.style.cssText = `
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #cda9ff;
+      font-weight: 600;
+      font-size: 1.1rem;
+    `;
+
+    // 🌟 Styling the arrow icon with stardust
+    const arrowIcon = nextPageArrow.querySelector('span:last-child');
+    arrowIcon.style.cssText = `
+      font-size: 1.8rem;
+      color: #bf80ff;
+      text-shadow: 0 0 10px #bf80ff;
+      transition: transform 0.3s ease;
+    `;
+
+    // ☄️ Animate the arrow on hover
+    nextPageArrow.addEventListener('mouseover', () => {
+      nextPageArrow.style.boxShadow = '0 0 25px #bf80ffaa, inset 0 0 30px #bf80ff77';
+      arrowIcon.style.transform = 'translateX(5px)';
+    });
+
+    nextPageArrow.addEventListener('mouseout', () => {
+      nextPageArrow.style.boxShadow = '0 0 15px #a280ff77, inset 0 0 20px #bf80ff55';
+      arrowIcon.style.transform = 'translateX(0)';
+    });
+
+    // ✨ Add to the page
+    document.body.appendChild(nextPageArrow);
+  };
+
+  createNextPageArrow();
 });
+
 </script>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stellara | Compatibility</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3924/3924420.png" type="image/png" />
+
+  <!-- 🌌 Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0e6cfd6.js" crossorigin="anonymous"></script>
+
+  <!-- 🌟 Styles -->
+  <link rel="stylesheet" href="compatibility.css" />
+</head>
+<body>
+
+  <!-- Video Background -->
+  <video autoplay muted loop id="bg-video">
+    <source src="https://cdn.pixabay.com/video/2019/07/08/25047-347958032_large.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Page Content -->
+  <div class="page-content"> </div>
+
+  <!-- Header with Navbar -->
+  <header class="main-header">
+    <div class="logo">Stellara</div>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="zodiac.html">Reveal Zodiac</a>
+      <a href="compatibility.html" class="active">Compatibility</a>
+      <a href="Celestial-Quiz.html">Quick Quiz</a>
+      <a href="Services.html">Stellar Services</a>
+    </nav>
+  </header>
+
+  <!-- Page Heading -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="stellara-title" id="title">Check Zodiac Compatibility</h1>
+      <p class="stellara-subtitle">Find out your cosmic chemistry ✨</p>
+      <div class="button-group">
+        <a href="#section1" class="btn-glow">Compatibility Chart</a>
+      </div>
+      <div class="scroll-down">
+        <span>Scroll down</span>
+        <span class="arrow">↓</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Decorative Divider -->
+  <div class="section-divider"></div>
+
+  <!-- Section 1: Compatibility Chart -->
+  <section class="compatibility-chart" id="section1">
+    <h2>Cosmic Compatibility Chart</h2>
+    <div class="chart-container">
+      <div class="chart-wheel" id="compatibilityWheel"></div>
+      <div class="chart-legend">
+        <div class="legend-item"><span class="legend-color high"></span><span>High Compatibility</span></div>
+        <div class="legend-item"><span class="legend-color medium"></span><span>Medium Compatibility</span></div>
+        <div class="legend-item"><span class="legend-color low"></span><span>Challenging Compatibility</span></div>
+      </div>
+    </div>
+    <p class="chart-instructions">Click on any sign to see its compatibility with all other signs!</p>
+    <a href="#section2" class="section-btn">Next: Relationship Dynamics</a>
+  </section>
+
+  <!-- Decorative Divider -->
+  <div class="section-divider"></div>
+
+  <!-- Relationship Dynamics Section -->
+  <section class="relationship-dynamics" id="section2">
+    <h2>Relationship Dynamics Explorer</h2>
+    <div class="dynamics-container">
+      <div class="dynamics-categories">
+        <button class="category-btn active" data-category="communication">Communication</button>
+        <button class="category-btn" data-category="emotions">Emotional Connection</button>
+        <button class="category-btn" data-category="romance">Romance & Passion</button>
+        <button class="category-btn" data-category="trust">Trust & Loyalty</button>
+        <button class="category-btn" data-category="growth">Growth Potential</button>
+      </div>
+      <div class="dynamics-content" id="dynamicsContent">
+        <p>Select two signs above and click on a category to explore specific relationship dynamics!</p>
+      </div>
+    </div>
+    <a href="#section3" class="section-btn">Next: Compatibility Timeline</a>
+  </section>
+
+  <!-- Decorative Divider -->
+  <div class="section-divider"></div>
+
+  <!-- Section 3: Compatibility Timeline -->
+  <section class="compatibility-timeline" id="section3">
+    <h2>Cosmic Connection Timeline</h2>
+    <p>Discover how your relationship may evolve over time with personalized astrological insights!</p>
+    <div class="timeline-options">
+      <div class="timeline-option">
+        <label for="timeline-period">Time Period:</label>
+        <select id="timeline-period">
+          <option value="months3">Next 3 Months</option>
+          <option value="months6">Next 6 Months</option>
+          <option value="year1" selected>Next Year</option>
+        </select>
+      </div>
+      <div class="timeline-option">
+        <label for="focus-area">Focus Area:</label>
+        <select id="focus-area">
+          <option value="overall" selected>Overall Connection</option>
+          <option value="love">Love & Romance</option>
+          <option value="communication">Communication</option>
+          <option value="growth">Growth & Learning</option>
+        </select>
+      </div>
+      <button id="generate-timeline" class="btn-glow">Generate Timeline</button>
+    </div>
+    <div class="timeline-container" id="timelineContainer">
+      <div class="timeline-placeholder">
+        <p>Select two signs above and generate your personalized compatibility timeline!</p>
+      </div>
+      <div class="timeline-visual" id="timelineVisual" style="display: none;"></div>
+    </div>
+    <div class="timeline-insights" id="timelineInsights"></div>
+    <a href="#title" class="section-btn">Back to Top</a>
+  </section>
+
+  <!-- Decorative Divider -->
+  <div class="section-divider"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-logo">Stellara</div>
+    <div class="footer-stars"><span>✨🌙🌟</span></div>
+    <p>Stellara — Reading the stars so you don't have to. ✨</p>
+    <div class="social-icons">
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Terms of Use</a> | 
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <p class="copyright">© 2025 Stellara. All rights reserved.</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="compatibility.js"></script>
+</body>
+</html>

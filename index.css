@@ -1,97 +1,90 @@
-/* === Base Styles and Setup === */
-
-/* Body: sets up font, background, scroll behavior and a nice fade-in */
+/* Fonts & base */
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif; /* Clean modern font for readability */
-  background: radial-gradient(ellipse at center, #0b0f1a 0%, #000 90%); /* A cosmic, dark spacey gradient */
-  color: #eee; /* Light text for high contrast */
-  overflow-x: hidden; /* Prevents horizontal scroll caused by animations or wide elements */
-  min-height: 100vh; /* Ensures body stretches to full viewport height */
-  position: relative;
-  animation: fadeInPage 1s ease-in-out; /* Smooth load-in animation */
+  font-family: 'Montserrat', sans-serif; /* Smooth, modern font for clean reading experience */
+  background: radial-gradient(ellipse at center, #0b0f1a 0%, #000 90%); /* Deep spacey vibe using a gradient */
+  color: #eee; /* Soft off-white for good contrast on dark bg */
+  overflow-x: hidden; /* Prevents weird sideways scrolling issues */
+  min-height: 100vh; /* Ensures body always takes up full height */
+  position: relative; /* Needed for stacking child elements properly */
+  animation: fadeInPage 1s ease-in-out; /* Soft intro animation for the whole page */
 }
 
-/* === Background Video === */
-
-/* Video takes full screen and stays fixed in background */
+/* Fullscreen background video */
 #bg-video {
-  position: fixed;
+  position: fixed; /* Makes the video stay in place as you scroll */
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  object-fit: cover; /* Ensures video fills screen without distortion */
-  z-index: -1; /* Sends video behind all content */
+  object-fit: cover; /* Ensures the video covers the entire screen nicely */
+  z-index: -1; /* Puts it behind everything else */
 }
 
-/* Wrapper for main page content so it sits above the video */
+
 .page-content {
-  position: relative;
-  z-index: 10; /* Ensures content overlays the background video */
+  position: relative; /* Ensures it stays above the video background */
+  z-index: 10;
   color: white;
-  padding: 20px;
+  padding: 20px; /* Gives breathing room inside the page */
 }
 
-/* === Header & Navigation === */
-
-/* Sticky top header with glassy background effect */
+/* Header */
 .main-header {
-  position: fixed;
+  position: fixed; /* Keeps the header stuck to the top on scroll */
   width: 100%;
   top: 0;
   left: 0;
-  padding: 12px 25px;
+  padding: 12px 25px; /* Balanced spacing for logo and nav */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(5, 5, 15, 0.75); /* Dark glass-like background */
-  backdrop-filter: blur(10px); /* Adds frosted glass blur */
+  background: rgba(5, 5, 15, 0.75); /* Soft transparent bg for glass-like effect */
+  backdrop-filter: blur(10px); /* Adds nice blur behind nav */
   z-index: 10;
-  box-shadow: 0 0 15px #5533ff66;
-  box-sizing: border-box;
+  box-shadow: 0 0 15px #5533ff66; /* Gives a dreamy glowing border around header */
+  box-sizing: border-box; /* Ensures padding doesn't mess with sizing */
 }
 
-/* Site logo with fancy font and glow */
+
 .logo {
-  font-family: 'Cinzel Decorative', serif;
+  font-family: 'Cinzel Decorative', serif; /* Gives magical/fantasy vibe */
   font-size: 1.8rem;
-  color: #a280ff;
-  text-shadow: 0 0 8px #a280ff88;
-  letter-spacing: 0.15em;
-  user-select: none;
+  color: #a280ff; /* Glowy lavender tone */
+  text-shadow: 0 0 8px #a280ff88; /* Makes logo pop a little more */
+  letter-spacing: 0.15em; /* Stylish spacing for elegance */
+  user-select: none; /* Prevents accidental text selection */
   cursor: default;
-  white-space: nowrap;
+  white-space: nowrap; /* Prevents wrapping to next line */
 }
 
-/* Navbar wrapper - horizontal layout with spacing */
+/* Navbar links */
 .navbar {
   display: flex;
-  gap: 20px; /* Even spacing between links */
+  gap: 20px; /* Clean spacing between nav links */
   align-items: center;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
 
-/* Navbar links with hover glow */
+
 .navbar a {
-  color: #ccc;
+  color: #ccc; /* Slightly muted for elegance */
   font-weight: 600;
   text-decoration: none;
   position: relative;
   font-size: 1rem;
-  transition: color 0.3s ease;
-  text-shadow: 0 0 3px #0008;
-  white-space: nowrap;
-  padding: 5px 0;
+  transition: color 0.3s ease; /* Smooth color transition on hover/focus */
+  text-shadow: 0 0 3px #0008; /* Slight shadow to lift the text */
+  white-space: nowrap; /* Prevents nav links from wrapping */
+  padding: 5px 0; /* Increases clickable area */
 }
-
-/* === Responsive Navigation === */
+ 
 
 @media (max-width: 768px) {
   .main-header {
-    padding: 10px 15px;
-    flex-direction: column;
+    padding: 10px 15px; /* Less padding for smaller screens */
+    flex-direction: column; /* Stacks logo and navbar vertically */
     align-items: stretch;
   }
 
@@ -106,7 +99,7 @@ body {
   }
 
   .navbar a {
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Slightly smaller for tablets */
   }
 }
 
@@ -116,83 +109,76 @@ body {
   }
 
   .navbar a {
-    font-size: 0.85rem;
+    font-size: 0.85rem; /* Even smaller for mobile screens */
   }
 }
 
-/* Glow effect on hover for navbar links */
+
 .navbar a:hover,
 .navbar a:focus {
-  color: #bf80ff;
+  color: #bf80ff; /* Brighter purple glow on interaction */
   text-shadow:
     0 0 10px #bf80ff,
     0 0 20px #bf80ff,
     0 0 30px #bf80ff,
-    0 0 40px #bf80ff;
+    0 0 40px #bf80ff; /* Sparkly effect */
 }
 
-/* Adds a magical ✦ when hovered */
+
 .navbar a:hover::after {
-  content: "✦";
+  content: "✦"; /* Adds a cute sparkle when hovered */
   position: absolute;
   right: -15px;
   top: 50%;
   transform: translateY(-50%);
   color: #bf80ff;
-  animation: sparkle 1.2s infinite alternate;
+  animation: sparkle 1.2s infinite alternate; /* Gentle pulsing sparkle */
   font-size: 1.2rem;
 }
 
-/* Sparkle animation for ✦ */
+
 @keyframes sparkle {
-  0% {
-    opacity: 0.3;
-    transform: translateY(-50%) scale(1);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(-60%) scale(1.3);
-  }
+  0% {opacity: 0.3; transform: translateY(-50%) scale(1);}
+  100% {opacity: 1; transform: translateY(-60%) scale(1.3);}
 }
 
-/* === Hero Section === */
-
-/* Full-screen center-aligned hero section */
+/* Hero Section */
 .hero-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  padding-top: 70px; /* Leaves space for the fixed header */
+  height: 100vh; /* Full screen intro section */
+  padding-top: 70px; /* Makes room for fixed header */
   text-align: center;
   position: relative;
   z-index: 1;
 }
 
-/* Animated content block in hero */
+
 .hero-content {
   max-width: 600px;
   padding: 20px;
-  animation: fadeInUp 1.5s ease forwards;
-  opacity: 0; /* Start hidden, reveal with animation */
+  animation: fadeInUp 1.5s ease forwards; /* Smooth fade-up when loaded */
+  opacity: 0; /* Hidden until animation starts */
 }
 
-/* Slide-up + fade-in animation */
+
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+ 
+  }
 }
 
-/* Main glowing title */
+
 .stellara-title {
   font-family: 'Cinzel Decorative', serif;
-  font-size: 3.8rem;
+  font-size: 3.8rem; /* Bold dramatic intro */
   color: #cda9ff;
   text-shadow:
     0 0 10px #bb8cff,
@@ -200,10 +186,10 @@ body {
     0 0 60px #bb8cff;
   margin-bottom: 0.25em;
   user-select: none;
-  animation: glowing 3s ease-in-out infinite;
+  animation: glowing 3s ease-in-out infinite; /* Continuous glowy vibe */
 }
 
-/* Pulse glow animation for title */
+
 @keyframes glowing {
   0%, 100% {
     text-shadow:
@@ -221,7 +207,7 @@ body {
   }
 }
 
-/* Subtitle under the main title */
+
 .stellara-subtitle {
   font-size: 1.4rem;
   margin-bottom: 2rem;
@@ -232,17 +218,15 @@ body {
   user-select: none;
 }
 
-/* === Buttons === */
-
-/* Group multiple buttons in one row */
+/* Buttons */
 .button-group {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 20px; /* Spacing between buttons */
   margin-bottom: 3rem;
 }
 
-/* Glowy pill-shaped button */
+
 .btn-glow {
   display: inline-block;
   padding: 12px 30px;
@@ -251,7 +235,7 @@ body {
   text-decoration: none;
   color: #fff;
   border: 2px solid #a280ff;
-  border-radius: 40px;
+  border-radius: 40px; /* Capsule shape */
   background: transparent;
   cursor: pointer;
   position: relative;
@@ -264,7 +248,7 @@ body {
   text-align: center;
 }
 
-/* Button hover glows + subtle animation */
+
 .btn-glow:hover,
 .btn-glow:focus {
   color: #e0bfff;
@@ -273,10 +257,10 @@ body {
     0 0 30px #bb8cff,
     0 0 50px #bb8cff,
     inset 0 0 25px #bb8cff;
-  animation: btnPulse 1.5s infinite;
+  animation: btnPulse 1.5s infinite; /* Gentle pulsing glow */
 }
 
-/* Pulse animation for button on hover */
+
 @keyframes btnPulse {
   0%, 100% {
     box-shadow: 0 0 20px #bb8cff, 0 0 30px #bb8cff, 0 0 50px #bb8cff, inset 0 0 25px #bb8cff;
@@ -285,52 +269,4 @@ body {
     box-shadow: 0 0 40px #d8baff, 0 0 60px #d8baff, 0 0 80px #d8baff, inset 0 0 35px #d8baff;
   }
 }
-
-/* === Scroll Down Arrow === */
-
-/* Scroll hint at the bottom of the screen */
-.scroll-down {
-  color: #a280ff;
-  font-weight: 600;
-  cursor: pointer;
-  user-select: none;
-  animation: bounce 2s infinite;
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.2rem;
-  font-size: 1.1rem;
-  text-shadow: 0 0 6px #a280ffbb;
-}
-
-/* Larger arrow with separate animation */
-.scroll-down .arrow {
-  font-size: 2.3rem;
-  animation: bounceArrow 2s infinite;
-}
-
-/* Soft bounce animation */
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(8px); }
-}
-@keyframes bounceArrow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(12px); }
-}
-
-/* === Cosmic Vibe Section (Optional Lower Content Block) === */
-
-.cosmic-vibe {
-  padding: 60px 20px 80px;
-  max-width: 650px;
-  margin: 0 auto 3rem auto;
-  background: rgba(20, 10, 40, 0.5); /* Subtle translucent background */
-  border-radius: 20px;
-  box-shadow: 0 0 15px #a280ff77, inset 0 0 30px #bf80ff55;
-  color: #e9d7ff;
-  text-align: center;
-  user-select: none;
-  transition: background 0.4s ease;
-}
+ 
