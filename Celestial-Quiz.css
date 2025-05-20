@@ -1,0 +1,1022 @@
+/* Fonts & base - Setting the galactic foundation for our cosmic website */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif; /* Clean, modern font for readability across space and time */
+  background: radial-gradient(ellipse at center, #0b0f1a 0%, #000 90%); /* Deep space gradient for that cosmic feel */
+  color: #eee;
+  overflow-x: hidden; /* Prevents horizontal scrolling - keeps users in our universe */
+  min-height: 100vh;
+  position: relative;
+  animation: fadeInPage 1s ease-in-out; /* Smooth entrance to our cosmic realm */
+}
+
+/* Elegant page entrance animation - like a nebula forming */
+@keyframes fadeInPage {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Fullscreen background video - our cosmic backdrop */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Ensures video covers the entire viewport */
+  z-index: -1;        /* Places it behind all content */
+  animation: videoFadeIn 2.5s ease-in; /* Gives video a gentle fade-in effect */
+}
+
+/* Animation for background video entrance */
+@keyframes videoFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.page-content {
+  position: relative;
+  z-index: 10; /* Ensures content stays above background elements */
+  color: white;
+  padding: 20px;
+  animation: contentFloat 6s ease-in-out infinite alternate; /* Subtle floating effect for content */
+}
+
+/* Gentle floating animation for content - like drifting through space */
+@keyframes contentFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-5px); }
+}
+
+/* Header - Our navigation through the cosmos */
+.main-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 12px 25px; /* Consistent padding for proper alignment */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(5, 5, 15, 0.75); /* Semi-transparent for that premium look */
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  box-shadow: 0 0 15px #5533ff66; /* Subtle glow effect for depth */
+  box-sizing: border-box; /* Ensures padding is included in width */
+  animation: headerReveal 1.2s ease-out; /* Slide in from top */
+  transition: padding 0.3s ease, background 0.4s ease; /* Smooth transitions for scroll effects */
+}
+
+/* Header reveal animation - commanding presence */
+@keyframes headerReveal {
+  0% { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.logo {
+  font-family: 'Cinzel Decorative', serif; /* Elegant serif font for fantasy feel */
+  font-size: 1.8rem;
+  color: #a280ff;
+  text-shadow: 0 0 8px #a280ff88; /* Ethereal glow effect */
+  letter-spacing: 0.15em;
+  user-select: none; /* Prevents text selection for better UX */
+  cursor: default;
+  white-space: nowrap; /* Prevents logo from breaking into multiple lines */
+  animation: logoGlow 3s ease-in-out infinite alternate; /* Pulsing glow effect */
+}
+
+/* Magical logo pulse animation - drawing attention like a beacon */
+@keyframes logoGlow {
+  0% { text-shadow: 0 0 8px #a280ff88; }
+  100% { text-shadow: 0 0 15px #a280ff, 0 0 25px #a280ffaa; }
+}
+
+/* Navbar links - Stellar navigation system */
+.navbar {
+  display: flex;
+  gap: 20px; /* Replaces margin-left on individual links - cleaner spacing */
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  animation: navFadeIn 1.5s ease-out; /* Fade in after header appears */
+}
+
+/* Animation for navbar entrance */
+@keyframes navFadeIn {
+  0% { opacity: 0; transform: translateX(10px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.navbar a {
+  color: #ccc;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.2s ease; /* Smooth color and transform changes */
+  text-shadow: 0 0 3px #0008;
+  white-space: nowrap; /* Prevents nav items from wrapping */
+  padding: 5px 0; /* Adds clickable area for better UX */
+}
+
+/* Hover effects for navbar - each link is a portal to new content */
+.navbar a:hover,
+.navbar a:focus {
+  color: #bf80ff;
+  text-shadow:
+    0 0 10px #bf80ff,
+    0 0 20px #bf80ff,
+    0 0 30px #bf80ff,
+    0 0 40px #bf80ff;
+  transform: translateY(-2px) scale(1.05); /* Slight lift and scale effect on hover */
+}
+
+.navbar a:hover::after {
+  content: "✦";
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #bf80ff;
+  animation: sparkle 1.2s infinite alternate; /* Twinkling star effect */
+  font-size: 1.2rem;
+}
+
+/* Twinkling star animation - like a guiding star */
+@keyframes sparkle {
+  0% {opacity: 0.3; transform: translateY(-50%) scale(1) rotate(0deg);}
+  100% {opacity: 1; transform: translateY(-60%) scale(1.3) rotate(15deg);}
+}
+
+/* Responsive design for smaller screens - cosmic experience on all devices */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 10px 15px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .logo {
+    margin-bottom: 10px;
+    text-align: center;
+    animation: logoFloatMobile 4s ease-in-out infinite alternate; /* Special animation for mobile */
+  }
+  
+  /* Special floating animation for mobile logo */
+  @keyframes logoFloatMobile {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+  }
+  
+  .navbar {
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .navbar a {
+    font-size: 0.9rem;
+    animation: navItemPulse 3s infinite alternate; /* Pulsing effect for mobile nav items */
+  }
+  
+  /* Subtle pulse animation for nav items on mobile */
+  @keyframes navItemPulse {
+    0% { opacity: 0.85; }
+    100% { opacity: 1; }
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    gap: 8px;
+  }
+  
+  .navbar a {
+    font-size: 0.85rem;
+  }
+}
+
+/* ============= Star Background Animation - Our cosmic tapestry ============= */
+.stars-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+    animation: starContainerTwinkle 10s infinite linear; /* Subtle overall twinkling effect */
+}
+
+/* Subtle animation for the entire star container */
+@keyframes starContainerTwinkle {
+    0%, 100% { opacity: 0.95; }
+    50% { opacity: 1; }
+}
+
+#stars, #stars2, #stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#stars {
+    background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0AgMAAAC2uDcZAAAADFBMVEUAAAD///////////84wDuoAAAAA3RSTlMAQAQwTSz/AAAAnklEQVR42u3VMQoAIAiFYUPX6Cid/6jRkNHSUA+e/R98ghCEhYUVGGutK+MxBr3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5t/5A8i9D/DFUuVeAAAAAElFTkSuQmCC') repeat top left;
+    animation: animateStars 500s linear infinite; /* Slow drift for distant stars */
+}
+
+#stars2 {
+    background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0AgMAAAC2uDcZAAAADFBMVEUAAAD///////////84wDuoAAAAA3RSTlMAQAQwTSz/AAAAnklEQVR42u3VMQoAIAiFYUPX6Cid/6jRkNHSUA+e/R98ghCEhYUVGGutK+MxBr3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5t/5A8i9D/DFUuVeAAAAAElFTkSuQmCC') repeat top left;
+    animation: animateStars 100s linear infinite; /* Medium speed for mid-distance stars */
+    opacity: 0.5;
+}
+
+#stars3 {
+    background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0AgMAAAC2uDcZAAAADFBMVEUAAAD///////////84wDuoAAAAA3RSTlMAQAQwTSz/AAAAnklEQVR42u3VMQoAIAiFYUPX6Cid/6jRkNHSUA+e/R98ghCEhYUVGGutK+MxBr3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5r3X5t/5A8i9D/DFUuVeAAAAAElFTkSuQmCC') repeat top left;
+    animation: animateStars 150s linear infinite; /* Slightly slower for variety */
+    opacity: 0.25;
+}
+
+/* Stars movement animation - like traveling through space */
+@keyframes animateStars {
+    from {
+        transform: translateY(0) rotate(0.01deg); /* Tiny rotation prevents pixel jittering */
+    }
+    to {
+        transform: translateY(-1000px) rotate(0.01deg);
+    }
+}
+
+/* ============= Header Styles - Command center of our cosmic journey ============= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 10;
+    animation: headerShimmer 8s infinite linear; /* Subtle background shimmer effect */
+}
+
+/* Subtle shimmer animation for header */
+@keyframes headerShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.logo {
+    font-family: 'Playfair Display', serif; /* Elegant serif font for premium feel */
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-bright);
+    text-shadow: 0 0 10px rgba(224, 176, 255, 0.7);
+    letter-spacing: 2px;
+    animation: logoFloat 6s ease-in-out infinite alternate; /* Floating logo effect */
+}
+
+/* Floating animation for logo - ethereal presence */
+@keyframes logoFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    animation: navItemsReveal 1.5s ease-out; /* Staggered reveal for nav items */
+}
+
+/* Reveal animation for nav items */
+@keyframes navItemsReveal {
+    0% { transform: translateY(10px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+nav ul li {
+    margin-left: 2rem;
+    animation: navItemFloat 5s infinite ease-in-out alternate; /* Each nav item floats independently */
+    animation-delay: calc(var(--i, 0) * 0.2s); /* Staggered animation delay */
+}
+
+/* Subtle float for nav items */
+@keyframes navItemFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-3px); }
+}
+
+nav ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color var(--transition-speed) ease, transform 0.3s ease; /* Added transform transition */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-medium);
+    transition: width var(--transition-speed) ease, opacity 0.3s ease; /* Added opacity transition */
+    opacity: 0.7;
+    animation: linePulse 2s infinite alternate; /* Pulsing effect for the underline */
+}
+
+/* Subtle pulse animation for underline */
+@keyframes linePulse {
+    0% { opacity: 0.7; box-shadow: 0 0 0 rgba(224, 176, 255, 0); }
+    100% { opacity: 1; box-shadow: 0 0 5px rgba(224, 176, 255, 0.5); }
+}
+
+nav ul li a:hover {
+    color: var(--accent-bright);
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    animation: lineGlow 1.5s infinite alternate; /* Enhanced glow effect on hover */
+}
+
+/* Glow animation for underline on hover */
+@keyframes lineGlow {
+    0% { box-shadow: 0 0 5px rgba(224, 176, 255, 0.5); }
+    100% { box-shadow: 0 0 10px rgba(224, 176, 255, 0.8); }
+}
+
+nav ul li a.active {
+    color: var(--accent-bright);
+    animation: activeNavPulse 2s infinite alternate; /* Pulsing effect for active nav item */
+}
+
+/* Pulse animation for active nav item */
+@keyframes activeNavPulse {
+    0% { text-shadow: 0 0 0 rgba(224, 176, 255, 0); }
+    100% { text-shadow: 0 0 10px rgba(224, 176, 255, 0.5); }
+}
+
+nav ul li a.active::after {
+    width: 100%;
+    background-color: var(--accent-bright);
+    animation: activeLineGlow 2s infinite alternate; /* Enhanced glow for active underline */
+}
+
+/* Glow animation for active underline */
+@keyframes activeLineGlow {
+    0% { box-shadow: 0 0 5px rgba(224, 176, 255, 0.5); }
+    100% { box-shadow: 0 0 15px rgba(224, 176, 255, 0.8); }
+}
+
+/* ============= Main Content Styles - The heart of our cosmic experience ============= */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    animation: mainContentFadeIn 1.5s ease-out; /* Smooth fade in for main content */
+}
+
+/* Fade in animation for main content */
+@keyframes mainContentFadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.quiz-container {
+    width: 100%;
+    max-width: 800px;
+    min-height: 650px;
+    background-color: rgba(21, 8, 77, 0.7);
+    border-radius: 15px;
+    padding: 2rem;
+    position: relative;
+    backdrop-filter: blur(5px);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 0 0 25px rgba(160, 87, 255, 0.3);
+    overflow: hidden;
+    animation: borderGlow 4s infinite alternate, quizContainerAppear 1s ease-out; /* Added appearance animation */
+}
+
+/* Appearance animation for quiz container */
+@keyframes quizContainerAppear {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes borderGlow {
+    0% {
+        border-color: var(--accent-dark);
+        box-shadow: 0 0 20px rgba(160, 87, 255, 0.3);
+    }
+    50% {
+        border-color: var(--accent-medium);
+        box-shadow: 0 0 30px rgba(196, 124, 255, 0.5);
+    }
+    100% {
+        border-color: var(--accent-bright);
+        box-shadow: 0 0 20px rgba(224, 176, 255, 0.3);
+    }
+}
+
+/* Quiz Header - Gateway to cosmic knowledge */
+.quiz-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: quizHeaderFloat 6s ease-in-out infinite alternate; /* Floating effect for header */
+}
+
+/* Floating animation for quiz header */
+@keyframes quizHeaderFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
+.glow-text {
+    color: var(--accent-bright);
+    text-shadow: 0 0 10px rgba(224, 176, 255, 0.7);
+    animation: textGlow 2s infinite alternate, textFloat 4s ease-in-out infinite alternate; /* Added floating animation */
+}
+
+/* Enhanced text glow animation */
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 10px rgba(224, 176, 255, 0.7);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(224, 176, 255, 0.9), 0 0 30px rgba(224, 176, 255, 0.5);
+    }
+}
+
+/* Subtle floating animation for glowing text */
+@keyframes textFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-3px); }
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+    animation: h1Reveal 1.2s ease-out; /* Reveal animation for main heading */
+}
+
+/* Reveal animation for h1 */
+@keyframes h1Reveal {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    animation: subtitleFadeIn 1.5s ease-out 0.3s both; /* Delayed fade in for subtitle */
+}
+
+/* Fade in animation for subtitle */
+@keyframes subtitleFadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Progress Bar - Tracking our cosmic journey */
+.progress-container {
+    margin-bottom: 2rem;
+    animation: progressContainerFadeIn 1.5s ease-out 0.5s both; /* Delayed fade in */
+}
+
+/* Fade in animation for progress container */
+@keyframes progressContainerFadeIn {
+    0% { opacity: 0; transform: translateX(-10px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: var(--primary-light);
+    border-radius: 4px;
+    overflow: hidden;
+    animation: progressBarPulse 4s infinite alternate; /* Subtle pulsing effect */
+}
+
+/* Subtle pulse animation for progress bar */
+@keyframes progressBarPulse {
+    0% { box-shadow: 0 0 3px rgba(224, 176, 255, 0.3); }
+    100% { box-shadow: 0 0 8px rgba(224, 176, 255, 0.5); }
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--accent-medium);
+    width: 33.33%;
+    transition: width 0.5s ease;
+    box-shadow: 0 0 8px var(--accent-medium);
+    animation: progressGlow 3s infinite alternate; /* Glowing effect */
+}
+
+/* Glow animation for progress */
+@keyframes progressGlow {
+    0% { box-shadow: 0 0 8px var(--accent-medium); }
+    100% { box-shadow: 0 0 15px var(--accent-bright); }
+}
+
+.progress-text {
+    text-align: center;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    animation: progressTextPulse 3s infinite alternate; /* Subtle pulsing effect */
+}
+
+/* Pulse animation for progress text */
+@keyframes progressTextPulse {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+/* Questions and Options - Cosmic choices that shape destiny */
+.question-container {
+    margin-bottom: 2rem;
+    animation: fadeIn 0.5s ease, questionContainerFloat 6s ease-in-out infinite alternate; /* Added floating effect */
+}
+
+/* Floating animation for question container */
+@keyframes questionContainerFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-3px); }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.question-text {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    color: var(--accent-bright);
+    animation: questionTextGlow 3s infinite alternate; /* Glowing effect for question text */
+}
+
+/* Glow animation for question text */
+@keyframes questionTextGlow {
+    0% { text-shadow: 0 0 5px rgba(224, 176, 255, 0.3); }
+    100% { text-shadow: 0 0 15px rgba(224, 176, 255, 0.6); }
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation: optionsContainerFadeIn 0.8s ease-out; /* Fade in for options container */
+}
+
+/* Fade in animation for options container */
+@keyframes optionsContainerFadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-light);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease, transform 0.3s ease; /* Added transform transition */
+    border: 1px solid transparent;
+    animation: optionPulse 4s infinite alternate; /* Subtle pulsing effect */
+    animation-delay: calc(var(--i, 0) * 0.1s); /* Staggered animation delay */
+}
+
+/* Subtle pulse animation for options */
+@keyframes optionPulse {
+    0% { box-shadow: 0 0 0 rgba(106, 27, 154, 0); }
+    100% { box-shadow: 0 0 10px rgba(106, 27, 154, 0.2); }
+}
+
+.option:hover {
+    transform: translateX(10px);
+    background-color: rgba(38, 23, 88, 0.8);
+    border-color: var(--accent-dark);
+    animation: optionHoverGlow 1.5s infinite alternate; /* Enhanced glow on hover */
+}
+
+/* Glow animation for option hover */
+@keyframes optionHoverGlow {
+    0% { box-shadow: 0 0 5px rgba(160, 87, 255, 0.3); }
+    100% { box-shadow: 0 0 15px rgba(160, 87, 255, 0.5); }
+}
+
+.option.selected {
+    background-color: rgba(106, 27, 154, 0.6);
+    border-color: var(--accent-medium);
+    transform: translateX(15px);
+    animation: selectedOptionGlow 2s infinite alternate; /* Enhanced glow for selected option */
+}
+
+/* Glow animation for selected option */
+@keyframes selectedOptionGlow {
+    0% { box-shadow: 0 0 10px rgba(160, 87, 255, 0.4); }
+    100% { box-shadow: 0 0 20px rgba(160, 87, 255, 0.6); }
+}
+
+.option-selector {
+    margin-right: 1rem;
+}
+
+.selector-outer {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all var(--transition-speed) ease;
+    animation: selectorPulse 3s infinite alternate; /* Pulsing effect for selector */
+}
+
+/* Pulse animation for selector */
+@keyframes selectorPulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+.selector-inner {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: var(--accent-medium);
+    transition: all var(--transition-speed) ease;
+}
+
+.option.selected .selector-outer {
+    border-color: var(--accent-bright);
+    animation: selectedSelectorPulse 1.5s infinite alternate; /* Enhanced pulse for selected selector */
+}
+
+/* Enhanced pulse animation for selected selector */
+@keyframes selectedSelectorPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 rgba(224, 176, 255, 0); }
+    100% { transform: scale(1.1); box-shadow: 0 0 10px rgba(224, 176, 255, 0.5); }
+}
+
+.option.selected .selector-inner {
+    width: 14px;
+    height: 14px;
+    box-shadow: 0 0 10px var(--accent-medium);
+    animation: innerSelectorGlow 1.5s infinite alternate; /* Glowing effect for inner selector */
+}
+
+/* Glow animation for inner selector */
+@keyframes innerSelectorGlow {
+    0% { box-shadow: 0 0 5px var(--accent-medium); }
+    100% { box-shadow: 0 0 15px var(--accent-bright); }
+}
+
+.option-text {
+    font-size: 1rem;
+}
+
+/* Navigation Buttons - Controls for our cosmic journey */
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    animation: navButtonsFadeIn 1s ease-out 0.8s both; /* Delayed fade in */
+}
+
+/* Fade in animation for nav buttons */
+@keyframes navButtonsFadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.nav-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent-deep);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid transparent;
+}
+
+.nav-btn:hover {
+    background-color: var(--accent-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(106, 27, 154, 0.3);
+}
+
+.nav-btn:active {
+    transform: translateY(-1px);
+}
+
+.nav-btn.hidden {
+    visibility: hidden;
+}
+
+/* Side Arrow Navigation */
+.side-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    color: var(--accent-medium);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    opacity: 0.8;
+    z-index: 100;
+}
+
+.side-nav:hover {
+    color: var(--accent-bright);
+    opacity: 1;
+    text-shadow: 0 0 15px var(--accent-bright);
+}
+
+.right-arrow {
+    right: -60px;
+    animation: pulseRight 2s infinite;
+}
+
+@keyframes pulseRight {
+    0% {
+        transform: translateY(-50%) translateX(0);
+    }
+    50% {
+        transform: translateY(-50%) translateX(5px);
+    }
+    100% {
+        transform: translateY(-50%) translateX(0);
+    }
+}
+
+/* Results Container */
+.results-container {
+    text-align: center;
+    animation: fadeInScale 0.8s ease;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.results-header {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+}
+
+.personality-type {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.constellation-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem;
+}
+
+.constellation {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.description-container {
+    margin-bottom: 2rem;
+}
+
+.personality-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.traits-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.trait-badge {
+    padding: 0.5rem 1.5rem;
+    background-color: var(--primary-light);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-bright);
+    border: 1px solid var(--accent-dark);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all var(--transition-speed) ease;
+}
+
+.trait-badge:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(160, 87, 255, 0.3);
+    background-color: var(--accent-deep);
+}
+
+.share-container {
+    margin-bottom: 2rem;
+}
+
+.share-container p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+.share-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.share-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-light);
+    color: var(--text-light);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.share-btn:hover {
+    transform: translateY(-3px) scale(1.1);
+    background-color: var(--accent-dark);
+    color: white;
+}
+
+.restart-btn {
+    padding: 0.75rem 2rem;
+    background-color: transparent;
+    color: var(--accent-bright);
+    border: 2px solid var(--accent-dark);
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    margin-top: 1rem;
+}
+
+.restart-btn:hover {
+    background-color: var(--accent-dark);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(160, 87, 255, 0.3);
+}
+
+/* Footer */
+.footer {
+  background: #0b0f1a;
+  color: #9999cc;
+  text-align: center;
+  padding: 3px 6px; /* Reduced padding to make footer shorter */
+  font-size: 0.9rem; /* Slightly smaller font */
+  border-top: 1px solid #1f1a3d;
+  box-shadow: 0 -2px 10px #2a1a50;
+}
+
+.footer-logo {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.5rem; /* Smaller logo */
+  color: #a280ff;
+  margin-bottom: 5px;
+}
+
+.footer-stars {
+  margin: 5px 0;
+}
+
+.social-icons {
+  margin: 10px 0;
+}
+
+.social-icons a {
+  color: #9999cc;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #bf80ff;
+}
+
+.footer-links {
+  margin: 10px 0;
+}
+
+.footer-links a {
+  color: #9999cc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #bf80ff;
+}
+
+.copyright {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #666699;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .logo {
+        margin-bottom: 1rem;
+    }
+    
+    nav ul li {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    
+    main {
+        padding: 1rem;
+    }
+    
+    .quiz-container {
+        padding: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .question-text {
+        font-size: 1.3rem;
+    }
+    
+    .option {
+        padding: 0.8rem;
+    }
+    
+    .side-nav {
+        display: none;
+    }
+    
+    .personality-type {
+        font-size: 1.8rem;
+    }
+}

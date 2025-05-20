@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic meta tags for character encoding and responsive viewport -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Page title that appears in the browser tab -->
+  <title>Stellara - Welcome</title>
+  <!-- Favicon (icon shown in browser tab) -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3924/3924420.png" type="image/png" />
+  <!-- Link to custom CSS stylesheet for styling -->
+  <link rel="stylesheet" href="Celestial-Quiz.css" />
+  <!-- Google Fonts import for fancy typography (Cinzel Decorative for headings, Montserrat for body text) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat&display=swap" rel="stylesheet" />
+  <!-- Font Awesome script for icons used throughout the page -->
+  <script src="https://kit.fontawesome.com/a2e0e6cfd6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Video Background Section - Creates cosmic atmosphere -->
+    <!-- Autoplay ensures immediate playback, muted for user experience, loop for continuous play -->
+    <video autoplay muted loop id="bg-video">
+      <!-- MP4 video source from Pixabay (free stock footage) -->
+      <source src="https://cdn.pixabay.com/video/2019/07/08/25047-347958032_large.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Container for all page content, positioned over the video background -->
+    <div class="page-content">
+    </div>
+
+    <!-- Header Section with Navigation -->
+    <header class="main-header">
+      <!-- Brand logo/name -->
+      <div class="logo">Stellara</div>
+      <!-- Navigation menu with links to other pages -->
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="zodiac.html">Reveal Zodiac</a>
+        <a href="Compatibility.html">Compatibility</a>
+        <a href="Celestial-Quiz.html"> Quiz</a>
+        <a href="Services.html">Stellar Services</a>
+      </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Quiz Container - Holds all quiz-related elements -->
+        <div class="quiz-container">
+            <!-- Quiz Header with Title and Subtitle -->
+            <div class="quiz-header">
+                <h1 class="glow-text">CELESTIAL QUIZ</h1>
+                <p class="subtitle">Which Star Personality Are You?</p>
+            </div>
+
+            <!-- Progress Bar to show user advancement through quiz -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <!-- Text indicator of current question number -->
+                <p class="progress-text" id="progress-text">Question 1 of 3</p>
+            </div>
+
+            <!-- Dynamic Quiz Content Area - Questions will be inserted here via JavaScript -->
+            <div id="quiz-content">
+                <!-- Questions will be loaded here from templates -->
+            </div>
+
+            <!-- Navigation Buttons for quiz progression -->
+            <div class="nav-buttons">
+                <!-- Previous button (hidden initially) -->
+                <button id="prev-btn" class="nav-btn hidden"><i class="fas fa-chevron-left"></i> Previous</button>
+                <!-- Next button -->
+                <button id="next-btn" class="nav-btn">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Right Arrow for additional navigation -->
+            <div class="side-nav right-arrow" id="next-page-arrow">
+                <i class="fas fa-chevron-circle-right"></i>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer section (appears twice in the code) -->
+    <footer>
+        <p>© 2025 Stellara Astrology | Your Cosmic Guide to the Stars</p>
+    </footer>
+
+    <!-- HTML Templates for JavaScript to use for dynamic content generation -->
+    <!-- These templates are invisible until cloned and inserted by JS -->
+    
+    <!-- Question Template - Structure for each quiz question -->
+    <template id="question-template">
+        <div class="question-container">
+            <h2 class="question-text"></h2>
+            <div class="options-container">
+                <!-- Options will be dynamically added here by JavaScript -->
+            </div>
+        </div>
+    </template>
+
+    <!-- Option Template - Structure for each answer option -->
+    <template id="option-template">
+        <div class="option">
+            <!-- Custom radio button-like selector -->
+            <div class="option-selector">
+                <div class="selector-outer">
+                    <div class="selector-inner"></div>
+                </div>
+            </div>
+            <!-- Text content for the option -->
+            <div class="option-text"></div>
+        </div>
+    </template>
+
+    <!-- Results Template - Structure for displaying final quiz results -->
+    <template id="results-template">
+        <div class="results-container">
+            <!-- Header for results section -->
+            <h2 class="results-header">YOUR COSMIC PERSONALITY IS</h2>
+            <!-- Personality type with glow effect -->
+            <h3 class="personality-type glow-text"></h3>
+            
+            <!-- Container for constellation visualization -->
+            <div class="constellation-container">
+                <div class="constellation" id="constellation-svg"></div>
+            </div>
+            
+            <!-- Container for personality description -->
+            <div class="description-container">
+                <p class="personality-description"></p>
+            </div>
+            
+            <!-- Container for personality traits -->
+            <div class="traits-container">
+                <!-- Traits will be dynamically added here by JavaScript -->
+            </div>
+            
+            <!-- Social media sharing options -->
+            <div class="share-container">
+                <p>Share your cosmic personality:</p>
+                <div class="share-buttons">
+                    <button class="share-btn facebook"><i class="fab fa-facebook-f"></i></button>
+                    <button class="share-btn twitter"><i class="fab fa-twitter"></i></button>
+                    <button class="share-btn instagram"><i class="fab fa-instagram"></i></button>
+                </div>
+            </div>
+            
+            <!-- Restart quiz button -->
+            <button class="restart-btn">Take Quiz Again</button>
+        </div>
+    </template>
+
+    <!-- Template for individual trait badges shown in results -->
+    <template id="trait-template">
+        <div class="trait-badge"></div>
+    </template>
+
+    <!-- Main Footer with more detailed information -->
+    <footer class="footer">
+      <!-- Brand logo in footer -->
+      <div class="footer-logo">Stellara</div>
+      <!-- Decorative star icons -->
+      <div class="footer-stars"><span>✨🌙🌟</span></div>
+      <!-- Tagline -->
+      <p>Stellara — Reading the stars so you don't have to. ✨</p>
+      <!-- Social media links with icons -->
+      <div class="social-icons">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      </div>
+      <!-- Site links -->
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a> | 
+        <a href="#">Terms of Use</a> | 
+        <a href="contact.html">Contact Us</a>
+      <!-- Copyright information -->
+      <p class="copyright">© 2025 Stellara. All rights reserved.</p>
+      </div>
+    </footer>
+    
+<!-- Link to JavaScript file that handles quiz functionality -->
+<script src="Celestial-Quiz.js"></script>
+</body>
+</html>

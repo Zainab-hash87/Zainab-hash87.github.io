@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic meta tags for character encoding and responsive viewport -->
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Stellara | Compatibility</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Page title that appears in the browser tab -->
+  <title>Stellara - Welcome</title>
+  <!-- Favicon (icon shown in browser tab) -->
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3924/3924420.png" type="image/png" />
-
-  <!-- 🌌 Fonts and Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Link to custom CSS stylesheet for styling -->
+  <link rel="stylesheet" href="Compatibility.css" />
+  <!-- Google Fonts import for fancy typography (Cinzel Decorative for headings, Montserrat for body text) -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat&display=swap" rel="stylesheet" />
+  <!-- Font Awesome script for icons used throughout the page -->
   <script src="https://kit.fontawesome.com/a2e0e6cfd6.js" crossorigin="anonymous"></script>
-
-  <!-- 🌟 Styles -->
-  <link rel="stylesheet" href="compatibility.css" />
-</head>
+ </head>
 <body>
 
-  <!-- Video Background -->
-  <video autoplay muted loop id="bg-video">
-    <source src="https://cdn.pixabay.com/video/2019/07/08/25047-347958032_large.mp4" type="video/mp4" />
-  </video>
+    <!-- Video Background Section - Creates cosmic atmosphere -->
+    <!-- Autoplay ensures immediate playback, muted for user experience, loop for continuous play -->
+    <video autoplay muted loop id="bg-video">
+      <!-- MP4 video source from Pixabay (free stock footage) -->
+      <source src="https://cdn.pixabay.com/video/2019/07/08/25047-347958032_large.mp4" type="video/mp4" />
+    </video>
 
-  <!-- Page Content -->
-  <div class="page-content"> </div>
+    <!-- Container for all page content, positioned over the video background -->
+    <div class="page-content">
+    </div>
 
-  <!-- Header with Navbar -->
-  <header class="main-header">
-    <div class="logo">Stellara</div>
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="zodiac.html">Reveal Zodiac</a>
-      <a href="compatibility.html" class="active">Compatibility</a>
-      <a href="Celestial-Quiz.html">Quick Quiz</a>
-      <a href="Services.html">Stellar Services</a>
-    </nav>
-  </header>
-
-  <!-- Page Heading -->
+    <!-- Header Section with Navigation -->
+    <header class="main-header">
+      <!-- Brand logo/name -->
+      <div class="logo">Stellara</div>
+      <!-- Navigation menu with links to other pages -->
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="zodiac.html">Reveal Zodiac</a>
+        <a href="Compatibility.html">Compatibility</a>
+        <a href="Celestial-Quiz.html"> Quiz</a>
+        <a href="Services.html">Stellar Services</a>
+      </nav>
+    </header>
+  <!-- Hero section with main title and call-to-action -->
   <section class="hero-section">
     <div class="hero-content">
       <h1 class="stellara-title" id="title">Check Zodiac Compatibility</h1>
       <p class="stellara-subtitle">Find out your cosmic chemistry ✨</p>
+      <!-- CTA button with glow effect -->
       <div class="button-group">
         <a href="#section1" class="btn-glow">Compatibility Chart</a>
       </div>
+      <!-- Visual indicator for users to scroll down -->
       <div class="scroll-down">
         <span>Scroll down</span>
         <span class="arrow">↓</span>
@@ -50,14 +58,16 @@
     </div>
   </section>
 
-  <!-- Decorative Divider -->
+  <!-- Decorative divider between page sections -->
   <div class="section-divider"></div>
 
-  <!-- Section 1: Compatibility Chart -->
+  <!-- Section 1: Interactive compatibility wheel visualization -->
   <section class="compatibility-chart" id="section1">
     <h2>Cosmic Compatibility Chart</h2>
     <div class="chart-container">
+      <!-- Container for the JS-generated compatibility wheel -->
       <div class="chart-wheel" id="compatibilityWheel"></div>
+      <!-- Chart legend explaining the color coding -->
       <div class="chart-legend">
         <div class="legend-item"><span class="legend-color high"></span><span>High Compatibility</span></div>
         <div class="legend-item"><span class="legend-color medium"></span><span>Medium Compatibility</span></div>
@@ -65,16 +75,18 @@
       </div>
     </div>
     <p class="chart-instructions">Click on any sign to see its compatibility with all other signs!</p>
+    <!-- Navigation button to next section -->
     <a href="#section2" class="section-btn">Next: Relationship Dynamics</a>
   </section>
-
-  <!-- Decorative Divider -->
+ 
+  <!-- Another decorative divider -->
   <div class="section-divider"></div>
 
-  <!-- Relationship Dynamics Section -->
+  <!-- Section 2: Detailed relationship dynamics explorer -->
   <section class="relationship-dynamics" id="section2">
     <h2>Relationship Dynamics Explorer</h2>
     <div class="dynamics-container">
+      <!-- Tab-style category buttons for different relationship aspects -->
       <div class="dynamics-categories">
         <button class="category-btn active" data-category="communication">Communication</button>
         <button class="category-btn" data-category="emotions">Emotional Connection</button>
@@ -82,20 +94,23 @@
         <button class="category-btn" data-category="trust">Trust & Loyalty</button>
         <button class="category-btn" data-category="growth">Growth Potential</button>
       </div>
+      <!-- Container for dynamically loaded content based on selected categories -->
       <div class="dynamics-content" id="dynamicsContent">
         <p>Select two signs above and click on a category to explore specific relationship dynamics!</p>
       </div>
     </div>
+    <!-- Navigation to the next section -->
     <a href="#section3" class="section-btn">Next: Compatibility Timeline</a>
   </section>
 
-  <!-- Decorative Divider -->
+  <!-- Another decorative section divider -->
   <div class="section-divider"></div>
 
-  <!-- Section 3: Compatibility Timeline -->
+  <!-- Section 3: Compatibility timeline with customization options -->
   <section class="compatibility-timeline" id="section3">
     <h2>Cosmic Connection Timeline</h2>
     <p>Discover how your relationship may evolve over time with personalized astrological insights!</p>
+    <!-- User customization options for the timeline -->
     <div class="timeline-options">
       <div class="timeline-option">
         <label for="timeline-period">Time Period:</label>
@@ -114,40 +129,49 @@
           <option value="growth">Growth & Learning</option>
         </select>
       </div>
+      <!-- Button to generate the customized timeline -->
       <button id="generate-timeline" class="btn-glow">Generate Timeline</button>
     </div>
+    <!-- Container for timeline visualization -->
     <div class="timeline-container" id="timelineContainer">
       <div class="timeline-placeholder">
         <p>Select two signs above and generate your personalized compatibility timeline!</p>
       </div>
+      <!-- Hidden by default until content is generated -->
       <div class="timeline-visual" id="timelineVisual" style="display: none;"></div>
     </div>
+    <!-- Container for written insights about the timeline -->
     <div class="timeline-insights" id="timelineInsights"></div>
+    <!-- Back to top navigation -->
     <a href="#title" class="section-btn">Back to Top</a>
   </section>
 
-  <!-- Decorative Divider -->
+  <!-- Final decorative divider before footer -->
   <div class="section-divider"></div>
 
-  <!-- Footer -->
+  <!-- Site footer with branding and legal links -->
   <footer class="footer">
     <div class="footer-logo">Stellara</div>
+    <!-- Decorative cosmic elements -->
     <div class="footer-stars"><span>✨🌙🌟</span></div>
     <p>Stellara — Reading the stars so you don't have to. ✨</p>
+    <!-- Social media links -->
     <div class="social-icons">
       <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
       <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
       <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
     </div>
+    <!-- Footer navigation links -->
     <div class="footer-links">
       <a href="#">Privacy Policy</a> | 
       <a href="#">Terms of Use</a> | 
       <a href="contact.html">Contact Us</a>
     </div>
+    <!-- Copyright notice -->
     <p class="copyright">© 2025 Stellara. All rights reserved.</p>
   </footer>
 
-  <!-- JS -->
-  <script src="compatibility.js"></script>
+  <!-- Link to JavaScript file with interactive functionality -->
+  <script src="Compatibility.js"></script>
 </body>
 </html>

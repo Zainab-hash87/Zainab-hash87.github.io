@@ -1,0 +1,1081 @@
+/* 
+  Stellar Astrology - Beautiful, mystical styling for your cosmic journey
+  A starry night experience for astrology enthusiasts
+  Enhanced with subtle animations and cosmic vibes
+*/
+
+/* Base styling with smooth page entry animation */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: radial-gradient(ellipse at center, #0b0f1a 0%, #000 90%);
+  color: #eee;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  min-height: 100vh;
+  position: relative;
+  animation: fadeInPage 1.5s ease-in-out; /* Smooth page load fade-in */
+}
+
+/* Magical page entrance animation */
+@keyframes fadeInPage {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Immersive background video that sets the cosmic mood */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; 
+  z-index: -1;
+  animation: subtleZoom 25s infinite alternate; /* Subtle zoom effect on background */
+}
+
+@keyframes subtleZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+/* Main content container that sits above our cosmic background */
+.page-content {
+  position: relative;
+  z-index: 10;
+  color: white;
+  padding: 20px;
+  animation: contentFadeIn 1.2s ease-in-out 0.3s backwards; /* Slightly delayed fade-in */
+}
+
+@keyframes contentFadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Ethereal floating header with glassmorphism effect */
+.main-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 12px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(5, 5, 15, 0.75);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  box-shadow: 0 0 15px #5533ff66;
+  box-sizing: border-box;
+  animation: headerSlideDown 1s ease-out, headerGlow 3s infinite alternate; /* Added header entrance + pulsing glow */
+}
+
+@keyframes headerSlideDown {
+  0% { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes headerGlow {
+  0% { box-shadow: 0 0 15px #5533ff66; }
+  100% { box-shadow: 0 0 20px #6644ff88; }
+}
+
+/* Mystical, glowing logo that emanates cosmic energy */
+.logo {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.8rem;
+  color: #a280ff;
+  text-shadow: 0 0 8px #a280ff88;
+  letter-spacing: 0.15em;
+  user-select: none;
+  cursor: default;
+  white-space: nowrap;
+  animation: logoGlowPulse 2.5s infinite alternate; /* Pulsing glow effect */
+}
+
+@keyframes logoGlowPulse {
+  0% { text-shadow: 0 0 8px #a280ff88; }
+  50% { text-shadow: 0 0 12px #a280ffaa, 0 0 20px #a280ff66; }
+  100% { text-shadow: 0 0 8px #a280ff88; }
+}
+
+/* Celestial navigation that guides your journey */
+.navbar {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  animation: navbarFadeIn 1.2s ease-in-out 0.5s backwards; /* Delayed fade-in for staggered effect */
+}
+
+@keyframes navbarFadeIn {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Magical navigation links with hover effects */
+.navbar a {
+  color: #ccc;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+  text-shadow: 0 0 3px #0008;
+  white-space: nowrap;
+  padding: 5px 0;
+  animation: floatLinks 5s infinite ease-in-out; /* Subtle floating animation */
+  animation-delay: calc(var(--i, 0) * 0.15s); /* Staggered float animation */
+}
+
+@keyframes floatLinks {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 10px 15px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .logo {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .navbar {
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .navbar a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    gap: 8px;
+  }
+  
+  .navbar a {
+    font-size: 0.85rem;
+  }
+}
+
+/* Enchanted navigation links that glow when hovered */
+.navbar a:hover,
+.navbar a:focus {
+  color: #bf80ff;
+  text-shadow:
+    0 0 10px #bf80ff,
+    0 0 20px #bf80ff,
+    0 0 30px #bf80ff,
+    0 0 40px #bf80ff;
+  transform: translateY(-2px); /* Added subtle rise on hover */
+}
+
+/* Magical sparkle that appears when hovering nav links */
+.navbar a:hover::after {
+  content: "✦";
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #bf80ff;
+  animation: sparkle 1.2s infinite alternate;
+  font-size: 1.2rem;
+}
+
+/* Sparkling star animation that feels alive */
+@keyframes sparkle {
+  0% {opacity: 0.3; transform: translateY(-50%) scale(1) rotate(0deg);}
+  100% {opacity: 1; transform: translateY(-60%) scale(1.3) rotate(20deg);}
+}
+
+/* ========== Hero Section - Your gateway to the stars ========== */
+.hero-section {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  background: radial-gradient(circle at center, rgba(30, 20, 60, 0.4) 0%, transparent 70%);
+  animation: heroGradientPulse 8s infinite alternate; /* Pulsing gradient background */
+}
+
+@keyframes heroGradientPulse {
+  0% { background: radial-gradient(circle at center, rgba(30, 20, 60, 0.3) 0%, transparent 70%); }
+  100% { background: radial-gradient(circle at center, rgba(40, 25, 80, 0.5) 0%, transparent 75%); }
+}
+
+/* Magical site title that gleams with cosmic energy */
+.stellara-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  color: #cda9ff;
+  text-shadow: 0 0 15px #a280ff;
+  animation: glow 2s infinite alternate, floatTitle 6s ease-in-out infinite; /* Added floating effect */
+}
+
+@keyframes floatTitle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Mystic subtitle that tells your site's story */
+.stellara-subtitle {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  opacity: 0.9;
+  animation: subtitleFadeIn 1.5s ease-in-out 0.8s backwards, subtitleFloat 7s ease-in-out infinite; /* Added fade-in and float */
+}
+
+@keyframes subtitleFadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 0.9; transform: translateY(0); }
+}
+
+@keyframes subtitleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Cosmic button group that invites exploration */
+.button-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 40px;
+  animation: buttonGroupFadeIn 1.8s ease-in-out 1s backwards; /* Delayed entrance */
+}
+
+@keyframes buttonGroupFadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Enchanted buttons that glow with cosmic energy */
+.btn-glow {
+  background: rgba(40, 20, 80, 0.5);
+  padding: 12px 30px;
+  border-radius: 40px;
+  color: white;
+  text-decoration: none;
+  border: 2px solid #a280ff;
+  font-weight: 600;
+  box-shadow: 0 0 15px rgba(162, 128, 255, 0.5);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: buttonPulse 3s infinite alternate; /* Pulsing glow effect */
+}
+
+@keyframes buttonPulse {
+  0% { box-shadow: 0 0 15px rgba(162, 128, 255, 0.5); }
+  100% { box-shadow: 0 0 25px rgba(162, 128, 255, 0.8); }
+}
+
+/* Button hover effect that feels magical */
+.btn-glow:hover {
+  background: rgba(60, 30, 110, 0.5);
+  box-shadow: 0 0 25px rgba(162, 128, 255, 0.8);
+  transform: translateY(-3px);
+}
+
+/* Added ripple effect for buttons when clicked */
+.btn-glow:active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  border-radius: 100%;
+  animation: ripple 0.8s ease-out;
+  z-index: -1;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(100);
+    opacity: 0;
+  }
+}
+
+/* Gentle scroll indicator that guides users further */
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.7;
+  animation: bounce 2s infinite, scrollFadeIn 2s ease-in-out 1.5s backwards; /* Added fade-in */
+}
+
+@keyframes scrollFadeIn {
+  0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  100% { opacity: 0.7; transform: translateX(-50%) translateY(0); }
+}
+
+/* Bouncing arrow that beckons scrolling */
+.scroll-down .arrow {
+  font-size: 1.5rem;
+  margin-top: 5px;
+  animation: arrowGlow 1.5s infinite alternate; /* Added glow effect */
+}
+
+@keyframes arrowGlow {
+  0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.3); }
+  100% { text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); }
+}
+
+/* ========== Section Divider - Cosmic separators ========== */
+.section-divider {
+  height: 2px;
+  width: 60%;
+  margin: 40px auto;
+  background: linear-gradient(90deg, transparent, #a280ff88, transparent);
+  position: relative;
+  animation: dividerGlow 4s infinite alternate; /* Added glow pulse */
+}
+
+@keyframes dividerGlow {
+  0% { background: linear-gradient(90deg, transparent, #a280ff88, transparent); }
+  100% { background: linear-gradient(90deg, transparent, #bf80ffaa, transparent); }
+}
+
+/* Magical star symbol in section dividers */
+.section-divider::before {
+  content: "✧";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: #bf80ff;
+  background: #0b0f1a;
+  padding: 0 15px;
+  text-shadow: 0 0 10px #bf80ff;
+  animation: starTwinkle 3s infinite alternate; /* Twinkling star */
+}
+
+@keyframes starTwinkle {
+  0% { text-shadow: 0 0 5px #bf80ff; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+  50% { text-shadow: 0 0 15px #bf80ff, 0 0 20px #bf80ff; transform: translate(-50%, -50%) scale(1.2) rotate(10deg); }
+  100% { text-shadow: 0 0 5px #bf80ff; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+}
+
+/* ========== Section Backgrounds - Cosmic cards of wisdom ========== */
+.compatibility-chart, 
+.relationship-dynamics, 
+.compatibility-timeline {
+  background: rgba(15, 10, 35, 0.6);
+  margin: 60px auto;
+  padding: 40px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(162, 128, 255, 0.3);
+  max-width: 900px;
+  position: relative;
+  overflow: hidden;
+  animation: sectionEntrance 0.8s ease-out, sectionGlow 5s infinite alternate; /* Added entrance and glow */
+}
+
+@keyframes sectionEntrance {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes sectionGlow {
+  0% { box-shadow: 0 0 20px rgba(162, 128, 255, 0.3); }
+  100% { box-shadow: 0 0 30px rgba(162, 128, 255, 0.5); }
+}
+
+/* Ethereal background glow for section cards */
+.compatibility-chart::before,
+.relationship-dynamics::before,
+.compatibility-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(162, 128, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+  animation: backgroundPulse 8s infinite alternate; /* Pulsing background */
+}
+
+@keyframes backgroundPulse {
+  0% { background: radial-gradient(ellipse at center, rgba(162, 128, 255, 0.1) 0%, transparent 70%); }
+  100% { background: radial-gradient(ellipse at center, rgba(162, 128, 255, 0.2) 0%, transparent 80%); }
+}
+
+/* ========== Section Titles - Celestial headings ========== */
+.compatibility-chart h2,
+.relationship-dynamics h2,
+.compatibility-timeline h2 {
+  font-family: 'Cinzel Decorative', serif;
+  color: #cda9ff;
+  text-shadow: 0 0 10px #bb8cff;
+  margin-bottom: 30px;
+  text-align: center;
+  animation: titleGlow 3s infinite alternate, titleEntrance 1s ease-out; /* Added glow and entrance */
+}
+
+@keyframes titleGlow {
+  0% { text-shadow: 0 0 10px #bb8cff; }
+  100% { text-shadow: 0 0 20px #bb8cff, 0 0 30px #bb8cff50; }
+}
+
+@keyframes titleEntrance {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== Section Buttons - Cosmic portals ========== */
+.section-btn {
+  display: block;
+  width: max-content;
+  margin: 30px auto 10px;
+  padding: 12px 30px;
+  background: rgba(40, 20, 80, 0.3);
+  border: 2px solid #a280ff;
+  border-radius: 40px;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(162, 128, 255, 0.5);
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: buttonFloatAndGlow 4s infinite alternate; /* Floating and glowing */
+}
+
+@keyframes buttonFloatAndGlow {
+  0% { transform: translateY(0); box-shadow: 0 0 10px rgba(162, 128, 255, 0.5); }
+  100% { transform: translateY(-5px); box-shadow: 0 0 20px rgba(162, 128, 255, 0.8); }
+}
+
+/* Hover effect for section buttons */
+.section-btn:hover {
+  background: rgba(60, 30, 110, 0.3);
+  box-shadow: 0 0 20px rgba(162, 128, 255, 0.8);
+  transform: translateY(-3px);
+}
+
+/* Added shimmer effect for section buttons */
+.section-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 70%;
+  height: 200%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: rotate(30deg);
+  transition: 0.6s;
+}
+
+.section-btn:hover::after {
+  left: 200%;
+  animation: shimmer 1.5s;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+/* ========== Compatibility Chart Styles - Cosmic connections ========== */
+.chart-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 40px 20px;
+  z-index: 1;
+  animation: containerFadeIn 1s ease-out; /* Smooth container entrance */
+}
+
+@keyframes containerFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Mystical chart wheel that reveals cosmic connections */
+.chart-wheel {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  border: 2px solid #a280ff;
+  background: rgba(30, 20, 60, 0.4);
+  margin-bottom: 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 30px rgba(162, 128, 255, 0.3), inset 0 0 30px rgba(162, 128, 255, 0.2);
+ 
+}
+
+@keyframes wheelRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes wheelGlow {
+  0% { box-shadow: 0 0 30px rgba(162, 128, 255, 0.3), inset 0 0 30px rgba(162, 128, 255, 0.2); }
+  100% { box-shadow: 0 0 40px rgba(162, 128, 255, 0.5), inset 0 0 40px rgba(162, 128, 255, 0.3); }
+}
+
+/* Legend that explains the cosmic symbols */
+.chart-legend {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: legendFadeIn 1.2s ease-out 0.3s backwards; /* Delayed entrance */
+}
+
+@keyframes legendFadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Individual legend items with staggered animation */
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: itemPopIn 0.5s ease-out backwards;
+  animation-delay: calc(var(--i, 0) * 0.15s + 0.5s); /* Staggered appearance */
+}
+
+@keyframes itemPopIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  70% { transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Colorful legend indicators */
+.legend-color {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  animation: colorPulse 3s infinite alternate; /* Pulsing colors */
+}
+
+@keyframes colorPulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.2); }
+}
+
+/* High compatibility color with cosmic energy */
+.legend-color.high {
+  background: #f1d927;
+  box-shadow: 0 0 8px #f9ea3d;
+  animation: highPulse 2s infinite alternate; /* Custom pulse */
+}
+
+@keyframes highPulse {
+  0% { box-shadow: 0 0 8px #f9ea3d; }
+  100% { box-shadow: 0 0 15px #f9ea3d; }
+}
+
+/* Medium compatibility color with balanced energy */
+.legend-color.medium {
+  background: hsl(0, 87%, 69%);
+  box-shadow: 0 0 8px hsl(0, 99%, 66%);
+  animation: mediumPulse 2.5s infinite alternate; /* Custom pulse */
+}
+
+@keyframes mediumPulse {
+  0% { box-shadow: 0 0 8px hsl(0, 99%, 66%); }
+  100% { box-shadow: 0 0 12px hsl(0, 99%, 66%); }
+}
+
+/* Low compatibility color with gentle energy */
+.legend-color.low {
+  background: #36d967;
+  box-shadow: 0 0 8px #7ae058;
+  animation: lowPulse 3s infinite alternate; /* Custom pulse */
+}
+
+@keyframes lowPulse {
+  0% { box-shadow: 0 0 8px #7ae058; }
+  100% { box-shadow: 0 0 10px #7ae058; }
+}
+
+/* Helpful chart instructions with subtle emphasis */
+.chart-instructions {
+  text-align: center;
+  font-style: italic;
+  opacity: 0.8;
+  margin-top: 20px;
+  animation: instructionsFade 2s ease-in-out 1s backwards, instructionsFloat 5s ease-in-out infinite; /* Added fade-in and float */
+}
+
+@keyframes instructionsFade {
+  0% { opacity: 0; }
+  100% { opacity: 0.8; }
+}
+
+@keyframes instructionsFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* ========== Relationship Dynamics Styles - Interactive cosmic connections ========== */
+.dynamics-container {
+  margin: 20px 0;
+  animation: containerSlideUp 1s ease-out; /* Sliding entrance */
+}
+
+@keyframes containerSlideUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Category buttons that reveal different aspects */
+.dynamics-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 30px;
+  animation: categoriesFadeIn 1.2s ease-out 0.5s backwards; /* Delayed entrance */
+}
+
+@keyframes categoriesFadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Interactive category buttons with cosmic energy */
+.category-btn {
+  background: rgba(30, 20, 60, 0.4);
+  border: 1px solid #a280ff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: buttonFloat 4s ease-in-out infinite, buttonPop 0.5s ease-out backwards;
+  animation-delay: calc(var(--i, 0) * 0.1s + 0.6s); /* Staggered appearance */
+}
+
+@keyframes buttonFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes buttonPop {
+  0% { opacity: 0; transform: scale(0.9); }
+  50% { transform: scale(1.05); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Hover effect for category buttons */
+.category-btn:hover {
+  background: rgba(50, 30, 90, 0.4);
+  box-shadow: 0 0 10px rgba(162, 128, 255, 0.3);
+  transform: translateY(-3px); /* Added rise effect */
+}
+
+/* Active state for category buttons */
+.category-btn.active {
+  background: rgba(70, 40, 120, 0.5);
+  box-shadow: 0 0 15px rgba(162, 128, 255, 0.4);
+  animation: activeButtonPulse 2s infinite alternate; /* Pulsing highlight */
+}
+
+@keyframes activeButtonPulse {
+  0% { box-shadow: 0 0 15px rgba(162, 128, 255, 0.4); }
+  100% { box-shadow: 0 0 25px rgba(162, 128, 255, 0.6); }
+}
+
+/* Content area that displays relationship insights */
+.dynamics-content {
+  background: rgba(20, 15, 40, 0.4);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(162, 128, 255, 0.3);
+  min-height: 150px;
+  text-align: center;
+  animation: contentReveal 0.8s ease-out, contentBorderGlow 4s infinite alternate; /* Added reveal and glow */
+}
+
+@keyframes contentReveal {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes contentBorderGlow {
+  0% { border-color: rgba(162, 128, 255, 0.3); }
+  100% { border-color: rgba(162, 128, 255, 0.7); }
+}
+
+/* ========== Timeline Styles - Cosmic journey through time ========== */
+
+.timeline-wrapper {
+    position: relative;
+    height: 350px;
+    margin: 40px 0;
+    animation: timelineWrapperFadeIn 1.5s ease-out; /* Added fade-in */
+}
+
+@keyframes timelineWrapperFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Monthly markers on the cosmic timeline */
+.timeline-months {
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+    gap: 25px;
+    padding: 0 20px;
+    animation: monthsSlideIn 1.2s ease-out; /* Added slide-in */
+}
+
+@keyframes monthsSlideIn {
+  0% { opacity: 0; transform: translateX(-20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Individual month columns with staggered animation */
+.timeline-month {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-width: 50px;
+    animation: monthPopUp 0.5s ease-out backwards;
+    animation-delay: calc(var(--i, 0) * 0.1s + 0.5s); /* Staggered appearance */
+}
+
+@keyframes monthPopUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Mystical percentage line showing cosmic energy levels */
+.timeline-percentage-line {
+    width: 4px;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    animation: lineGrow 1.5s ease-out backwards; /* Line grows from bottom */
+    animation-delay: calc(var(--i, 0) * 0.15s + 0.8s); /* Staggered growth */
+}
+
+@keyframes lineGrow {
+  0% { height: 0; }
+  100% { height: 100%; }
+}
+
+/* Enhanced hover effect for percentage lines */
+.timeline-month:hover .timeline-percentage-line {
+    background: rgba(255, 255, 255, 1);
+    width: 6px;
+    animation: lineGlow 1s infinite alternate; /* Added glow on hover */
+}
+
+@keyframes lineGlow {
+  0% { box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+  100% { box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 25px rgba(162, 128, 255, 0.5); }
+}
+
+/* Cosmic percentage values that reveal your compatibility */
+.percentage-value {
+    position: absolute;
+    top: -25px;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    animation: valuePop 0.5s ease-out backwards; /* Pop-in animation */
+    animation-delay: calc(var(--i, 0) * 0.2s + 1.3s); /* Appear after line grows */
+}
+
+@keyframes valuePop {
+  0% { opacity: 0; transform: scale(0.8); }
+  60% { transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* Month labels that mark your cosmic journey */
+.month-label {
+    position: absolute;
+    bottom: -30px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 500;
+    animation: labelFadeIn 0.8s ease-out backwards; /* Fade-in animation */
+    animation-delay: calc(var(--i, 0) * 0.1s + 1s); /* Staggered appearance */
+}
+
+@keyframes labelFadeIn {
+  0% { opacity: 0; transform: translateY(5px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Reference line showing cosmic alignment baseline */
+.timeline-reference-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+    top: 50%;
+    z-index: -1;
+    animation: lineExtend 1.5s ease-out; /* Line extends from center */
+}
+
+@keyframes lineExtend {
+  0% { left: 50%; right: 50%; }
+  100% { left: 0; right: 0; }
+}
+
+/* Reference markers for important cosmic thresholds */
+.reference-marker {
+    position: absolute;
+    top: -10px;
+    transform: translateX(-50%);
+    animation: markerFadeIn 1s ease-out backwards; /* Fade-in animation */
+    animation-delay: 1.2s;
+}
+
+@keyframes markerFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Labels for celestial reference points */
+.marker-label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    position: relative;
+    top: -15px;
+    animation: labelFloat 5s ease-in-out infinite; /* Gentle floating */
+}
+
+@keyframes labelFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* Cosmic event indicators that highlight special moments */
+.event-indicator {
+    position: absolute;
+    top: -40px;
+    color: #a280ff;
+    font-size: 16px;
+    animation: twinkle 2s infinite, indicatorPop 0.8s ease-out backwards; /* Added entrance animation */
+    animation-delay: 1.5s;
+    z-index: 2;
+}
+
+@keyframes indicatorPop {
+  0% { opacity: 0; transform: scale(0) rotate(-30deg); }
+  60% { transform: scale(1.3) rotate(15deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+/* Enhanced twinkling effect for cosmic events */
+@keyframes twinkle {
+    0% { opacity: 0.5; transform: scale(1) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1.3) rotate(10deg); }
+    100% { opacity: 0.5; transform: scale(1) rotate(0deg); }
+}
+
+/* Options for exploring different cosmic timelines */
+.timeline-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 50px;
+  animation: optionsFadeIn 1.2s ease-out 0.5s backwards; /* Delayed entrance */
+}
+
+@keyframes optionsFadeIn {
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Individual timeline option controls with subtle animations */
+.timeline-option {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: optionPulse 5s infinite alternate; /* Subtle pulse */
+  animation-delay: calc(var(--i, 0) * 0.3s); /* Staggered pulse */
+}
+
+@keyframes optionPulse {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3px); }
+}
+
+/* Mystical labels for timeline options */
+.timeline-option label {
+  color: #cda9ff;
+  animation: labelGlow 3s infinite alternate; /* Subtle glow */
+}
+
+@keyframes labelGlow {
+  0% { text-shadow: 0 0 3px rgba(205, 169, 255, 0.3); }
+  100% { text-shadow: 0 0 8px rgba(205, 169, 255, 0.6); }
+}
+
+/* Enchanted select inputs for cosmic configuration */
+.timeline-option select {
+  width: 180px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background: rgba(30, 20, 60, 0.6);
+  color: white;
+  border: 1px solid #a280ff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(162, 128, 255, 0.2);
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23cda9ff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  transition: all 0.3s ease;
+  animation: selectGlow 4s infinite alternate; /* Subtle glow */
+}
+
+@keyframes selectGlow {
+  0% { box-shadow: 0 0 8px rgba(162, 128, 255, 0.2); }
+  100% { box-shadow: 0 0 12px rgba(162, 128, 255, 0.5); }
+}
+
+/* Hover effect for cosmic select inputs */
+.timeline-option select:hover,
+.timeline-option select:focus {
+  border-color: #bf80ff;
+  box-shadow: 0 0 15px rgba(162, 128, 255, 0.6);
+  transform: translateY(-2px); /* Added hover lift */
+}
+
+/* Timeline container with cosmic energy visualization */
+.timeline-container {
+  margin: 40px 0;
+  min-height: 200px;
+  animation: containerReveal 1s ease-out; /* Container reveal */
+}
+
+@keyframes containerReveal {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Timeline placeholder with a pulsing invitation */
+.timeline-placeholder {
+  text-align: center;
+  padding: 30px;
+  background: rgba(20, 15, 40, 0.4);
+  border-radius: 15px;
+  border: 1px dashed rgba(162, 128, 255, 0.3);
+  animation: placeholderPulse 3s infinite alternate; /* Pulsing border */
+}
+
+@keyframes placeholderPulse {
+  0% { border-color: rgba(162, 128, 255, 0.3); }
+  100% { border-color: rgba(162, 128, 255, 0.7); }
+}
+
+/* Visual timeline with magical cosmic energy flows */
+.timeline-visual {
+  height: 150px;
+  background: rgba(20, 15, 40, 0.4);
+  border-radius: 15px;
+  border: 1px solid rgba(162, 128, 255, 0.3);
+  padding: 30px;
+  position: relative;
+  filter: saturate(0.7) brightness(1.1);
+  animation: visualReveal 1.2s ease-out, visualGlow 5s infinite alternate; /* Added reveal and glow */
+}
+
+@keyframes visualReveal {
+  0% { opacity: 0; height: 0; padding: 0 30px; }
+  100% { opacity: 1; height: 150px; padding: 30px; }
+}
+
+@keyframes visualGlow {
+  0% { box-shadow: 0 0 10px rgba(162, 128, 255, 0.2) inset; }
+  100% { box-shadow: 0 0 25px rgba(162, 128, 255, 0.4) inset; }
+}
+
+/* Canvas element with softer cosmic colors */
+.timeline-visual canvas {
+  filter: saturate(0.6) brightness(1.1);
+  animation: canvasFadeIn 1.5s ease-out 0.3s backwards; /* Delayed fade-in */
+}
+
+@keyframes canvasFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Chart color variables for cosmic harmony */
+.chart-colors {
+  --primary-color: rgba(162, 128, 255, 0.7);
+  --secondary-color: rgba(102, 204, 255, 0.5);
+  --tertiary-color: rgba(255, 153, 204, 0.5);
+}
+
+/* Chart.js specific colors for celestial visualization */
+.timeline-chart {
+  --chart-color-1: #a280ff80;
+  --chart-color-2: #66ccff80;
+  --chart-color-3: #ff99cc80;
+}
+
+/* Cosmic insights derived from the timeline */
+.timeline-insights {
+  margin-top: 30px;
+  padding: 0 20px;
+  animation: insightsFadeIn 1.5s ease-out 0.8s backwards, insightsFloat 6s ease-in-out infinite; /* Added fade-in and float */
+}
+
+@keyframes insightsFadeIn {
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes insightsFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/*
