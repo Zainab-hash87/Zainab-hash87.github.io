@@ -2,17 +2,22 @@
    BASE SETUP & GLOBAL STYLES
    These styles set up the fundamental page structure
    ================================================= */
-
-   * Fonts & base */
+/* Base styling with smooth page entry animation */
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif; /* Primary font for the entire website */
-  background: radial-gradient(ellipse at center, #0b0f1a 0%, #000 90%); /* Dark space-themed gradient background */
-  color: #eee; /* Light text color for readability on dark background */
-  overflow-x: hidden; /* Prevents horizontal scrollbars */
-  min-height: 100vh; /* Ensures full viewport height coverage */
-  position: relative; /* Required for proper positioning of child elements */
-  animation: fadeInPage 1s ease-in-out; /* Subtle fade-in animation when page loads */
+  font-family: 'Montserrat', sans-serif;
+  background: radial-gradient(ellipse at center, #0b0f1a 0%, #000 90%);
+  color: #eee;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  min-height: 100vh;
+  position: relative;
+  animation: fadeInPage 1.5s ease-in-out; /* Smooth page load fade-in */
+}
+
+/* Magical page entrance animation */
+@keyframes fadeInPage {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 
