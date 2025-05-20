@@ -15,10 +15,9 @@ body {
 }
 
 
-/* =================================================
-   BACKGROUND VIDEO CONFIGURATION
-   Handles the positioning and sizing of the background video
-   ================================================= */
+/* BACKGROUND VIDEO CONFIGURATION
+   Handles the positioning and sizing of the background video*/
+
 /* Fullscreen background video */
 #bg-video {
   position: fixed; /* Fixed positioning to keep video in the same place during scroll */
@@ -31,21 +30,20 @@ body {
 }
 
 
-/* =================================================
+/*
    PAGE CONTENT CONTAINER
-   Ensures content appears above the background video
-   ================================================= */
+   Ensures content appears above the background video   */
+
 .page-content {
   position: relative; /* Establishes a new stacking context */
   z-index: 10; /* Positions content above background elements */
   color: white; /* Text color for main content */
   padding: 20px; /* Spacing around main content */
 }
-
-/* =================================================
+/*
    HEADER STYLING
-   Navigation bar and branding elements
-   ================================================= */
+   Navigation bar and branding elements*/
+
 /* Header */
 .main-header {
   position: fixed; /* Keeps header at top of viewport during scroll */
@@ -75,10 +73,10 @@ body {
   white-space: nowrap; /* Keeps logo on a single line */
 }
 
-/* =================================================
+/* 
    NAVIGATION ELEMENTS
-   Navigation bar links and interactions
-   ================================================= */
+   Navigation bar links and interactions */
+
 /* Navbar links container */
 .navbar {
   display: flex; /* Horizontal layout for navigation links */
@@ -101,10 +99,10 @@ body {
   padding: 5px 0; /* Increases clickable area */
 }
 
-/* =================================================
+/* 
    RESPONSIVE HEADER ADJUSTMENTS
-   Modifies header layout for smaller screens
-   ================================================= */
+   Modifies header layout for smaller screens*/
+
 @media (max-width: 768px) {
   .main-header {
     padding: 10px 15px; /* Reduced padding on smaller devices */
@@ -138,10 +136,10 @@ body {
   }
 }
 
-/* =================================================
+/* 
    NAVIGATION HOVER EFFECTS
-   Visual feedback for interactive navigation elements
-   ================================================= */
+   Visual feedback for interactive navigation elements */
+
 .navbar a:hover,
 .navbar a:focus {
   color: #bf80ff; /* Brighter purple on hover/focus */
@@ -170,10 +168,10 @@ body {
   100% {opacity: 1; transform: translateY(-60%) scale(1.3);} /* Bright and enlarged */
 }
 
-/* =================================================
+/* 
    HERO SECTION
-   Main feature area at the top of the page
-   ================================================= */
+   Main feature area at the top of the page */
+
 /* Hero section container */
 .hero-section {
   display: flex; /* Enables flexbox layout */
@@ -249,10 +247,10 @@ body {
   user-select: none; /* Prevents text selection */
 }
 
-/* =================================================
+/* 
    BUTTON GROUP
-   Container for interactive buttons
-   ================================================= */
+   Container for interactive buttons */
+
 /* Button container */
 .button-group {
   display: flex; /* Horizontal layout for buttons */
@@ -305,10 +303,10 @@ body {
   }
 }
 
-/* =================================================
+/* 
    SCROLL INDICATOR
-   Visual indicator to encourage scrolling
-   ================================================= */
+   Visual indicator to encourage scrolling */
+   
 /* Scroll down indicator */
 .scroll-down {
   color: #a280ff; /* Purple text color */
@@ -343,11 +341,12 @@ body {
   50% { transform: translateY(12px); } /* Moved further down at midpoint */
 }
 
-/* =================================================
+/*
    COSMIC VIBE SECTION
-   Interactive feature section with cosmic theme
-   ================================================= */
+   Interactive feature section with cosmic theme*/
+
 /* Cosmic vibe container */
+
 .cosmic-vibe {
   padding: 60px 20px 80px; /* Top, horizontal, bottom padding */
   max-width: 650px; /* Maximum width for readability */
@@ -434,10 +433,10 @@ body {
   text-shadow: 0 0 15px #d8baff; /* Glow effect */
 }
 
-/* =================================================
+/* 
    STARRY TEXT ANIMATION
-   Animation for cosmic-themed text elements
-   ================================================= */
+   Animation for cosmic-themed text elements */
+
 /* Animation for shimmering text effect */
 @keyframes starryText {
   0% {
@@ -456,10 +455,10 @@ body {
   animation: starryText 3s infinite; /* Continuous shimmer animation */
 }
 
-/* =================================================
+/* 
    RESPONSIVE ADJUSTMENTS FOR COSMIC SECTION
-   Mobile-friendly adjustments for feature section
-   ================================================= */
+   Mobile-friendly adjustments for feature section */
+
 /* Small screen adjustments */
 @media (max-width: 480px) {
   .cosmic-vibe h2 {
@@ -471,10 +470,10 @@ body {
   }
 }
 
-/* =================================================
+/* 
    ABOUT SECTION
    Information section with cosmic styling
-   ================================================= */
+ */
 /* About section container */
 .about-section {
   max-width: 700px; /* Maximum width for readability */

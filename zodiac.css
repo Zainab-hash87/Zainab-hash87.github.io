@@ -1,38 +1,46 @@
-/* Fonts & base */
-/* This sets up our cosmic space theme with a dark background and ensures the page fills the whole screen.
-   The fadeInPage animation gives that nice smooth entrance when the site loads. */
+/* =================================================
+   BASE SETUP & GLOBAL STYLES
+   These styles set up the fundamental page structure
+   ================================================= */
+
+   * Fonts & base */
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: radial-gradient(ellipse at center, #0b0f1a 0%, #000 90%);
-  color: #eee;
-  overflow-x: hidden; /* Changed from visible to hidden to prevent horizontal scroll */
-  min-height: 100vh;
-  position: relative;
-  animation: fadeInPage 1s ease-in-out;
+  font-family: 'Montserrat', sans-serif; /* Primary font for the entire website */
+  background: radial-gradient(ellipse at center, #0b0f1a 0%, #000 90%); /* Dark space-themed gradient background */
+  color: #eee; /* Light text color for readability on dark background */
+  overflow-x: hidden; /* Prevents horizontal scrollbars */
+  min-height: 100vh; /* Ensures full viewport height coverage */
+  position: relative; /* Required for proper positioning of child elements */
+  animation: fadeInPage 1s ease-in-out; /* Subtle fade-in animation when page loads */
 }
 
+
+/* BACKGROUND VIDEO CONFIGURATION
+   Handles the positioning and sizing of the background video*/
 
 /* Fullscreen background video */
-/* This creates our immersive space/astrology background video that covers the entire viewport.
-   Setting z-index to -1 ensures it stays behind all our content. */
+
 #bg-video {
-  position: fixed;
+  position: fixed; /* Fixed positioning to keep video in the same place during scroll */
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover; 
-  z-index: -1;        
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  object-fit: cover; /* Ensures video covers the entire container without distortion */
+  z-index: -1; /* Places video behind all content */
 }
 
 
-/* Main content wrapper - keeps everything on top of our background video with some breathing room */
+/*
+   PAGE CONTENT CONTAINER
+   Ensures content appears above the background video   */
+
 .page-content {
-  position: relative;
-  z-index: 10;
-  color: white;
-  padding: 20px;
+  position: relative; /* Establishes a new stacking context */
+  z-index: 10; /* Positions content above background elements */
+  color: white; /* Text color for main content */
+  padding: 20px; /* Spacing around main content */
 }
 
 /* Header */
