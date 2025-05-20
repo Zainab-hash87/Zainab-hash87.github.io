@@ -142,19 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 1000);
         });
     });
-    
-    // Add animation to social icons
-    const socialIcons = document.querySelectorAll('.social-icon, .social-icons a');
-    
-    socialIcons.forEach(icon => {
-        icon.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-3px)';
-        });
-        
-        icon.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
+
     
     // Form validation
     if (contactForm) {

@@ -1,189 +1,269 @@
 <!DOCTYPE html>
+<!-- The foundation of every great cosmic journey begins with a proper DOCTYPE -->
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stellara - Welcome</title>
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3924/3924420.png" type="image/png" />
-  <link rel="stylesheet" href="Services.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/a2e0e6cfd6.js" crossorigin="anonymous"></script>
-</head>
-<body>
+<!-- We're speaking the universe's most common language here -->
 
+<head>
+  <!-- The control center of our stellar experience -->
+  <meta charset="UTF-8" />
+  <!-- Because even star signs need proper encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Making sure our cosmic wisdom looks good on all earthly devices -->
+  <title>Stellara - Welcome</title>
+  <!-- A title worthy of the celestial experience to come -->
+  
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3924/3924420.png" type="image/png" />
+  <!-- A mystical icon to guide users through their astral journey -->
+  
+  <link rel="stylesheet" href="Services.css" />
+  <!-- The style sheet that makes our universe beautiful -->
+  
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat&display=swap" rel="stylesheet" />
+  <!-- Elegant typography fit for celestial royalty and earthly visitors alike -->
+  
+  <script src="https://kit.fontawesome.com/a2e0e6cfd6.js" crossorigin="anonymous"></script>
+  <!-- Our toolkit of magical icons for that extra stellar sparkle -->
+</head>
+
+<body>
+<!-- Where the cosmic magic truly happens -->
 
 <!-- Video Background -->
 <video autoplay muted loop id="bg-video">
+  <!-- A mesmerizing cosmic dance to set the mood -->
   <source src="https://cdn.pixabay.com/video/2019/07/08/25047-347958032_large.mp4" type="video/mp4" />
+  <!-- The very fabric of our stellar universe, playing on loop -->
 </video>
 
 <!-- Page Content -->
 <div class="page-content">
+<!-- The container for all earthly and celestial wisdom -->
 </div>
 
 
 <!-- Header with Navbar -->
-  <header class="main-header">
-    <div class="logo">Stellara</div>
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="zodiac.html">Reveal Zodiac</a>
-      <a href="Compatibility.html">Compatibility</a>
-      <a href="Celestial-Quiz.html">Quick Quiz</a>
-      <a href="Services.html"> Stellar Services</a>
-    </nav>
-  </header>
+<header class="main-header">
+  <!-- The shining constellation guiding users through our cosmic offerings -->
+  <div class="logo">Stellara</div>
+  <!-- Our brand name, glowing like the north star -->
+  
+  <nav class="navbar">
+    <!-- The celestial pathway to different cosmic experiences -->
+    <a href="index.html">Home</a>
+    <!-- Back to the cosmic hearth -->
+    <a href="zodiac.html">Reveal Zodiac</a>
+    <!-- Where destinies are decoded -->
+    <a href="Compatibility.html">Compatibility</a>
+    <!-- For when cosmic connections need examining -->
+    <a href="Celestial-Quiz.html">Quick Quiz</a>
+    <!-- A fun cosmic test for earthly minds -->
+    <a href="Services.html">Stellar Services</a>
+    <!-- Our premium cosmic offerings -->
+  </nav>
+</header>
 
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
+<!-- The humble hamburger - simple on earth, complex in the cosmos -->
+<div class="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+  <!-- Three lines that hold the power to reveal the cosmic menu -->
+</div>
+
+<main>
+  <!-- Where the main cosmic revelations occur -->
+  <section class="hero">
+    <!-- Our shining celestial welcome mat -->
+    <div class="container">
+      <h1>Get in Touch</h1>
+      <!-- A cosmic invitation to connect -->
+      <p>We'd love to hear from you. Reach out or subscribe for updates.</p>
+      <!-- Because even star-gazers need earthly communication -->
+    </div>
+  </section>
+
+  <section class="content-wrapper">
+    <!-- The container for our cosmic contact methods -->
+    <div class="container">
+      <div class="two-column">
+        <!-- The twin constellations of communication -->
+        
+        <!-- Contact Form Column -->
+        <div class="contact-form">
+          <!-- Our cosmic messaging portal -->
+          <h2>Send Us a Message</h2>
+          <!-- Your direct line to the stars -->
+          <form id="contactForm">
+            <!-- The sacred scroll for earthly communications -->
+            
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <!-- What's a name in the cosmic scale? Yet we ask anyway -->
+              <input type="text" id="name" name="name" required>
+              <!-- The input field where earthly identities are recorded -->
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <!-- Your digital cosmic address -->
+              <input type="email" id="email" name="email" required>
+              <!-- Where celestial replies will find you -->
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <!-- For those who prefer terrestrial connections -->
+              <input type="tel" id="phone" name="phone">
+              <!-- Optional, like many things in the universe -->
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <!-- Even cosmic messages need focus -->
+              <input type="text" id="subject" name="subject" required>
+              <!-- The title of your earthly inquiry -->
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <!-- Where your thoughts take flight to the stars -->
+              <textarea id="message" name="message" rows="5" required></textarea>
+              <!-- The blank cosmos awaiting your words -->
+            </div>
+            
+            <button type="submit" class="btn">Send Message</button>
+            <!-- The button that launches your message across the digital universe -->
+          </form>
+          
+          <div id="formSuccess" class="form-success">
+            <p>Thank you! Your message has been sent successfully.</p>
+            <!-- The cosmic confirmation that your message is among the stars -->
+          </div>
         </div>
-    </header>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Get in Touch</h1>
-                <p>We'd love to hear from you. Reach out or subscribe for updates.</p>
+        <!-- Subscription Column -->
+        <div class="subscription">
+          <!-- The celestial newsletter - modern day star charts -->
+          <div class="contact-info">
+            <!-- Our earthly coordinates in this vast digital universe -->
+            <h2>Contact Information</h2>
+            <!-- Where to find us when the stars align just right -->
+            
+            <ul>
+              <!-- A constellation of contact details -->
+              <li>
+                <i class="location-icon"></i>
+                <!-- A pin in the cosmic map -->
+                <p>123 Business Avenue, Suite 500<br>New York, NY 10001</p>
+                <!-- Our earthly coordinates -->
+              </li>
+              <li>
+                <i class="phone-icon"></i>
+                <!-- A device for cosmic vibrations -->
+                <p><a href="tel:+12345678900">+1 (234) 567-8900</a></p>
+                <!-- Numbers that connect across space and time -->
+              </li>
+              <li>
+                <i class="email-icon"></i>
+                <!-- Digital carrier pigeons -->
+                <p><a href="mailto:info@stelara.com">info@stelara.com</a></p>
+                <!-- Our electronic cosmic mailbox -->
+              </li>
+              <li>
+                <i class="hours-icon"></i>
+                <!-- Because even the cosmos keeps some schedule -->
+                <p>Monday - Friday: 9AM - 5PM<br>Saturday & Sunday: Closed</p>
+                <!-- Our earthly hours of cosmic operation -->
+              </li>
+            </ul>
+          </div>
+          
+          <div class="newsletter">
+            <!-- The modern-day star chart subscription -->
+            <h2>Subscribe to Our Newsletter</h2>
+            <!-- Join our cosmic mailing list -->
+            <p>Stay updated with our latest news, products, and special offers.</p>
+            <!-- Regular deliveries of stellar wisdom -->
+            
+            <form id="subscriptionForm">
+              <!-- The scroll to join our cosmic updates -->
+              <div class="form-group">
+                <label for="subName">Full Name</label>
+                <!-- What shall we call you in our cosmic database? -->
+                <input type="text" id="subName" name="subName" required>
+                <!-- The field where names become stardust -->
+              </div>
+              
+              <div class="form-group">
+                <label for="subEmail">Email Address</label>
+                <!-- Your portal for receiving cosmic knowledge -->
+                <input type="email" id="subEmail" name="subEmail" required>
+                <!-- Where the stars will send their updates -->
+              </div>
+              
+              <div class="form-group checkbox">
+                <!-- The cosmic agreement checkbox -->
+                <input type="checkbox" id="consent" name="consent" required>
+                <label for="consent">I agree to receive marketing emails and accept the <a href="privacy.html">Privacy Policy</a></label>
+                <!-- Even in the cosmos, we respect privacy boundaries -->
+              </div>
+              
+              <button type="submit" class="btn">Subscribe Now</button>
+              <!-- The button that connects you to the cosmic newsletter -->
+            </form>
+            
+            <div id="subscriptionSuccess" class="form-success">
+              <p>Thank you for subscribing! You're now on our mailing list.</p>
+              <!-- Welcome to our cosmic circle of communication -->
             </div>
-        </section>
-
-        <section class="content-wrapper">
-            <div class="container">
-                <div class="two-column">
-                    <!-- Contact Form Column -->
-                    <div class="contact-form">
-                        <h2>Send Us a Message</h2>
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <label for="name">Full Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone">
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn">Send Message</button>
-                        </form>
-                        <div id="formSuccess" class="form-success">
-                            <p>Thank you! Your message has been sent successfully.</p>
-                        </div>
-                    </div>
-
-                    <!-- Subscription Column -->
-                    <div class="subscription">
-                        <div class="contact-info">
-                            <h2>Contact Information</h2>
-                            <ul>
-                                <li>
-                                    <i class="location-icon"></i>
-                                    <p>123 Business Avenue, Suite 500<br>New York, NY 10001</p>
-                                </li>
-                                <li>
-                                    <i class="phone-icon"></i>
-                                    <p><a href="tel:+12345678900">+1 (234) 567-8900</a></p>
-                                </li>
-                                <li>
-                                    <i class="email-icon"></i>
-                                    <p><a href="mailto:info@stelara.com">info@stelara.com</a></p>
-                                </li>
-                                <li>
-                                    <i class="hours-icon"></i>
-                                    <p>Monday - Friday: 9AM - 5PM<br>Saturday & Sunday: Closed</p>
-                                </li>
-                            </ul>
-                            <div class="social-media">
-                                <a href="#" class="social-icon facebook" aria-label="Facebook"></a>
-                                <a href="#" class="social-icon twitter" aria-label="Twitter"></a>
-                                <a href="#" class="social-icon instagram" aria-label="Instagram"></a>
-                                <a href="#" class="social-icon linkedin" aria-label="LinkedIn"></a>
-                            </div>
-                        </div>
-                        
-                        <div class="newsletter">
-                            <h2>Subscribe to Our Newsletter</h2>
-                            <p>Stay updated with our latest news, products, and special offers.</p>
-                            <form id="subscriptionForm">
-                                <div class="form-group">
-                                    <label for="subName">Full Name</label>
-                                    <input type="text" id="subName" name="subName" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="subEmail">Email Address</label>
-                                    <input type="email" id="subEmail" name="subEmail" required>
-                                </div>
-                                <div class="form-group checkbox">
-                                    <input type="checkbox" id="consent" name="consent" required>
-                                    <label for="consent">I agree to receive marketing emails and accept the <a href="privacy.html">Privacy Policy</a></label>
-                                </div>
-                                <button type="submit" class="btn">Subscribe Now</button>
-                            </form>
-                            <div id="subscriptionSuccess" class="form-success">
-                                <p>Thank you for subscribing! You're now on our mailing list.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="map-section">
-            <div class="container">
-                <h2>Find Us</h2>
-                <div class="map-container">
-                    <!-- Replace with actual map embed code -->
-                    <div class="map-placeholder">
-                        <p>Google Maps embed will appear here</p>
-                        <!-- For actual implementation:
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!..."
-                            width="100%" 
-                            height="450" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                        -->
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-   <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-logo">Stellara</div>
-    <div class="footer-stars"><span>✨🌙🌟</span></div>
-    <p>Stellara — Reading the stars so you don't have to. ✨</p>
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="footer-links">
-      <a href="#">Privacy Policy</a> | 
-      <a href="#">Terms of Use</a> | 
-      <a href="#">Contact Us</a>
-    </div>
-    <p class="copyright">© 2025 Stellara. All rights reserved.</p>
-  </footer>
+  </section>
 
-    <script src="Services.js"></script>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <!-- The foundation where our cosmic journey rests -->
+  <div class="footer-logo">Stellara</div>
+  <!-- Our brand shining in the digital night sky -->
+  
+  <div class="footer-stars"><span>✨🌙🌟</span></div>
+  <!-- A small constellation to brighten your journey -->
+  
+  <p>Stellara — Reading the stars so you don't have to. ✨</p>
+  <!-- Our cosmic mission statement -->
+  
+  <div class="social-icons">
+    <!-- Mini portals to our social media constellations -->
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <!-- For visual cosmic wonders -->
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <!-- For cosmic thoughts in 280 characters -->
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <!-- Where cosmic communities gather -->
+  </div>
+  
+  <div class="footer-links">
+    <!-- The fine print of the cosmos -->
+    <a href="#">Privacy Policy</a> | 
+    <!-- How we protect your cosmic data -->
+    <a href="#">Terms of Use</a> | 
+    <!-- The rules of our celestial playground -->
+    <a href="#">Contact Us</a>
+    <!-- Another path back to cosmic communication -->
+  </div>
+  
+  <p class="copyright">© 2025 Stellara. All rights reserved.</p>
+  <!-- Claiming our little piece of the digital universe -->
+</footer>
+
+<script src="Services.js"></script>
+<!-- The magic spells that make our cosmic portal interactive -->
 </body>
 </html>
+<!-- The end of our cosmic HTML journey - until next time, stargazer! -->

@@ -1080,20 +1080,6 @@ body {
 
 
 
-
-.scroll-down {
-  position: absolute;
-  bottom: 20px;
-  animation: bounce 2s infinite;
-  transition: opacity 0.5s ease;
-}
-
-body.scrolled .scroll-down {
-  opacity: 0;
-  pointer-events: none;
-}
-
-
 /* Footer */
 /* Our cosmic footer with subtle styling - like star dust at the bottom of the universe */
 .footer {

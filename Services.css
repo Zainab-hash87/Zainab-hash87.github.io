@@ -350,31 +350,7 @@ textarea {
     line-height: 1.4;
     text-decoration: none;
 }
-
-.social-media {
-    margin-top: 1.5rem;
-    display: flex;
-    gap: 1rem;
-}
-
-.social-icon {
-    width: 35px;
-    height: 35px;
-    display: inline-block;
-    background-color: var(--accent-color);
-    mask-size: cover;
-    -webkit-mask-size: cover;
-    border-radius: 50%;
-    transition: transform 0.3s;
-    box-shadow: 0 0 10px #a280ff; /* Added glow */
-}
-
-.social-icon:hover {
-    transform: scale(1.2);
-    background-color: #bf80ff; /* Brighter purple */
-}
-
-/* Newsletter */
+ Newsletter */
 .newsletter p {
     font-size: 0.95rem;
     margin-bottom: 1.2rem;
