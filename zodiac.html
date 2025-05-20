@@ -429,18 +429,19 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// ====== NAVIGATION ARROW ======
-// This function creates a floating arrow button that links to the compatibility page
-const createNextPageArrow = () => {
-  // Create the arrow element
-  const nextPageArrow = document.createElement('div');
-  nextPageArrow.className = 'next-page-arrow';
-  nextPageArrow.innerHTML = `
-    <a href="Compatibility.html" title="Compatibility">
-      <span style="margin-right: 10px;">Analyze Compatibility</span>
-      <span style="font-size: 1.8rem;">⟶</span>
-    </a>
-  `;
+/**
+   * Creates a floating navigation arrow to guide users to next content section
+   */
+  function createNextPageNavigationArrow() {
+    // Create navigation element
+    const nextPageNavigationArrow = document.createElement('div');
+    nextPageNavigationArrow.className = 'next-page-arrow';
+    nextPageNavigationArrow.innerHTML = `
+      <a href="Compatibility.html" title="Go to Compatibility page">
+        <span style="margin-right: 10px;">Analyze Compatibility</span>
+        <span style="font-size: 1.8rem;">⟶</span>
+      </a>
+    `;
   
   // Style the arrow to make it look like a floating button
   nextPageArrow.style.cssText = `
