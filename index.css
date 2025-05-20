@@ -1,7 +1,9 @@
-/* =================================================
-   BASE SETUP & GLOBAL STYLES
-   These styles set up the fundamental page structure
-   ================================================= */
+/* 
+  Stellar Astrology - Beautiful, mystical styling for your cosmic journey
+  A starry night experience for astrology enthusiasts
+  Enhanced with subtle animations and cosmic vibes
+*/
+
 /* Base styling with smooth page entry animation */
 body {
   margin: 0;
@@ -20,31 +22,35 @@ body {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-
-/* BACKGROUND VIDEO CONFIGURATION
-   Handles the positioning and sizing of the background video*/
-
-/* Fullscreen background video */
+/* Immersive background video that sets the cosmic mood */
 #bg-video {
-  position: fixed; /* Fixed positioning to keep video in the same place during scroll */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* Full viewport width */
-  height: 100vh; /* Full viewport height */
-  object-fit: cover; /* Ensures video covers the entire container without distortion */
-  z-index: -1; /* Places video behind all content */
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; 
+  z-index: -1;
+  animation: subtleZoom 25s infinite alternate; /* Subtle zoom effect on background */
 }
 
+@keyframes subtleZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
 
-/*
-   PAGE CONTENT CONTAINER
-   Ensures content appears above the background video   */
-
+/* Main content container that sits above our cosmic background */
 .page-content {
-  position: relative; /* Establishes a new stacking context */
-  z-index: 10; /* Positions content above background elements */
-  color: white; /* Text color for main content */
-  padding: 20px; /* Spacing around main content */
+  position: relative;
+  z-index: 10;
+  color: white;
+  padding: 20px;
+  animation: contentFadeIn 1.2s ease-in-out 0.3s backwards; /* Slightly delayed fade-in */
+}
+
+@keyframes contentFadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 /*
    HEADER STYLING
