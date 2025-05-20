@@ -22,6 +22,73 @@ body {
   100% { opacity: 1; transform: translateY(0); }
 }
 
+/* ADDED: Floating animation for cosmic elements */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ADDED: Gentle rotation animation */
+@keyframes gentleRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ADDED: Starry background animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* ADDED: Glow pulse animation */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 10px #a280ff55; }
+  50% { box-shadow: 0 0 20px #bf80ffaa; }
+}
+
+/* ADDED: Text shimmer animation */
+@keyframes textShimmer {
+  0% { background-position: -500% 0; }
+  100% { background-position: 500% 0; }
+}
+
+/* ADDED: Cosmic spin animation */
+@keyframes cosmicSpin {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.05); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* ADDED: Create before pseudo-element for star field */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.2;
+  z-index: -1;
+  animation: twinkle 3s infinite alternate, float 15s infinite ease-in-out;
+}
+
+/* ADDED: Create after pseudo-element for nebula effect */
+body::after {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, transparent 0%, #0b0f1a 70%, #000 100%);
+  opacity: 0.3;
+  z-index: -1;
+  animation: gentleRotate 180s linear infinite;
+}
+
 /* Immersive background video that sets the cosmic mood */
 #bg-video {
   position: fixed;
@@ -70,6 +137,14 @@ body {
   z-index: 10;
   box-shadow: 0 0 15px #5533ff66;
   box-sizing: border-box; /* Ensures padding is included in width */
+  /* ADDED: Subtle header animation */
+  animation: headerGlow 4s infinite alternate;
+}
+
+/* ADDED: Header glow animation */
+@keyframes headerGlow {
+  0% { box-shadow: 0 0 15px #5533ff66; }
+  100% { box-shadow: 0 0 25px #7755ffaa; }
 }
 
 /* Our magical logo styling with that gorgeous Cinzel Decorative font and purple glow */
@@ -82,6 +157,15 @@ body {
   user-select: none;
   cursor: default;
   white-space: nowrap; /* Prevents logo from breaking into multiple lines */
+  /* ADDED: Logo animation */
+  animation: logoGlow 3s infinite alternate;
+}
+
+/* ADDED: Logo glow animation */
+@keyframes logoGlow {
+  0% { text-shadow: 0 0 8px #a280ff88; }
+  50% { text-shadow: 0 0 12px #bf80ffaa, 0 0 20px #bf80ff66; }
+  100% { text-shadow: 0 0 8px #a280ff88; }
 }
 
 /* Navbar links */
@@ -105,7 +189,23 @@ body {
   text-shadow: 0 0 3px #0008;
   white-space: nowrap; /* Prevents nav items from wrapping */
   padding: 5px 0; /* Adds clickable area */
+  /* ADDED: Nav links animation */
+  animation: navItemFloat 6s infinite ease-in-out;
+  animation-delay: calc(var(--i, 0) * 0.2s);
 }
+
+/* ADDED: Navigation item floating animation */
+@keyframes navItemFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* ADDED: Setting different delays for nav items */
+.navbar a:nth-child(1) { --i: 1; }
+.navbar a:nth-child(2) { --i: 2; }
+.navbar a:nth-child(3) { --i: 3; }
+.navbar a:nth-child(4) { --i: 4; }
+.navbar a:nth-child(5) { --i: 5; }
 
 /* Making our header responsive for smaller screens - stacking elements vertically */
 @media (max-width: 768px) {
@@ -180,12 +280,47 @@ body {
   align-items: center;
   text-align: center;
   padding: 40px 20px;
+  /* ADDED: Cosmic background animation */
+  position: relative;
+  overflow: hidden;
+}
+
+/* ADDED: Hero section cosmic particles */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background-image: 
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: 0 0, 25px 25px;
+  opacity: 0.1;
+  animation: heroParticles 120s linear infinite;
+  z-index: -1;
+}
+
+/* ADDED: Hero particles animation */
+@keyframes heroParticles {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* Keeps our hero content from stretching too wide on larger screens */
 .hero-content {
   max-width: 700px;
   margin: auto;
+  /* ADDED: Hero content animation */
+  animation: heroContentFloat 6s infinite ease-in-out;
+}
+
+/* ADDED: Hero content floating animation */
+@keyframes heroContentFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
 }
 
 /* The magical main title - big, bold, and with that special cosmic font */
@@ -194,6 +329,13 @@ body {
   font-family: 'Cinzel Decorative', cursive;
   color: #fff;
   margin-bottom: 20px;
+  /* ADDED: Title animation */
+  background: linear-gradient(90deg, #fff, #bf80ff, #a280ff, #fff);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 8s infinite linear;
 }
 
 /* A softer subtitle to balance the bold title above */
@@ -201,6 +343,14 @@ body {
   font-size: 20px;
   color: #ddd;
   margin-bottom: 30px;
+  /* ADDED: Subtitle animation */
+  animation: subtitleFade 5s infinite alternate;
+}
+
+/* ADDED: Subtitle fade animation */
+@keyframes subtitleFade {
+  0% { opacity: 0.8; }
+  100% { opacity: 1; }
 }
 
 /* Our cosmic call-to-action button with a pretty hover effect */
@@ -214,6 +364,37 @@ body {
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s;
+  /* ADDED: Button pulsing animation */
+  animation: buttonPulse 3s infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ADDED: Button pulse animation */
+@keyframes buttonPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* ADDED: Button ripple effect */
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  opacity: 0;
+  transition: transform 0.8s, opacity 0.8s;
+}
+
+/* ADDED: Button ripple animation on hover */
+.btn-glow:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
 }
 
 /* Button transforms to white with a purple glow when hovered - very celestial! */
@@ -229,6 +410,32 @@ body {
   background: rgba(0, 0, 0, 0.75);
   padding: 60px 20px;
   text-align: center;
+  /* ADDED: Calculator section particles */
+  position: relative;
+  overflow: hidden;
+}
+
+/* ADDED: Calculator cosmic background */
+.zodiac-calculator::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(rgba(255, 215, 0, 0.1) 2px, transparent 2px),
+    radial-gradient(rgba(176, 121, 255, 0.1) 2px, transparent 2px);
+  background-size: 30px 30px, 35px 35px;
+  background-position: 0 0, 15px 15px;
+  animation: calculatorStars 60s linear infinite;
+  z-index: 0;
+}
+
+/* ADDED: Calculator stars animation */
+@keyframes calculatorStars {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100px); }
 }
 
 /* The calculator box itself gets this pretty glass-like effect with golden accents */
@@ -239,6 +446,10 @@ body {
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 0 20px rgba(0, 8, 255, 0.3);
+  position: relative;
+  z-index: 1;
+  /* ADDED: Calculator container animation */
+  animation: glowPulse 4s infinite alternate;
 }
 
 /* Golden title for our calculator to add that mystical astrology vibe */
@@ -247,13 +458,36 @@ body {
   font-size: 32px;
   color: #ffd700;
   margin-bottom: 25px;
+  /* ADDED: Title shimmer animation */
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+  animation: titleShimmer 3s infinite alternate;
+}
+
+/* ADDED: Title shimmer animation */
+@keyframes titleShimmer {
+  0% { text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+  100% { text-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 0 0 25px rgba(255, 215, 0, 0.4); }
 }
 
 /* Each input field gets its own space and consistent styling */
 .input-group {
   margin-bottom: 20px;
   text-align: left;
+  /* ADDED: Staggered entrance for inputs */
+  animation: inputEntrance 0.5s ease-out backwards;
 }
+
+/* ADDED: Input entrance animation */
+@keyframes inputEntrance {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ADDED: Staggered timing for each input */
+.input-group:nth-child(1) { animation-delay: 0.1s; }
+.input-group:nth-child(2) { animation-delay: 0.2s; }
+.input-group:nth-child(3) { animation-delay: 0.3s; }
+.input-group:nth-child(4) { animation-delay: 0.4s; }
 
 /* Golden labels that match our title for consistency */
 .input-group label {
@@ -261,6 +495,14 @@ body {
   margin-bottom: 8px;
   font-weight: bold;
   color: #ffd700;
+  /* ADDED: Label glow animation */
+  animation: labelGlow 4s infinite alternate;
+}
+
+/* ADDED: Label glow animation */
+@keyframes labelGlow {
+  0% { text-shadow: none; }
+  100% { text-shadow: 0 0 8px rgba(255, 215, 0, 0.5); }
 }
 
 /* Semi-transparent inputs with golden borders for that magical feel */
@@ -273,6 +515,21 @@ body {
   color: white;
   font-size: 16px;
   outline: none;
+  /* ADDED: Input focus animation */
+  transition: all 0.3s ease;
+}
+
+/* ADDED: Input border animation */
+.styled-input:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  animation: inputBorderPulse 1.5s infinite alternate;
+}
+
+/* ADDED: Input border pulse animation */
+@keyframes inputBorderPulse {
+  0% { border-color: #ffd700; }
+  100% { border-color: #ffffff; }
 }
 
 /* Slightly lighter placeholder text so it doesn't compete with actual input */
@@ -289,6 +546,14 @@ body {
   padding: 15px;
   border-radius: 10px;
   border: 1px solid #ffd700;
+  /* ADDED: Result area animation */
+  animation: resultGlow 3s infinite alternate;
+}
+
+/* ADDED: Result glow animation */
+@keyframes resultGlow {
+  0% { box-shadow: 0 0 10px rgba(255, 215, 0, 0.2) inset; }
+  100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5) inset; }
 }
 
 /* Carousel Section */
@@ -296,6 +561,9 @@ body {
 .carousel-section {
   position: relative;
   overflow: hidden;
+  /* ADDED: Cosmic ambient light */
+  background: radial-gradient(ellipse at top, rgba(176, 121, 255, 0.1), transparent 70%),
+              radial-gradient(ellipse at bottom, rgba(255, 215, 0, 0.05), transparent 70%);
 }
 
 /* Gives our carousel some horizontal breathing room */
@@ -335,7 +603,23 @@ body {
   overflow: hidden;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* ADDED: Card animation */
+  animation: cardFloat 5s infinite ease-in-out;
+  animation-delay: calc(var(--card-i, 0) * 0.7s);
 }
+
+/* ADDED: Card float animation */
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ADDED: Card index variables for staggered animation */
+.carousel-card:nth-child(1) { --card-i: 1; }
+.carousel-card:nth-child(2) { --card-i: 2; }
+.carousel-card:nth-child(3) { --card-i: 3; }
+.carousel-card:nth-child(4) { --card-i: 4; }
+.carousel-card:nth-child(5) { --card-i: 5; }
 
 /* Cards float upward with a bigger shadow on hover - so magical! */
 .carousel-card:hover {
@@ -348,6 +632,27 @@ body {
   width: 100%;
   height: auto;
   display: block;
+  /* ADDED: Image shine effect */
+  position: relative;
+  overflow: hidden;
+}
+
+/* ADDED: Image shine animation */
+.carousel-card img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: imageSweep 3s infinite;
+}
+
+/* ADDED: Image sweep animation */
+@keyframes imageSweep {
+  0% { left: -100%; }
+  50%, 100% { left: 150%; }
 }
 
 /* Navigation buttons for our carousel with subtle semi-transparent styling */
@@ -368,6 +673,14 @@ body {
   cursor: pointer;
   z-index: 10;
   transition: all 0.3s ease;
+  /* ADDED: Button animation */
+  animation: btnPulse 2s infinite alternate;
+}
+
+/* ADDED: Button pulse animation */
+@keyframes btnPulse {
+  0% { box-shadow: 0 0 0 rgba(255, 255, 255, 0.2); }
+  100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
 }
 
 /* Buttons become slightly more visible on hover */
@@ -402,11 +715,36 @@ body {
   margin: 0 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  /* ADDED: Indicator animation */
+  animation: indicatorPulse 3s infinite alternate;
+  animation-delay: calc(var(--ind-i, 0) * 0.5s);
 }
+
+/* ADDED: Indicator pulse animation */
+@keyframes indicatorPulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.2); }
+}
+
+/* ADDED: Indicator index variables */
+.indicator:nth-child(1) { --ind-i: 1; }
+.indicator:nth-child(2) { --ind-i: 2; }
+.indicator:nth-child(3) { --ind-i: 3; }
+.indicator:nth-child(4) { --ind-i: 4; }
+.indicator:nth-child(5) { --ind-i: 5; }
 
 /* The active slide gets a purple indicator - matches our cosmic theme */
 .indicator.active {
   background-color: #c98fff;
+  /* ADDED: Active indicator animation */
+  animation: activeIndicator 1.5s infinite alternate;
+}
+
+/* ADDED: Active indicator animation */
+@keyframes activeIndicator {
+  0% { box-shadow: 0 0 0 rgba(201, 143, 255, 0.5); }
+  100% { box-shadow: 0 0 
+    10px rgba(201, 143, 255, 0.8); }
 }
 
 /* Responsiveness */
@@ -422,374 +760,7 @@ body {
     font-size: 1.2rem;
   }
 }
-
-/* Fonts & base */
-/* (This appears to be a duplicate of the first section - possibly unintentional) */
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: radial-gradient(ellipse at center, #0b0f1a 0%, #000 90%);
-  color: #eee;
-  overflow-x: hidden; /* Changed from visible to hidden to prevent horizontal scroll */
-  min-height: 100vh;
-  position: relative;
-  animation: fadeInPage 1s ease-in-out;
-}
-
-
-/* Fullscreen background video */
-/* (This appears to be a duplicate of earlier code) */
-#bg-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover; 
-  z-index: -1;        
-}
-
-
-.page-content {
-  position: relative;
-  z-index: 10;
-  color: white;
-  padding: 20px;
-}
-
-/* Header */
-/* (This appears to be a duplicate of earlier code) */
-.main-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  padding: 12px 25px; /* Consistent padding */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(5, 5, 15, 0.75);
-  backdrop-filter: blur(10px);
-  z-index: 10;
-  box-shadow: 0 0 15px #5533ff66;
-  box-sizing: border-box; /* Ensures padding is included in width */
-}
-
-.logo {
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 1.8rem;
-  color: #a280ff;
-  text-shadow: 0 0 8px #a280ff88;
-  letter-spacing: 0.15em;
-  user-select: none;
-  cursor: default;
-  white-space: nowrap; /* Prevents logo from breaking into multiple lines */
-}
-
-/* Navbar links */
-/* (This appears to be a duplicate of earlier code) */
-.navbar {
-  display: flex;
-  gap: 20px; /* Replaces margin-left on individual links */
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-.navbar a {
-  color: #ccc;
-  font-weight: 600;
-  text-decoration: none;
-  position: relative;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-  text-shadow: 0 0 3px #0008;
-  white-space: nowrap; /* Prevents nav items from wrapping */
-  padding: 5px 0; /* Adds clickable area */
-}
-
-@media (max-width: 768px) {
-  .main-header {
-    padding: 10px 15px;
-    flex-direction: column;
-    align-items: stretch;
-  }
-  
-  .logo {
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  
-  .navbar {
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .navbar a {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar {
-    gap: 8px;
-  }
-  
-  .navbar a {
-    font-size: 0.85rem;
-  }
-}
-
-.navbar a:hover,
-.navbar a:focus {
-  color: #bf80ff;
-  text-shadow:
-    0 0 10px #bf80ff,
-    0 0 20px #bf80ff,
-    0 0 30px #bf80ff,
-    0 0 40px #bf80ff;
-}
-
-.navbar a:hover::after {
-  content: "✦";
-  position: absolute;
-  right: -15px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #bf80ff;
-  animation: sparkle 1.2s infinite alternate;
-  font-size: 1.2rem;
-}
-
-@keyframes sparkle {
-  0% {opacity: 0.3; transform: translateY(-50%) scale(1);}
-  100% {opacity: 1; transform: translateY(-60%) scale(1.3);}
-}
-
-
-/* Hero Section */
-/* (This appears to be a duplicate of earlier code) */
-.hero-section {
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.hero-content {
-  max-width: 700px;
-  margin: auto;
-}
-
-.stellara-title {
-  font-size: 48px;
-  font-family: 'Cinzel Decorative', cursive;
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-.stellara-subtitle {
-  font-size: 20px;
-  color: #ddd;
-  margin-bottom: 30px;
-}
-
-.btn-glow {
-  padding: 12px 24px;
-  background: #9494e4;
-  color: #000;
-  font-weight: bold;
-  border: none;
-  border-radius: 30px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.btn-glow:hover {
-  background: #fff;
-  color: #111;
-  box-shadow: 0 0 15px #2c1961;
-}
-
-/* Zodiac Calculator Section */
-/* (This appears to be a duplicate of earlier code) */
-.zodiac-calculator {
-  background: rgba(0, 0, 0, 0.75);
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.calculator-container {
-  max-width: 600px;
-  margin: auto;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0, 8, 255, 0.3);
-}
-
-.calculator-container h2 {
-  font-family: 'Cinzel Decorative', cursive;
-  font-size: 32px;
-  color: #ffd700;
-  margin-bottom: 25px;
-}
-
-.input-group {
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.input-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #ffd700;
-}
-
-.styled-input {
-  width: 100%;
-  padding: 12px 15px;
-  border-radius: 8px;
-  border: 1px solid #ffd700;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  font-size: 16px;
-  outline: none;
-}
-
-.styled-input::placeholder {
-  color: #ccc;
-}
-
-.result {
-  margin-top: 25px;
-  font-size: 18px;
-  color: #fff;
-  background-color: rgba(255, 215, 0, 0.15);
-  padding: 15px;
-  border-radius: 10px;
-  border: 1px solid #ffd700;
-}
-
-.carousel-section {
-  position: relative;
-  overflow: hidden;
-}
-
-.carousel-container {
-  position: relative;
-  width: 100%;
-  padding: 0 1rem;
-}
-
-.carousel-track-container {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-
-.carousel-track {
-  display: flex;
-  list-style: none;
-  transition: transform 0.5s ease-out;
-  cursor: grab;
-}
-
-.carousel-track.grabbing {
-  cursor: grabbing;
-  transition: none;
-}
-
-.carousel-card {
-  flex: 0 0 auto;
-  width: 300px;
-  margin: 0 10px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.carousel-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
-}
-
-.carousel-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 10;
-  transition: all 0.3s ease;
-}
-
-.carousel-btn:hover {
-  background: rgba(255, 255, 255, 0.4);
-}
-
-.left-btn {
-  left: 10px;
-}
-
-.right-btn {
-  right: 10px;
-}
-
-/* Progress indicators */
-.carousel-indicators {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.indicator {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.3);
-  margin: 0 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.indicator.active {
-  background-color: #c98fff;
-}
-
-/* Responsiveness */
-@media (max-width: 768px) {
-  .carousel-card {
-    width: calc(100vw - 40px);
-  }
-  
-  .carousel-btn {
-    width: 35px;
-    height: 35px;
-    font-size: 1.2rem;
-  }
-}
-
+ 
 /* Footer */
 /* Our cosmic footer with subtle styling - like star dust at the bottom of the universe */
 .footer {
@@ -855,9 +826,10 @@ body {
   margin-top: 10px;
   font-size: 0.8rem;
   color: #666699;
-}
+ }
 
-/* =================================================
+
+ /* =================================================
    NEXT PAGE NAVIGATION
    Fixed navigation to additional pages
    ================================================= */
