@@ -1,137 +1,165 @@
-/* Global Styles */
+/* ============================================= */
+/* GLOBAL STYLES AND VARIABLES */
+/* ============================================= */
+
+/* Root variables for easy theming and consistency */
 :root {
-    --primary-color: #6a4c93;
-    --secondary-color: #8a5a44;
-    --accent-color: #a280ff; /* Changed to purple */
-    --dark-color: #0b0f1a; /* Changed to dark space color */
-    --light-color: #eee; /* Changed to light gray */
-    --success-color: #4caf50;
-    --error-color: #f44336;
-    --transition: all 0.3s ease;
-    --font-heading: 'Cinzel Decorative', serif;
-    --font-body: 'Montserrat', sans-serif;
+    --primary-color: #6a4c93;         /* Main brand purple color */
+    --secondary-color: #8a5a44;       /* Complementary brown/orange */
+    --accent-color: #a280ff;          /* Bright purple for highlights */
+    --dark-color: #0b0f1a;            /* Deep space-like background */
+    --light-color: #eee;              /* Off-white for text */
+    --success-color: #4caf50;         /* Green for success messages */
+    --error-color: #f44336;           /* Red for error states */
+    --transition: all 0.3s ease;      /* Default transition timing */
+    --font-heading: 'Cinzel Decorative', serif; /* Fancy decorative font */
+    --font-body: 'Montserrat', sans-serif;      /* Clean readable font */
 }
 
+/* Universal reset for consistent baseline */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Includes padding in width calculations */
 }
 
+/* Base body styles - the foundation of our site */
 body {
-    font-family: var(--font-body);
-    line-height: 1.6;
-    color: var(--light-color);
-    overflow-x: hidden;
-    background: radial-gradient(ellipse at center, #0b0f1a 0%, #000 90%); /* Added space gradient */
-    animation: fadeInPage 1s ease-in-out; /* Added fade-in animation */
+    font-family: var(--font-body);    /* Using our body font */
+    line-height: 1.6;                 /* Comfortable reading spacing */
+    color: var(--light-color);        /* Light text for dark background */
+    overflow-x: hidden;               /* Prevents horizontal scrolling */
+    /* Beautiful space-like gradient background */
+    background: radial-gradient(ellipse at center, #0b0f1a 0%, #000 90%);
+    /* Smooth fade-in when page loads */
+    animation: fadeInPage 1s ease-in-out;
 }
 
+/* Simple fade-in animation for page load */
 @keyframes fadeInPage {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; }  /* Start invisible */
+    to { opacity: 1; }    /* Fade to fully visible */
 }
 
-/* Video Background */
+/* ============================================= */
+/* VIDEO BACKGROUND STYLES */
+/* ============================================= */
+
+/* Fullscreen video background element */
 #bg-video {
-    position: fixed;
+    position: fixed;      /* Fixed position so it stays in place */
     right: 0;
     bottom: 0;
-    min-width: 100%;
+    min-width: 100%;      /* Always covers full viewport */
     min-height: 100%;
-    z-index: -1;
-    filter: brightness(0.4);
+    z-index: -1;         /* Behind all other content */
+    filter: brightness(0.4); /* Darken the video for better text contrast */
 }
 
+/* Wrapper for content that sits above video */
 .page-content {
-    position: relative;
-    z-index: 1;
-    color: white;
+    position: relative;   /* Establishes stacking context */
+    z-index: 1;          /* Above the video background */
+    color: white;        /* Ensures text is white */
 }
 
-/* Header Styles */
+/* ============================================= */
+/* HEADER AND NAVIGATION STYLES */
+/* ============================================= */
+
+/* Main header container - fixed at top */
 .main-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Logo on left, nav on right */
     align-items: center;
-    padding: 1.5rem 5%;
-    background-color: rgba(5, 5, 15, 0.75); /* Changed to darker blue */
-    position: fixed;
-    width: 100%;
+    padding: 1.5rem 5%;  /* Comfortable spacing */
+    background-color: rgba(5, 5, 15, 0.75); /* Semi-transparent dark blue */
+    position: fixed;     /* Stays at top during scroll */
+    width: 100%;         /* Full width */
     top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(10px); /* Increased blur */
-    transition: var(--transition);
-    box-shadow: 0 0 15px #5533ff66; /* Added purple glow */
+    z-index: 1000;       /* Above other content */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    transition: var(--transition); /* Smooth property changes */
+    box-shadow: 0 0 15px #5533ff66; /* Purple glow effect */
 }
 
+/* Smaller header when page is scrolled */
 .main-header.scrolled {
-    padding: 1rem 5%;
-    background-color: rgba(5, 5, 15, 0.95); /* Darker when scrolled */
+    padding: 1rem 5%;    /* More compact */
+    background-color: rgba(5, 5, 15, 0.95); /* Less transparent */
 }
 
+/* Logo styling - fancy and eye-catching */
 .logo {
-    font-family: var(--font-heading);
+    font-family: var(--font-heading); /* Decorative font */
     font-size: 2rem;
-    color: var(--accent-color);
-    text-shadow: 0 0 8px #a280ff88; /* Changed to purple glow */
-    letter-spacing: 0.15em; /* Added letter spacing */
-    user-select: none;
+    color: var(--accent-color);      /* Bright purple */
+    text-shadow: 0 0 8px #a280ff88;  /* Glow effect */
+    letter-spacing: 0.15em;          /* Wider spacing for elegance */
+    user-select: none;               /* Prevents text selection */
 }
 
+/* Navigation bar container */
 .navbar {
     display: flex;
-    gap: 2rem;
+    gap: 2rem;           /* Space between nav items */
 }
 
+/* Navigation link base styles */
 .navbar a {
-    color: #ccc; /* Changed to light gray */
+    color: #ccc;         /* Light gray for normal state */
     text-decoration: none;
-    font-weight: 600; /* Changed to semi-bold */
-    position: relative;
-    transition: var(--transition);
-    text-shadow: 0 0 3px #0008; /* Added subtle shadow */
+    font-weight: 600;    /* Semi-bold for better readability */
+    position: relative;  /* For pseudo-elements */
+    transition: var(--transition); /* Smooth hover effects */
+    text-shadow: 0 0 3px #0008;    /* Subtle shadow for depth */
 }
 
+/* Navigation link hover state */
 .navbar a:hover {
-    color: #bf80ff; /* Changed to brighter purple */
-    text-shadow: 0 0 10px #bf80ff, 0 0 20px #bf80ff, 0 0 30px #bf80ff, 0 0 40px #bf80ff; /* Multi-layered glow */
+    color: #bf80ff;      /* Brighter purple */
+    /* Multi-layered glow effect on hover */
+    text-shadow: 0 0 10px #bf80ff, 0 0 20px #bf80ff, 0 0 30px #bf80ff, 0 0 40px #bf80ff;
 }
 
+/* Animated underline effect */
 .navbar a::after {
     content: '';
     position: absolute;
-    width: 0;
+    width: 0;           /* Start with no width */
     height: 2px;
     bottom: -5px;
     left: 0;
-    background-color: var(--accent-color);
-    transition: var(--transition);
+    background-color: var(--accent-color); /* Purple line */
+    transition: var(--transition); /* Animate the width change */
 }
 
+/* Full width underline on hover */
 .navbar a:hover::after {
     width: 100%;
 }
 
-/* Star decoration appearing on hover */
+/* Decorative star that appears on hover */
 .navbar a:hover::before {
-    content: "✦";
+    content: "✦";       /* Star character */
     position: absolute;
-    right: -15px;
+    right: -15px;       /* Position to the right of link */
     top: 50%;
-    transform: translateY(-50%);
-    color: #bf80ff;
-    animation: sparkle 1.2s infinite alternate;
+    transform: translateY(-50%); /* Perfect vertical centering */
+    color: #bf80ff;     /* Purple color */
+    animation: sparkle 1.2s infinite alternate; /* Pulsing animation */
     font-size: 1.2rem;
 }
 
+/* Sparkle animation for the hover star */
 @keyframes sparkle {
-    0% { opacity: 0.3; transform: translateY(-50%) scale(1); }
-    100% { opacity: 1; transform: translateY(-60%) scale(1.3); }
+    0% { opacity: 0.3; transform: translateY(-50%) scale(1); } /* Faint and normal size */
+    100% { opacity: 1; transform: translateY(-60%) scale(1.3); } /* Bright and slightly larger */
 }
 
+/* Mobile menu toggle button (hidden by default) */
 .hamburger {
-    display: none;
+    display: none;       /* Hidden on desktop */
     cursor: pointer;
     flex-direction: column;
     justify-content: space-between;
@@ -139,377 +167,485 @@ body {
     height: 21px;
 }
 
+/* Hamburger menu lines */
 .hamburger span {
     display: block;
     height: 3px;
     width: 100%;
-    background-color: var(--light-color);
+    background-color: var(--light-color); /* Light color */
     border-radius: 3px;
-    transition: var(--transition);
+    transition: var(--transition); /* For transform animations */
 }
 
-/* Hero Section */
+/* ============================================= */
+/* HERO SECTION STYLES */
+/* ============================================= */
+
+/* Full viewport hero section */
 .hero {
-    min-height: 100vh;
+    min-height: 100vh;  /* At least full viewport height */
     display: flex;
-    align-items: center;
-    text-align: center;
-    padding-top: 80px;
-    background: linear-gradient(rgba(5, 5, 15, 0.7), rgba(5, 5, 15, 0.5)); /* Darker gradient */
+    align-items: center; /* Vertically center content */
+    text-align: center;  /* Horizontally center text */
+    padding-top: 80px;   /* Account for fixed header */
+    /* Dark overlay gradient for better text contrast */
+    background: linear-gradient(rgba(5, 5, 15, 0.7), rgba(5, 5, 15, 0.5));
 }
 
+/* Main hero heading */
 .hero h1 {
-    font-family: var(--font-heading);
+    font-family: var(--font-heading); /* Fancy decorative font */
     font-size: 4rem;
     margin-bottom: 1rem;
-    color: #cda9ff; /* Changed to light purple */
-    text-shadow: 0 0 10px #bb8cff, 0 0 30px #bb8cff, 0 0 60px #bb8cff; /* Multi-layered glow */
-    animation: glowing 3s ease-in-out infinite; /* Changed to glowing animation */
+    color: #cda9ff;      /* Light purple */
+    /* Multi-layered text glow */
+    text-shadow: 0 0 10px #bb8cff, 0 0 30px #bb8cff, 0 0 60px #bb8cff;
+    /* Continuous glowing animation */
+    animation: glowing 3s ease-in-out infinite;
 }
 
+/* Keyframes for the glowing text animation */
 @keyframes glowing {
     0%, 100% {
+        /* Normal glow state */
         text-shadow: 0 0 8px #bb8cff, 0 0 20px #bb8cff, 0 0 30px #bb8cff;
         color: #cda9ff;
     }
     50% {
+        /* Brighter pulse state */
         text-shadow: 0 0 20px #e0bfff, 0 0 40px #e0bfff, 0 0 70px #e0bfff;
         color: #e0bfff;
     }
 }
 
+/* Hero paragraph text */
 .hero p {
     font-size: 1.5rem;
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    color: #aaa; /* Changed to light gray */
-    text-shadow: 0 0 6px #5e3f88; /* Added purple shadow */
+    max-width: 800px;    /* Optimal reading width */
+    margin: 0 auto 2rem; /* Centered with bottom margin */
+    color: #aaa;        /* Light gray for subtlety */
+    text-shadow: 0 0 6px #5e3f88; /* Purple shadow for depth */
 }
 
-/* Two-Column Section */
+/* ============================================= */
+/* TWO-COLUMN LAYOUT STYLES */
+/* ============================================= */
+
+/* Content wrapper with fancy background */
 .content-wrapper {
-    padding: 6rem 5% 4rem;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
+    padding: 6rem 5% 4rem; /* Generous vertical padding */
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
     color: var(--light-color);
 }
 
+/* Two-column flexible container */
 .two-column {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
+    flex-wrap: wrap;     /* Allows columns to stack on small screens */
+    gap: 2rem;          /* Space between columns */
     justify-content: space-between;
-    animation: fadeIn 1.5s ease-in-out;
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in animation */
 }
 
+/* Shared styles for form and subscription boxes */
 .contact-form,
 .subscription {
-    flex: 1 1 48%;
-    background: rgba(20, 10, 40, 0.5); /* Changed to purple background */
+    flex: 1 1 48%;      /* Flexible columns, roughly half width */
+    background: rgba(20, 10, 40, 0.5); /* Semi-transparent purple */
     padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), inset 0 0 30px #bf80ff55; /* Added inner glow */
+    border-radius: 1rem; /* Rounded corners */
+    /* Outer shadow and inner glow combo */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), inset 0 0 30px #bf80ff55;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    color: #e9d7ff; /* Changed to light purple */
+    color: #e9d7ff;     /* Light purple text */
 }
 
+/* Hover effect for form boxes */
 .contact-form:hover,
 .subscription:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px #a280ff77, inset 0 0 40px #bf80ff77; /* Purple glow */
+    transform: translateY(-8px); /* Lift effect */
+    /* Enhanced glow on hover */
+    box-shadow: 0 12px 25px #a280ff77, inset 0 0 40px #bf80ff77;
 }
 
+/* Section headings */
 .contact-form h2,
 .subscription h2 {
-    color: #cda9ff; /* Changed to light purple */
+    color: #cda9ff;      /* Light purple */
     margin-bottom: 1rem;
-    font-family: var(--font-heading);
+    font-family: var(--font-heading); /* Decorative font */
     font-size: 1.8rem;
-    text-shadow: 0 0 12px #bb8cff; /* Added glow */
+    text-shadow: 0 0 12px #bb8cff; /* Glow effect */
 }
 
+/* Form group container */
 .form-group {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.2rem; /* Consistent spacing */
 }
 
+/* Form labels */
 .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: #d1bfff; /* Changed to light purple */
+    display: block;      /* Makes label take full width */
+    margin-bottom: 0.5rem; /* Space between label and input */
+    font-weight: 600;    /* Semi-bold for emphasis */
+    color: #d1bfff;      /* Light purple */
 }
 
+/* Shared input styles */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 textarea {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    border: 2px solid transparent;
-    border-radius: 0.5rem;
-    background-color: rgba(43, 31, 77, 0.7); /* Changed to dark purple */
-    color: var(--light-color);
+    width: 100%;         /* Full width of container */
+    padding: 0.8rem 1rem; /* Comfortable padding */
+    border: 2px solid transparent; /* Invisible by default */
+    border-radius: 0.5rem; /* Slightly rounded corners */
+    background-color: rgba(43, 31, 77, 0.7); /* Dark purple */
+    color: var(--light-color); /* Light text */
     font-size: 1rem;
-    transition: border 0.3s, box-shadow 0.3s;
-    box-shadow: inset 0 0 10px #9d78ff77; /* Added inner glow */
+    transition: border 0.3s, box-shadow 0.3s; /* Smooth transitions */
+    /* Inner glow effect */
+    box-shadow: inset 0 0 10px #9d78ff77;
 }
 
+/* Focus states for form elements */
 input:focus,
 textarea:focus {
-    outline: none;
-    border-color: #bf80ff; /* Changed to purple */
-    box-shadow: 0 0 18px #cda9ffcc, inset 0 0 10px #9d78ff77; /* Enhanced glow */
+    outline: none;       /* Remove default outline */
+    border-color: #bf80ff; /* Purple border */
+    /* Enhanced glow when focused */
+    box-shadow: 0 0 18px #cda9ffcc, inset 0 0 10px #9d78ff77;
 }
 
+/* Textarea specific styles */
 textarea {
-    resize: vertical;
+    resize: vertical;    /* Only allow vertical resizing */
 }
 
-/* Checkbox */
+/* ============================================= */
+/* CHECKBOX STYLES */
+/* ============================================= */
+
+/* Custom checkbox container */
 .checkbox {
     display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-    font-size: 0.95rem;
-    color: #d1b3ff; /* Changed to light purple */
+    align-items: flex-start; /* Align to top of container */
+    gap: 0.5rem;        /* Space between checkbox and text */
+    font-size: 0.95rem;  /* Slightly smaller text */
+    color: #d1b3ff;      /* Light purple */
 }
 
+/* Checkbox input styling */
 .checkbox input[type="checkbox"] {
-    transform: scale(1.1);
-    margin-top: 0.2rem;
+    transform: scale(1.1); /* Slightly larger */
+    margin-top: 0.2rem;  /* Fine-tuned vertical alignment */
 }
 
+/* Link in checkbox label */
 .checkbox a {
-    color: #bf80ff; /* Changed to purple */
-    text-decoration: underline;
+    color: #bf80ff;      /* Purple */
+    text-decoration: underline; /* Standard link appearance */
 }
 
-/* Button */
+/* ============================================= */
+/* BUTTON STYLES */
+/* ============================================= */
+
+/* Base button styles */
 .btn {
     display: inline-block;
-    padding: 0.75rem 2rem;
-    background: transparent; /* Changed to transparent */
-    color: #fff; /* Changed to white */
+    padding: 0.75rem 2rem; /* Comfortable click area */
+    background: transparent; /* No fill by default */
+    color: #fff;         /* White text */
     font-weight: bold;
-    border: 2px solid #a280ff; /* Added purple border */
-    border-radius: 2rem;
+    border: 2px solid #a280ff; /* Purple border */
+    border-radius: 2rem; /* Fully rounded ends */
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 0 5px #bda1ff88, inset 0 0 15px #a280ff55; /* Added glow */
+    /* Glow effects */
+    box-shadow: 0 0 5px #bda1ff88, inset 0 0 15px #a280ff55;
 }
 
+/* Button hover state */
 .btn:hover {
     background: rgba(191, 128, 255, 0.2); /* Semi-transparent purple */
-    transform: scale(1.05);
+    transform: scale(1.05); /* Slight grow effect */
+    /* Enhanced glow effects */
     box-shadow: 0 0 20px #bb8cff, 0 0 30px #bb8cff, 0 0 50px #bb8cff, inset 0 0 25px #bb8cff;
-    animation: btnPulse 1.5s infinite; /* Added pulse animation */
+    animation: btnPulse 1.5s infinite; /* Continuous pulse */
 }
 
+/* Button pulse animation */
 @keyframes btnPulse {
     0%, 100% {
+        /* Normal glow state */
         box-shadow: 0 0 20px #bb8cff, 0 0 30px #bb8cff, 0 0 50px #bb8cff, inset 0 0 25px #bb8cff;
     }
     50% {
+        /* Brighter pulse state */
         box-shadow: 0 0 40px #d8baff, 0 0 60px #d8baff, 0 0 80px #d8baff, inset 0 0 35px #d8baff;
     }
 }
 
-/* Success Message */
+/* ============================================= */
+/* FORM SUCCESS MESSAGE */
+/* ============================================= */
+
+/* Success message styling */
 .form-success {
     margin-top: 1rem;
-    background-color: rgba(46, 125, 50, 0.7); /* Semi-transparent */
+    background-color: rgba(46, 125, 50, 0.7); /* Semi-transparent green */
     color: white;
     padding: 1rem;
     border-radius: 0.5rem;
-    display: none;
+    display: none;       /* Hidden by default */
 }
 
-/* Contact Info & Socials */
+/* ============================================= */
+/* CONTACT INFORMATION STYLES */
+/* ============================================= */
+
+/* Contact info list */
 .contact-info ul {
-    list-style: none;
+    list-style: none;   /* Remove bullets */
     padding: 0;
     margin-top: 1rem;
 }
 
+/* Contact info list items */
 .contact-info li {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.2rem; /* Consistent spacing */
     display: flex;
-    gap: 1rem;
-    align-items: center;
+    gap: 1rem;          /* Space between icon and text */
+    align-items: center; /* Vertical alignment */
 }
 
+/* Contact info icons */
 .contact-info i {
-    font-size: 1.3rem;
-    color: var(--accent-color);
+    font-size: 1.3rem;  /* Slightly larger */
+    color: var(--accent-color); /* Purple */
 }
 
+/* Contact text and links */
 .contact-info p,
 .contact-info a {
-    color: #d1b3ff; /* Changed to light purple */
+    color: #d1b3ff;      /* Light purple */
     font-size: 0.95rem;
     line-height: 1.4;
     text-decoration: none;
 }
- Newsletter */
+
+/* ============================================= */
+/* NEWSLETTER STYLES */
+/* ============================================= */
+
+/* Newsletter description text */
 .newsletter p {
     font-size: 0.95rem;
     margin-bottom: 1.2rem;
-    color: #d1b3ff; /* Changed to light purple */
+    color: #d1b3ff;      /* Light purple */
 }
 
-/* Animations */
+/* ============================================= */
+/* ANIMATIONS */
+/* ============================================= */
+
+/* Fade-in animation for elements */
 @keyframes fadeIn {
     0% {
-        opacity: 0;
-        transform: translateY(30px);
+        opacity: 0;     /* Start invisible */
+        transform: translateY(30px); /* Start slightly below */
     }
     100% {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 1;     /* Fade in */
+        transform: translateY(0); /* Move to final position */
     }
 }
 
-/* Responsive Design */
+/* ============================================= */
+/* RESPONSIVE DESIGN - TABLET SIZE */
+/* ============================================= */
+
 @media (max-width: 768px) {
+    /* Stack columns vertically on smaller screens */
     .two-column {
         flex-direction: column;
     }
 
+    /* Full width form containers */
     .contact-form,
     .subscription {
         flex: 1 1 100%;
     }
 }
 
-/* Footer */
+/* ============================================= */
+/* FOOTER STYLES */
+/* ============================================= */
+
+/* Footer container */
 .footer {
-    background-color: #0b0f1a; /* Changed to dark space color */
-    padding: 1.5rem 0; /* Reduced padding */
+    background-color: #0b0f1a; /* Dark space color */
+    padding: 1.5rem 0;   /* Reduced padding for compact look */
     text-align: center;
-    backdrop-filter: blur(5px);
-    border-top: 1px solid #1f1a3d; /* Added top border */
-    box-shadow: 0 -2px 10px #2a1a50; /* Added upward shadow */
+    backdrop-filter: blur(5px); /* Subtle blur */
+    border-top: 1px solid #1f1a3d; /* Top border */
+    box-shadow: 0 -2px 10px #2a1a50; /* Upward shadow */
 }
 
+/* Footer logo */
 .footer-logo {
-    font-family: var(--font-heading);
+    font-family: var(--font-heading); /* Decorative font */
     font-size: 2rem;
-    color: var(--accent-color);
-    margin-bottom: 0.5rem; /* Reduced space */
-    text-shadow: 0 0 8px #a280ff88; /* Added glow */
+    color: var(--accent-color); /* Purple */
+    margin-bottom: 0.5rem; /* Tight spacing */
+    text-shadow: 0 0 8px #a280ff88; /* Glow effect */
 }
 
+/* Decorative stars in footer */
 .footer-stars {
     font-size: 1.5rem;
-    margin-bottom: 0.5rem; /* Reduced space */
-    color: #a280ff; /* Purple color */
+    margin-bottom: 0.5rem;
+    color: #a280ff;      /* Purple */
 }
 
+/* Footer text */
 .footer p {
-    margin-bottom: 1rem; /* Reduced space */
-    max-width: 600px;
+    margin-bottom: 1rem;
+    max-width: 600px;    /* Optimal reading width */
     margin-left: auto;
-    margin-right: auto;
-    color: #9999cc; /* Changed to light purple */
+    margin-right: auto;  /* Centered */
+    color: #9999cc;      /* Light purple */
 }
 
+/* Social icons container */
 .social-icons {
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 1rem; /* Reduced space */
+    justify-content: center; /* Centered horizontally */
+    gap: 1.5rem;        /* Space between icons */
+    margin-bottom: 1rem;
 }
 
+/* Social icon links */
 .social-icons a {
-    color: #9999cc; /* Changed to light purple */
-    font-size: 1.5rem;
-    transition: var(--transition);
+    color: #9999cc;      /* Light purple */
+    font-size: 1.5rem;   /* Large enough to click */
+    transition: var(--transition); /* Smooth hover */
 }
 
+/* Social icon hover state */
 .social-icons a:hover {
-    color: #bf80ff; /* Brighter purple */
-    transform: translateY(-3px);
+    color: #bf80ff;      /* Brighter purple */
+    transform: translateY(-3px); /* Lift effect */
 }
 
+/* Footer links container */
 .footer-links {
-    margin-bottom: 1rem; /* Reduced space */
+    margin-bottom: 1rem;
 }
 
+/* Footer navigation links */
 .footer-links a {
-    color: #9999cc; /* Changed to light purple */
+    color: #9999cc;      /* Light purple */
     text-decoration: none;
     transition: var(--transition);
-    margin: 0 10px; /* Added horizontal spacing */
+    margin: 0 10px;      /* Horizontal spacing */
 }
 
+/* Footer link hover state */
 .footer-links a:hover {
-    color: #bf80ff; /* Brighter purple */
+    color: #bf80ff;      /* Brighter purple */
 }
 
+/* Copyright text */
 .copyright {
-    font-size: 0.9rem;
-    color: #666699; /* Changed to darker purple */
+    font-size: 0.9rem;   /* Smaller text */
+    color: #666699;      /* Darker purple */
 }
 
-/* Responsive Styles */
+/* ============================================= */
+/* RESPONSIVE DESIGN - LARGE TABLET */
+/* ============================================= */
+
 @media (max-width: 992px) {
+    /* Single column layout */
     .two-column {
         grid-template-columns: 1fr;
     }
     
+    /* Smaller hero heading */
     .hero h1 {
         font-size: 3rem;
     }
 }
 
+/* ============================================= */
+/* RESPONSIVE DESIGN - TABLET */
+/* ============================================= */
+
 @media (max-width: 768px) {
+    /* Mobile navigation styles */
     .navbar {
         position: fixed;
         top: 80px;
-        left: -100%;
-        width: 80%;
-        height: calc(100vh - 80px);
-        background-color: var(--dark-color);
-        flex-direction: column;
+        left: -100%;     /* Off-screen by default */
+        width: 80%;      /* Most of screen width */
+        height: calc(100vh - 80px); /* Full height minus header */
+        background-color: var(--dark-color); /* Dark background */
+        flex-direction: column; /* Stack vertically */
         align-items: center;
         padding: 2rem 0;
         transition: var(--transition);
     }
     
+    /* Active state for mobile menu */
     .navbar.active {
-        left: 0;
+        left: 0;        /* Slide into view */
     }
     
+    /* Show hamburger menu */
     .hamburger {
         display: flex;
     }
     
+    /* Transform hamburger into X icon */
     .hamburger.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
     
+    /* Hide middle line */
     .hamburger.active span:nth-child(2) {
         opacity: 0;
     }
     
+    /* Transform bottom line */
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
     }
     
+    /* Smaller hero heading */
     .hero h1 {
         font-size: 2.5rem;
     }
     
+    /* Smaller hero paragraph */
     .hero p {
         font-size: 1.2rem;
     }
 }
 
+/* ============================================= */
+/* RESPONSIVE DESIGN - MOBILE */
+/* ============================================= */
+
 @media (max-width: 576px) {
+    /* Even smaller hero heading */
     .hero h1 {
         font-size: 2rem;
     }
     
+    /* More compact form padding */
     .contact-form, .subscription {
         padding: 1.5rem;
     }
