@@ -846,3 +846,58 @@ body {
   font-size: 0.8rem;
   color: #666699;
 }
+
+/* =================================================
+   NEXT PAGE NAVIGATION
+   Fixed navigation to additional pages
+   ================================================= */
+/* Next page navigation container */
+.next-page-arrow {
+  position: fixed; /* Fixed position relative to viewport */
+  bottom: 30px; /* Distance from bottom of viewport */
+  right: 30px; /* Distance from right of viewport */
+  background: rgba(20, 10, 40, 0.7); /* Semi-transparent purple background */
+  padding: 15px 20px; /* Vertical and horizontal padding */
+  border-radius: 50px; /* Fully rounded corners */
+  box-shadow: 0 0 15px #a280ff77, inset 0 0 20px #bf80ff55; /* Outer and inner glow */
+  cursor: pointer; /* Hand cursor indicates interactive */
+  z-index: 100; /* Ensures visibility above other content */
+  transition: all 0.3s ease; /* Smooth transitions for all properties */
+  display: flex; /* Enables flexbox layout */
+  align-items: center; /* Vertically centers content */
+  justify-content: center; /* Horizontally centers content */
+}
+
+/* Link within next page navigation */
+.next-page-arrow a {
+  display: flex; /* Enables flexbox layout */
+  align-items: center; /* Vertically centers content */
+  gap: 10px; /* Space between text and icon */
+  text-decoration: none; /* Removes underlines from links */
+  color: #cda9ff; /* Light purple text */
+  font-weight: 600; /* Semi-bold text */
+  font-size: 1.1rem; /* Larger than standard text */
+}
+
+/* Arrow icon in navigation */
+.next-page-arrow .arrow-icon {
+  font-size: 1.8rem; /* Large size for visibility */
+  color: #bf80ff; /* Purple color matching theme */
+  text-shadow: 0 0 10px #bf80ff; /* Glow effect */
+  transition: transform 0.3s ease; /* Smooth movement transition */
+}
+
+/* Navigation hover state */
+.next-page-arrow:hover {
+  box-shadow: 0 0 25px #bf80ffaa, inset 0 0 30px #bf80ff77; /* Enhanced glow on hover */
+}
+
+/* Arrow icon hover animation */
+.next-page-arrow:hover .arrow-icon {
+  transform: translateX(5px); /* Moves arrow slightly right on hover */
+}
+
+/* Navigation link hover state */
+.next-page-arrow:hover a {
+  color: #e0bfff; /* Lighter purple text on hover */
+}
