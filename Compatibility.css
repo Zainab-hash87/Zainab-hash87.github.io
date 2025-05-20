@@ -1078,4 +1078,85 @@ body {
   50% { transform: translateY(-5px); }
 }
 
-/*
+
+
+
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  animation: bounce 2s infinite;
+  transition: opacity 0.5s ease;
+}
+
+body.scrolled .scroll-down {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* Footer */
+/* Our cosmic footer with subtle styling - like star dust at the bottom of the universe */
+.footer {
+  background: #0b0f1a;
+  color: #9999cc;
+  text-align: center;
+  padding: 3px 6px; /* Reduced padding to make footer shorter */
+  font-size: 0.9rem; /* Slightly smaller font */
+  border-top: 1px solid #1f1a3d;
+  box-shadow: 0 -2px 10px #2a1a50;
+}
+
+/* Footer logo matches our header for brand consistency */
+.footer-logo {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.5rem; /* Smaller logo */
+  color: #a280ff;
+  margin-bottom: 5px;
+}
+
+/* A little starry decoration in the footer */
+.footer-stars {
+  margin: 5px 0;
+}
+
+/* Social media links arranged in a neat row */
+.social-icons {
+  margin: 10px 0;
+}
+
+/* Each social icon gets the same baseline styling */
+.social-icons a {
+  color: #9999cc;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+/* Icons glow purple on hover like our navigation links */
+.social-icons a:hover {
+  color: #bf80ff;
+}
+
+/* Footer navigation links in a clean row */
+.footer-links {
+  margin: 10px 0;
+}
+
+/* Styling for each footer link */
+.footer-links a {
+  color: #9999cc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Footer links also get the purple glow on hover */
+.footer-links a:hover {
+  color: #bf80ff;
+}
+
+/* Copyright notice at the very bottom - subtle and small */
+.copyright {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #666699;
+}
