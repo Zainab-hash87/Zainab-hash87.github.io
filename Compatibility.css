@@ -13,7 +13,7 @@ body {
   overflow-x: hidden; /* Prevents horizontal scrolling */
   min-height: 100vh;
   position: relative;
-  animation: fadeInPage 1.5s ease-in-out; /* Smooth page load fade-in */
+  animation: fadeInPage 1s ease-in-out; /* Smooth page load fade-in */
 }
 
 /* Magical page entrance animation */
