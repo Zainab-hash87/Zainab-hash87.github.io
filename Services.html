@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stellara - Welcome</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/3924/3924420.png" type="image/png" />
+  <link rel="stylesheet" href="Services.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Montserrat&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a2e0e6cfd6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+<!-- Video Background -->
+<video autoplay muted loop id="bg-video">
+  <source src="https://cdn.pixabay.com/video/2019/07/08/25047-347958032_large.mp4" type="video/mp4" />
+</video>
+
+<!-- Page Content -->
+<div class="page-content">
+</div>
+
+
+<!-- Header with Navbar -->
+  <header class="main-header">
+    <div class="logo">Stellara</div>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="zodiac.html">Reveal Zodiac</a>
+      <a href="compatibility.html">Compatibility</a>
+      <a href="Celestial-Quiz.html">Quick Quiz</a>
+      <a href="Services.html"> Stellar Services</a>
+    </nav>
+  </header>
+
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Get in Touch</h1>
+                <p>We'd love to hear from you. Reach out or subscribe for updates.</p>
+            </div>
+        </section>
+
+        <section class="content-wrapper">
+            <div class="container">
+                <div class="two-column">
+                    <!-- Contact Form Column -->
+                    <div class="contact-form">
+                        <h2>Send Us a Message</h2>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                        <div id="formSuccess" class="form-success">
+                            <p>Thank you! Your message has been sent successfully.</p>
+                        </div>
+                    </div>
+
+                    <!-- Subscription Column -->
+                    <div class="subscription">
+                        <div class="contact-info">
+                            <h2>Contact Information</h2>
+                            <ul>
+                                <li>
+                                    <i class="location-icon"></i>
+                                    <p>123 Business Avenue, Suite 500<br>New York, NY 10001</p>
+                                </li>
+                                <li>
+                                    <i class="phone-icon"></i>
+                                    <p><a href="tel:+12345678900">+1 (234) 567-8900</a></p>
+                                </li>
+                                <li>
+                                    <i class="email-icon"></i>
+                                    <p><a href="mailto:info@stelara.com">info@stelara.com</a></p>
+                                </li>
+                                <li>
+                                    <i class="hours-icon"></i>
+                                    <p>Monday - Friday: 9AM - 5PM<br>Saturday & Sunday: Closed</p>
+                                </li>
+                            </ul>
+                            <div class="social-media">
+                                <a href="#" class="social-icon facebook" aria-label="Facebook"></a>
+                                <a href="#" class="social-icon twitter" aria-label="Twitter"></a>
+                                <a href="#" class="social-icon instagram" aria-label="Instagram"></a>
+                                <a href="#" class="social-icon linkedin" aria-label="LinkedIn"></a>
+                            </div>
+                        </div>
+                        
+                        <div class="newsletter">
+                            <h2>Subscribe to Our Newsletter</h2>
+                            <p>Stay updated with our latest news, products, and special offers.</p>
+                            <form id="subscriptionForm">
+                                <div class="form-group">
+                                    <label for="subName">Full Name</label>
+                                    <input type="text" id="subName" name="subName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subEmail">Email Address</label>
+                                    <input type="email" id="subEmail" name="subEmail" required>
+                                </div>
+                                <div class="form-group checkbox">
+                                    <input type="checkbox" id="consent" name="consent" required>
+                                    <label for="consent">I agree to receive marketing emails and accept the <a href="privacy.html">Privacy Policy</a></label>
+                                </div>
+                                <button type="submit" class="btn">Subscribe Now</button>
+                            </form>
+                            <div id="subscriptionSuccess" class="form-success">
+                                <p>Thank you for subscribing! You're now on our mailing list.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <div class="container">
+                <h2>Find Us</h2>
+                <div class="map-container">
+                    <!-- Replace with actual map embed code -->
+                    <div class="map-placeholder">
+                        <p>Google Maps embed will appear here</p>
+                        <!-- For actual implementation:
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!..."
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-logo">Stellara</div>
+    <div class="footer-stars"><span>✨🌙🌟</span></div>
+    <p>Stellara — Reading the stars so you don't have to. ✨</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Terms of Use</a> | 
+      <a href="#">Contact Us</a>
+    </div>
+    <p class="copyright">© 2025 Stellara. All rights reserved.</p>
+  </footer>
+
+    <script src="Services.js"></script>
+</body>
+</html>
